@@ -1,6 +1,6 @@
-# Heart Sutra Memorization App (般若心経)
+# Sutra Memorization App (お経)
 
-Mobile-first web app for memorizing the Heart Sutra as chanted in Japanese Zen tradition. Progressive chunk reveal with self-assessed recall.
+Mobile-first web app for memorizing Sino-Japanese sutras as chanted in the Zen tradition. Progressive chunk reveal with self-assessed recall. Currently supports the Heart Sutra (般若心経); additional sutras to follow.
 
 ## Tech Stack
 
@@ -20,7 +20,7 @@ npm run preview  # Preview production build
 
 ## Architecture
 
-- **Data**: `src/data/heart-sutra.ts` — 262-character rufubon Heart Sutra, 30 sections (title + 28 body + mantra)
+- **Data**: `src/data/` — one JSON + TS wrapper per sutra. See `heart-sutra.json` / `heart-sutra.ts` for the pattern.
 - **Types**: `src/types.ts` — Character, Chunk, Section, StudyMode, DrillState, Settings
 - **Hooks**: `src/hooks/` — useDrill (drill queue + advancement), useSettings (localStorage), useTTS (Web Speech API)
 - **Components**: `src/components/` — HomeScreen, StudySession, ChunkDisplay, ActionButtons, SettingsPanel, SectionSummary, ProgressBar
@@ -40,24 +40,30 @@ npm run preview  # Preview production build
 
 Queue pattern: `[current, previous, 2-back, current]`. Advance if final pass is clean (all "Got It"). No SRS — naive user-controlled progression.
 
-## Data Sources
+## Sutra Data
 
-- mindisbuddha.org — section structure, characters, pinyin, romaji, kana
-- andrew-may.com/zendynamics/heart.htm — character types, English glosses
-- chinesetolearn.com — character-by-character pinyin with tone marks
+Each sutra lives in `src/data/` as a JSON file + TS wrapper (Zod validation + `expandChunks()`). The JSON schema and full compilation process are documented in `plans/data-compilation.md`.
+
+### Key principles
+
+- **Chanting tradition > dictionary.** The authoritative standard for readings is the Zen chanting tradition, not generic dictionary on'yomi. Buddhist chanting uses go-on (呉音) readings which often differ from standard on'yomi.
+- **Sparse chunks.** Only compound chunks with non-obvious readings are stored in JSON. Single-character chunks are generated at runtime by `expandChunks()`.
+- **Cross-reference everything.** No single source is reliable. Every field should be verified against at least two independent sources.
+- **Don't trust LLM knowledge for readings.** Use LLMs for fetching/parsing/cross-referencing, not as a source of truth for obscure Buddhist Japanese.
+
+### Data sources
+
 - `data/kaikki.org-dictionary-Japanese.jsonl` — Wiktionary extract (kaikki.org) for verifying on'yomi and compound readings. Gitignored (large file). Query with: `jq 'select(.word == "X")' data/kaikki.org-dictionary-Japanese.jsonl -c`
-
-## Data Audit Notes
-
-The readings in `src/data/heart-sutra.json` were initially compiled by cross-referencing web sources via LLM. The authoritative standard for chunk-level readings is **the Zen chanting tradition** (not dictionary readings). Where chanting readings differ from standard on'yomi (e.g. 五蘊 = go on in chanting vs go un in dictionaries), the chanting reading takes priority. Character-level `on`/`kana` fields should reflect the reading used in the actual chanting context, not a generic dictionary entry.
+- See `plans/data-compilation.md` for the full list of web sources and cross-referencing strategy.
 
 ## Design Decisions
 
 - Chunk readings stored explicitly (not derived) because compound readings don't decompose cleanly (e.g. 般若 = hannya)
 - TTS passes kana (not romaji) to speech engine for better Japanese pronunciation
 - Character types (semantic/phonetic/name) enable future color-coding
-- Section 0 = full title (摩訶般若波羅蜜多心經), drillable since it's chanted
+- Section 0 = full title, drillable since it's chanted
 
-## Plan
+## Plans
 
-See `plans/v1-plan.md` for the full implementation plan.
+- `plans/v1-plan.md` — App implementation plan
+- `plans/data-compilation.md` — Sutra data compilation guide (schema, sources, process)
