@@ -16,7 +16,7 @@ export function HomeScreen({ progress, totalSections, onStart, onOpenSettings }:
     <div className="home">
       <div style={{ display: "flex", justifyContent: "flex-end" }}>
         <button className="btn-ghost" onClick={onOpenSettings}>
-          &#9881;
+          <span className="material-symbols-outlined">settings</span>
         </button>
       </div>
 

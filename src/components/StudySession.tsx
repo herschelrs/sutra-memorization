@@ -94,7 +94,7 @@ export function StudySession({
           Section {section.id}
         </span>
         <button className="btn-ghost" onClick={onOpenSettings}>
-          &#9881;
+          <span className="material-symbols-outlined">settings</span>
         </button>
       </div>
       <ProgressBar current={section.id} total={totalSections - 1} />
