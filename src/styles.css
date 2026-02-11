@@ -178,6 +178,50 @@ button:disabled {
   font-size: 0.9rem;
 }
 
+/* Sutra Selection */
+.sutra-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sutra-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  padding: 20px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  width: 100%;
+  text-align: left;
+  position: relative;
+}
+
+.sutra-card:hover {
+  border-color: var(--accent);
+}
+
+.sutra-card-ja {
+  font-family: var(--font-cjk);
+  font-size: 1.4rem;
+}
+
+.sutra-card-en {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.sutra-card-progress {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 0.85rem;
+  color: var(--accent);
+  font-weight: 600;
+}
+
 /* Study Session */
 .study-session {
   flex: 1;

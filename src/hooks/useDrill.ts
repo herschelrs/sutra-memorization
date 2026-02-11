@@ -1,5 +1,5 @@
 import { useState, useCallback, useMemo } from "react";
-import type { Section } from "../data/heart-sutra";
+import type { Section } from "../data/schema";
 
 interface SectionRun {
   sectionId: number;
@@ -12,21 +12,36 @@ export interface Recovery {
   passesTotal: number;
 }
 
-interface DrillProgress {
+export interface DrillProgress {
   frontier: number;
 }
 
-const STORAGE_KEY = "sutras-drill-progress";
 const RECOVERY_PASSES = 3;
 
-function loadProgress(): DrillProgress {
+function storageKey(sutraKey: string) {
+  return `sutras-drill-${sutraKey}`;
+}
+
+export function loadProgress(sutraKey: string): DrillProgress {
   try {
-    const raw = localStorage.getItem(STORAGE_KEY);
+    const raw = localStorage.getItem(storageKey(sutraKey));
     if (raw) {
       const parsed = JSON.parse(raw);
-      // migrate from old format
       if ("currentSectionIndex" in parsed) return { frontier: parsed.currentSectionIndex };
       return parsed;
+    }
+    // migrate from old shared key (pre-multi-sutra)
+    if (sutraKey === "heart-sutra") {
+      const old = localStorage.getItem("sutras-drill-progress");
+      if (old) {
+        const parsed = JSON.parse(old);
+        const progress = "currentSectionIndex" in parsed
+          ? { frontier: parsed.currentSectionIndex }
+          : parsed as DrillProgress;
+        localStorage.setItem(storageKey(sutraKey), JSON.stringify(progress));
+        localStorage.removeItem("sutras-drill-progress");
+        return progress;
+      }
     }
   } catch {
     // ignore
@@ -34,8 +49,8 @@ function loadProgress(): DrillProgress {
   return { frontier: 0 };
 }
 
-function saveProgress(progress: DrillProgress) {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
+function saveProgress(sutraKey: string, progress: DrillProgress) {
+  localStorage.setItem(storageKey(sutraKey), JSON.stringify(progress));
 }
 
 function buildWindow(target: number): number[] {
@@ -45,8 +60,8 @@ function buildWindow(target: number): number[] {
   return win;
 }
 
-export function useDrill(sections: Section[]) {
-  const [progress, setProgress] = useState<DrillProgress>(loadProgress);
+export function useDrill(sections: Section[], sutraKey: string) {
+  const [progress, setProgress] = useState<DrillProgress>(() => loadProgress(sutraKey));
   const [recovery, setRecovery] = useState<Recovery | null>(null);
   const [windowIndex, setWindowIndex] = useState(0);
   const [run, setRun] = useState<SectionRun | null>(null);
@@ -98,7 +113,7 @@ export function useDrill(sections: Section[]) {
           if (nextSection > progress.frontier) {
             const newProgress = { frontier: nextSection };
             setProgress(newProgress);
-            saveProgress(newProgress);
+            saveProgress(sutraKey, newProgress);
           }
           setRun({ sectionId: nextSection, revealed: false });
         } else {
@@ -131,7 +146,7 @@ export function useDrill(sections: Section[]) {
               if (nextSection > progress.frontier) {
                 const newProgress = { frontier: nextSection };
                 setProgress(newProgress);
-                saveProgress(newProgress);
+                saveProgress(sutraKey, newProgress);
               }
               setRecovery(null);
               setWindowIndex(0);
@@ -180,7 +195,7 @@ export function useDrill(sections: Section[]) {
   const resetProgress = useCallback(() => {
     const fresh: DrillProgress = { frontier: 0 };
     setProgress(fresh);
-    saveProgress(fresh);
+    saveProgress(sutraKey, fresh);
     setRecovery(null);
     setWindowIndex(0);
     setRun(null);

@@ -1,7 +1,7 @@
 import { useState, useCallback, useEffect } from "react";
 import { createRoot } from "react-dom/client";
-import { sections } from "./data/heart-sutra";
-import { useDrill } from "./hooks/useDrill";
+import { sutras, type SutraInfo } from "./data";
+import { useDrill, loadProgress } from "./hooks/useDrill";
 import { useSettings } from "./hooks/useSettings";
 import { useTTS } from "./hooks/useTTS";
 import { HomeScreen } from "./components/HomeScreen";
@@ -9,9 +9,36 @@ import { StudySession } from "./components/StudySession";
 import { SettingsPanel } from "./components/SettingsPanel";
 import "./styles.css";
 
-export default function App() {
+function SutraSelect({ onSelect }: { onSelect: (sutra: SutraInfo) => void }) {
+  return (
+    <div className="home">
+      <h1 className="home-title">お経</h1>
+      <p className="home-subtitle">Sutra Memorization</p>
+
+      <div className="sutra-list">
+        {sutras.map((s) => {
+          const progress = loadProgress(s.id);
+          const pct = s.sections.length > 1
+            ? Math.round((progress.frontier / (s.sections.length - 1)) * 100)
+            : 0;
+          return (
+            <button key={s.id} className="sutra-card" onClick={() => onSelect(s)}>
+              <span className="sutra-card-ja">{s.titleJa}</span>
+              <span className="sutra-card-en">{s.titleEn}</span>
+              {progress.frontier > 0 && (
+                <span className="sutra-card-progress">{pct}%</span>
+              )}
+            </button>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+function SutraDrill({ sutra, onBack }: { sutra: SutraInfo; onBack: () => void }) {
   const { settings, setSettings } = useSettings();
-  const drill = useDrill(sections);
+  const drill = useDrill(sutra.sections, sutra.id);
   const { speakChunk } = useTTS(settings);
   const [showSettings, setShowSettings] = useState(false);
 
@@ -59,9 +86,13 @@ export default function App() {
     return (
       <>
         <HomeScreen
+          titleJa={sutra.titleJa}
+          titleEn={sutra.titleEn}
+          sections={sutra.sections}
           progress={drill.progress}
           totalSections={drill.totalSections}
           onStart={drill.startDrill}
+          onBack={onBack}
           onOpenSettings={() => setShowSettings(true)}
         />
         {showSettings && (
@@ -80,6 +111,7 @@ export default function App() {
   return (
     <>
       <StudySession
+        sections={sutra.sections}
         section={drill.currentSection}
         previousSections={drill.previousSections}
         run={drill.run}
@@ -102,6 +134,26 @@ export default function App() {
         />
       )}
     </>
+  );
+}
+
+export default function App() {
+  const [selectedSutraId, setSelectedSutraId] = useState<string | null>(null);
+
+  const sutra = selectedSutraId
+    ? sutras.find((s) => s.id === selectedSutraId) ?? null
+    : null;
+
+  if (!sutra) {
+    return <SutraSelect onSelect={(s) => setSelectedSutraId(s.id)} />;
+  }
+
+  return (
+    <SutraDrill
+      key={sutra.id}
+      sutra={sutra}
+      onBack={() => setSelectedSutraId(null)}
+    />
   );
 }
 

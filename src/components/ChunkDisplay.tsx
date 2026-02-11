@@ -1,4 +1,4 @@
-import type { Chunk, Section } from "../data/heart-sutra";
+import type { Chunk, Section } from "../data/schema";
 import type { Settings } from "../types";
 
 interface Props {

@@ -1,4 +1,4 @@
-import type { Section, Character } from "../data/heart-sutra";
+import type { Section, Character } from "../data/schema";
 import type { Settings } from "../types";
 import type { Recovery } from "../hooks/useDrill";
 import { ActionButtons } from "./ActionButtons";
@@ -10,6 +10,7 @@ interface Run {
 }
 
 interface Props {
+  sections: Section[];
   section: Section;
   previousSections: Section[];
   run: Run;
@@ -69,6 +70,7 @@ function SectionRuby({ section, settings, className }: { section: Section; setti
 
 
 export function StudySession({
+  sections,
   section,
   previousSections,
   run,
@@ -91,13 +93,13 @@ export function StudySession({
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="13,4 7,10 13,16" /></svg>
         </button>
         <span className="header-title">
-          Section {section.id}
+          {section.id === 0 ? "Title" : `Section ${section.id}`}
         </span>
         <button className="btn-ghost" onClick={onOpenSettings}>
           <span className="material-symbols-outlined">settings</span>
         </button>
       </div>
-      <ProgressBar current={section.id} total={totalSections - 1} />
+      <ProgressBar current={run.sectionId} total={totalSections - 1} />
       {recovery && (() => {
         const done = recovery.passesTotal - recovery.passesLeft;
         return (
@@ -108,7 +110,7 @@ export function StudySession({
               ))}
             </div>
             <div className="recovery-label">
-              {recovery.passesLeft} more through section {recovery.target} to continue
+              {recovery.passesLeft} more through section {sections[recovery.target].id} to continue
             </div>
           </div>
         );
