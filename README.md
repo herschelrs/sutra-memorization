@@ -34,6 +34,10 @@ npm run dev      # Start dev server
 npm run build    # Production build
 ```
 
+## Bugs
+
+- [ ] need option to disable glosses in the line being tested
+
 ## Roadmap
 
 - [ ] View/review data for a given sutra (to check readings, chunking, etc)
