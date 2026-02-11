@@ -45,6 +45,11 @@ Queue pattern: `[current, previous, 2-back, current]`. Advance if final pass is 
 - mindisbuddha.org — section structure, characters, pinyin, romaji, kana
 - andrew-may.com/zendynamics/heart.htm — character types, English glosses
 - chinesetolearn.com — character-by-character pinyin with tone marks
+- `data/kaikki.org-dictionary-Japanese.jsonl` — Wiktionary extract (kaikki.org) for verifying on'yomi and compound readings. Gitignored (large file). Query with: `jq 'select(.word == "X")' data/kaikki.org-dictionary-Japanese.jsonl -c`
+
+## Data Audit Notes
+
+The readings in `src/data/heart-sutra.json` were initially compiled by cross-referencing web sources via LLM. The authoritative standard for chunk-level readings is **the Zen chanting tradition** (not dictionary readings). Where chanting readings differ from standard on'yomi (e.g. 五蘊 = go on in chanting vs go un in dictionaries), the chanting reading takes priority. Character-level `on`/`kana` fields should reflect the reading used in the actual chanting context, not a generic dictionary entry.
 
 ## Design Decisions
 
