@@ -138,7 +138,7 @@
       { "char": "空", "type": "s", "on": "kū", "kana": "くう", "pinyin": "kōng", "gloss": "emptiness" }
     ],
     "chunks": [
-      { "start": 0, "end": 4, "ja": "shiki sokize kū", "jaKana": "しきそくぜくう", "zh": "sè jí shì kōng" }
+      { "start": 0, "end": 4, "ja": "shiki soku ze kū", "jaKana": "しきそくぜくう", "zh": "sè jí shì kōng" }
     ]
   },
   {
@@ -151,7 +151,7 @@
       { "char": "色", "type": "s", "on": "shiki", "kana": "しき", "pinyin": "sè", "gloss": "form" }
     ],
     "chunks": [
-      { "start": 0, "end": 4, "ja": "kū sokize shiki", "jaKana": "くうそくぜしき", "zh": "kōng jí shì sè" }
+      { "start": 0, "end": 4, "ja": "kū soku ze shiki", "jaKana": "くうそくぜしき", "zh": "kōng jí shì sè" }
     ]
   },
   {
@@ -452,8 +452,8 @@
       { "char": "怖", "type": "s", "on": "fu", "kana": "ふ", "pinyin": "bù", "gloss": "terror" }
     ],
     "chunks": [
-      { "start": 0, "end": 4, "ja": "shin mu keige", "jaKana": "しんむけいげ", "zh": "xīn wú guà ài" },
-      { "start": 4, "end": 8, "ja": "mu keige ko", "jaKana": "むけいげこ", "zh": "wú guà ài gù" },
+      { "start": 0, "end": 4, "ja": "shin mu kege", "jaKana": "しんむけげ", "zh": "xīn wú guà ài" },
+      { "start": 4, "end": 8, "ja": "mu kege ko", "jaKana": "むけげこ", "zh": "wú guà ài gù" },
       { "start": 8, "end": 12, "ja": "mu u kufu", "jaKana": "むうくふ", "zh": "wú yǒu kǒng bù" }
     ]
   },
@@ -470,7 +470,7 @@
       { "char": "夢", "type": "s", "on": "mu", "kana": "む", "pinyin": "mèng", "gloss": "dream" },
       { "char": "想", "type": "s", "on": "sō", "kana": "そう", "pinyin": "xiǎng", "gloss": "thinking" },
       { "char": "究", "type": "s", "on": "ku", "kana": "く", "pinyin": "jiū", "gloss": "investigate" },
-      { "char": "竟", "type": "s", "on": "kyō", "kana": "きょう", "pinyin": "jìng", "gloss": "complete" },
+      { "char": "竟", "type": "s", "on": "gyō", "kana": "ぎょう", "pinyin": "jìng", "gloss": "complete" },
       { "char": "涅", "type": "p", "on": "ne", "kana": "ね", "pinyin": "niè", "gloss": null },
       { "char": "槃", "type": "p", "on": "han", "kana": "はん", "pinyin": "pán", "gloss": null }
     ],
@@ -479,7 +479,7 @@
       { "start": 2, "end": 4, "ja": "issai", "jaKana": "いっさい", "zh": "yī qiè" },
       { "start": 4, "end": 6, "ja": "tendō", "jaKana": "てんどう", "zh": "diān dǎo" },
       { "start": 6, "end": 8, "ja": "musō", "jaKana": "むそう", "zh": "mèng xiǎng" },
-      { "start": 8, "end": 10, "ja": "kukyō", "jaKana": "くきょう", "zh": "jiū jìng" },
+      { "start": 8, "end": 10, "ja": "kugyō", "jaKana": "くぎょう", "zh": "jiū jìng" },
       { "start": 10, "end": 12, "ja": "nehan", "jaKana": "ねはん", "zh": "niè pán" }
     ]
   },
@@ -565,14 +565,14 @@
       { "char": "是", "type": "s", "on": "ze", "kana": "ぜ", "pinyin": "shì", "gloss": "is" },
       { "char": "無", "type": "s", "on": "mu", "kana": "む", "pinyin": "wú", "gloss": "without" },
       { "char": "等", "type": "s", "on": "tō", "kana": "とう", "pinyin": "děng", "gloss": "equal" },
-      { "char": "等", "type": "s", "on": "tō", "kana": "とう", "pinyin": "děng", "gloss": "equal" },
+      { "char": "等", "type": "s", "on": "dō", "kana": "どう", "pinyin": "děng", "gloss": "equal" },
       { "char": "呪", "type": "s", "on": "shu", "kana": "しゅ", "pinyin": "zhòu", "gloss": "mantra" }
     ],
     "chunks": [
       { "start": 0, "end": 4, "ja": "ze dai jin shu", "jaKana": "ぜだいじんしゅ", "zh": "shì dà shén zhòu" },
       { "start": 4, "end": 8, "ja": "ze dai myō shu", "jaKana": "ぜだいみょうしゅ", "zh": "shì dà míng zhòu" },
       { "start": 8, "end": 12, "ja": "ze mu jō shu", "jaKana": "ぜむじょうしゅ", "zh": "shì wú shàng zhòu" },
-      { "start": 12, "end": 17, "ja": "ze mu tō tō shu", "jaKana": "ぜむとうとうしゅ", "zh": "shì wú děng děng zhòu" }
+      { "start": 12, "end": 17, "ja": "ze mu tō dō shu", "jaKana": "ぜむとうどうしゅ", "zh": "shì wú děng děng zhòu" }
     ]
   },
   {
@@ -640,7 +640,7 @@
       { "char": "揭", "type": "p", "on": "gya", "kana": "ぎゃ", "pinyin": "jiē", "gloss": null },
       { "char": "諦", "type": "p", "on": "tei", "kana": "てい", "pinyin": "dì", "gloss": null },
       { "char": "菩", "type": "p", "on": "bo", "kana": "ぼ", "pinyin": "pú", "gloss": null },
-      { "char": "提", "type": "p", "on": "dai", "kana": "だい", "pinyin": "tí", "gloss": null },
+      { "char": "提", "type": "p", "on": "ji", "kana": "じ", "pinyin": "tí", "gloss": null },
       { "char": "薩", "type": "p", "on": "so", "kana": "そ", "pinyin": "sà", "gloss": null },
       { "char": "婆", "type": "p", "on": "wa", "kana": "わ", "pinyin": "pó", "gloss": null },
       { "char": "訶", "type": "p", "on": "ka", "kana": "か", "pinyin": "hē", "gloss": null }
@@ -650,7 +650,7 @@
       { "start": 2, "end": 4, "ja": "gyatei", "jaKana": "ぎゃてい", "zh": "jiē dì" },
       { "start": 4, "end": 8, "ja": "hara gyatei", "jaKana": "はらぎゃてい", "zh": "bō luó jiē dì" },
       { "start": 8, "end": 13, "ja": "harasō gyatei", "jaKana": "はらそうぎゃてい", "zh": "bō luó sēng jiē dì" },
-      { "start": 13, "end": 15, "ja": "bodai", "jaKana": "ぼだい", "zh": "pú tí" },
+      { "start": 13, "end": 15, "ja": "boji", "jaKana": "ぼじ", "zh": "pú tí" },
       { "start": 15, "end": 18, "ja": "sowaka", "jaKana": "そわか", "zh": "sà pó hē" }
     ]
   }
