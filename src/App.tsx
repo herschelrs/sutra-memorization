@@ -12,7 +12,7 @@ import "./styles.css";
 function SutraSelect({ onSelect }: { onSelect: (sutra: SutraInfo) => void }) {
   return (
     <div className="home">
-      <h1 className="home-title">お経</h1>
+      <h1 className="home-title">お經</h1>
       <p className="home-subtitle">Sutra Memorization</p>
 
       <div className="sutra-list">
