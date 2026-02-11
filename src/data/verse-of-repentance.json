@@ -1,0 +1,57 @@
+[
+  {
+    "id": 1,
+    "translation": "All the evil karma I have created since of old",
+    "characters": [
+      {"char":"我","type":"s","on":"ga","kana":"が","pinyin":"wǒ","gloss":"I"},
+      {"char":"昔","type":"s","on":"shaku","kana":"しゃく","pinyin":"xī","gloss":"past"},
+      {"char":"所","type":"s","on":"sho","kana":"しょ","pinyin":"suǒ","gloss":"that which"},
+      {"char":"造","type":"s","on":"zō","kana":"ぞう","pinyin":"zào","gloss":"create"},
+      {"char":"諸","type":"s","on":"sho","kana":"しょ","pinyin":"zhū","gloss":"various"},
+      {"char":"惡","simplified":"悪","type":"s","on":"aku","kana":"あく","pinyin":"è","gloss":"evil"},
+      {"char":"業","type":"s","on":"gō","kana":"ごう","pinyin":"yè","gloss":"karma"}
+    ]
+  },
+  {
+    "id": 2,
+    "translation": "All due to beginningless greed, anger, and delusion",
+    "characters": [
+      {"char":"皆","type":"s","on":"kai","kana":"かい","pinyin":"jiē","gloss":"all"},
+      {"char":"由","type":"s","on":"yū","kana":"ゆう","pinyin":"yóu","gloss":"due to"},
+      {"char":"無","type":"s","on":"mu","kana":"む","pinyin":"wú","gloss":"without"},
+      {"char":"始","type":"s","on":"shi","kana":"し","pinyin":"shǐ","gloss":"beginning"},
+      {"char":"貪","type":"s","on":"ton","kana":"とん","pinyin":"tān","gloss":"greed"},
+      {"char":"瞋","type":"s","on":"jin","kana":"じん","pinyin":"chēn","gloss":"anger"},
+      {"char":"癡","simplified":"痴","type":"s","on":"chi","kana":"ち","pinyin":"chī","gloss":"delusion"}
+    ]
+  },
+  {
+    "id": 3,
+    "translation": "Born of body, mouth, and mind",
+    "characters": [
+      {"char":"從","simplified":"従","type":"s","on":"jū","kana":"じゅう","pinyin":"cóng","gloss":"from"},
+      {"char":"身","type":"s","on":"shin","kana":"しん","pinyin":"shēn","gloss":"body"},
+      {"char":"口","type":"s","on":"ku","kana":"く","pinyin":"kǒu","gloss":"mouth"},
+      {"char":"意","type":"s","on":"i","kana":"い","pinyin":"yì","gloss":"mind"},
+      {"char":"之","type":"s","on":"shi","kana":"し","pinyin":"zhī","gloss":"of"},
+      {"char":"所","type":"s","on":"sho","kana":"しょ","pinyin":"suǒ","gloss":"that which"},
+      {"char":"生","type":"s","on":"shō","kana":"しょう","pinyin":"shēng","gloss":"born"}
+    ]
+  },
+  {
+    "id": 4,
+    "translation": "All of this I now fully repent",
+    "characters": [
+      {"char":"一","type":"s","on":"i","kana":"い","pinyin":"yī","gloss":"one"},
+      {"char":"切","type":"s","on":"sai","kana":"さい","pinyin":"qiè","gloss":"all"},
+      {"char":"我","type":"s","on":"ga","kana":"が","pinyin":"wǒ","gloss":"I"},
+      {"char":"今","type":"s","on":"kon","kana":"こん","pinyin":"jīn","gloss":"now"},
+      {"char":"皆","type":"s","on":"kai","kana":"かい","pinyin":"jiē","gloss":"all"},
+      {"char":"懺","type":"s","on":"zan","kana":"ざん","pinyin":"chàn","gloss":"repent"},
+      {"char":"悔","type":"s","on":"ge","kana":"げ","pinyin":"huǐ","gloss":"regret"}
+    ],
+    "chunks": [
+      {"start":0,"end":2,"ja":"issai","jaKana":"いっさい","zh":"yī qiè"}
+    ]
+  }
+]
