@@ -25,6 +25,34 @@
   --knob: #ffffff;
   --font-cjk: "Noto Serif CJK JP", "Hiragino Mincho Pro", "Yu Mincho", "MS Mincho", serif;
   --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color-scheme: light dark;
+}
+
+/*
+ * Dark palette — defined twice intentionally:
+ * 1. Media query: responds to OS dark mode at CSS level (no JS needed)
+ * 2. data-theme: responds to explicit user choice via settings toggle
+ * Keep both in sync when editing colors.
+ */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1a1a1a;
+    --text: #e8e4df;
+    --text-muted: #9a9590;
+    --accent: #6b9960;
+    --accent-hover: #7db070;
+    --danger: #c45555;
+    --danger-hover: #d46666;
+    --success: #6b9960;
+    --border: #333330;
+    --card-bg: #242422;
+    --overlay-bg: rgba(0, 0, 0, 0.6);
+    --accent-subtle: rgba(107, 153, 96, 0.12);
+    --danger-subtle: rgba(196, 85, 85, 0.15);
+    --accent-flash: rgba(107, 153, 96, 0.18);
+    --dot-border: #666;
+    --knob: #e8e4df;
+  }
 }
 
 [data-theme="dark"] {
