@@ -63,6 +63,26 @@ Each sutra lives in `src/data/` as a JSON file + TS wrapper (Zod validation + `e
 - Character types (semantic/phonetic/name) enable future color-coding
 - Section 0 = full title (if present), drillable since it's chanted. Sutras without a title section start at id 1.
 
+## Issues
+
+- [ ] Compile remaining sutras from Daishuin West sutra book
+  - [x] HANNYA SHINGYO 般若心経 — Heart Sutra
+  - [x] SHI KU SEI GAN 四弘誓願 — Four Great Vows
+  - [ ] ZAN GE MON 懺悔文 — Verse of Repentance
+  - [ ] SAN KI KAI 三帰戒 — Three Refuges / Precepts
+  - [ ] SHO SAI SHU 消災呪 — Disaster-Preventing Dharani
+  - [ ] DAI HI SHU 大悲呪 — Great Compassion Dharani
+  - [ ] SHA RI RAI 舎利礼 — Homage to the Relics
+  - [ ] DAI SE GA KI 大施餓鬼 — ambiguous, ceremony/sequence not a single text
+  - [ ] BU CHIN SON SHIN DO RO NI 仏頂尊勝陀羅尼 — Ushnisha Vijaya Dharani
+  - [ ] DAI E ZENJI HOTSU GAN MON 大慧禅師発願文 — Daie Zenji's Vow
+  - [ ] KOZEN DAITO KOKUSHI YUIKAI 興禅大燈国師遺誡 — Daito Kokushi's Admonition
+  - [ ] HAKU IN ZENJI ZAZEN WASAN 白隠禅師坐禅和讃 — Hakuin's Song of Zazen
+  - [ ] TEI DAI DEN PO BUSSO MYO GO 定大伝法仏祖名号 — ambiguous, lineage name list
+  - [ ] KAN NON GYO 観音経 — Kannon Sutra, long text
+  - [ ] BREAKFAST SUTRAS — ambiguous, composite meal chant sequence
+  - [ ] LUNCH SUTRAS — ambiguous, composite meal chant sequence
+
 ## Plans
 
 - `plans/v1-plan.md` — App implementation plan
