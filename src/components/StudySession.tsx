@@ -70,7 +70,7 @@ export function StudySession({
     <div className="study-session">
       <div className="header">
         <button className="btn-ghost" onClick={onHome}>
-          &larr;
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="13,4 7,10 13,16" /></svg>
         </button>
         <span className="header-title">
           Section {section.id}

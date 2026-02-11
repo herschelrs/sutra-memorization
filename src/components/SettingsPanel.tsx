@@ -9,10 +9,7 @@ interface Props {
 
 const modes: { value: StudyMode; label: string }[] = [
   { value: "readings", label: "Readings" },
-  { value: "kanji", label: "Kanji" },
   { value: "mandarin", label: "Mandarin" },
-  { value: "glosses", label: "Glosses" },
-  { value: "translation", label: "Translation" },
 ];
 
 export function SettingsPanel({ settings, onUpdate, onReset, onClose }: Props) {
