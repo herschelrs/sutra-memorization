@@ -6,54 +6,55 @@ interface SectionRun {
   revealed: boolean;
 }
 
+export interface Recovery {
+  target: number;
+  passesLeft: number;
+  passesTotal: number;
+}
+
 interface DrillProgress {
-  currentSectionIndex: number;
-  sectionResults: Record<number, { attempts: number; lastClean: boolean }>;
+  frontier: number;
 }
 
 const STORAGE_KEY = "sutras-drill-progress";
+const RECOVERY_PASSES = 3;
 
 function loadProgress(): DrillProgress {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
-    if (raw) return JSON.parse(raw);
+    if (raw) {
+      const parsed = JSON.parse(raw);
+      // migrate from old format
+      if ("currentSectionIndex" in parsed) return { frontier: parsed.currentSectionIndex };
+      return parsed;
+    }
   } catch {
     // ignore
   }
-  return { currentSectionIndex: 0, sectionResults: {} };
+  return { frontier: 0 };
 }
 
 function saveProgress(progress: DrillProgress) {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
 }
 
-function buildQueue(currentIdx: number, sectionResults: DrillProgress["sectionResults"]): number[] {
-  const queue: number[] = [currentIdx];
-  const lastResult = sectionResults[currentIdx];
-  if (lastResult && !lastResult.lastClean) {
-    queue.push(currentIdx);
-  }
-  if (currentIdx > 0) queue.push(currentIdx - 1);
-  if (currentIdx > 1) queue.push(currentIdx - 2);
-  queue.push(currentIdx);
-  return queue;
+function buildWindow(target: number): number[] {
+  const start = Math.max(0, target - 2);
+  const win: number[] = [];
+  for (let i = start; i <= target; i++) win.push(i);
+  return win;
 }
 
 export function useDrill(sections: Section[]) {
   const [progress, setProgress] = useState<DrillProgress>(loadProgress);
-  const [queueIndex, setQueueIndex] = useState(0);
+  const [recovery, setRecovery] = useState<Recovery | null>(null);
+  const [windowIndex, setWindowIndex] = useState(0);
   const [run, setRun] = useState<SectionRun | null>(null);
-
-  const queue = useMemo(
-    () => buildQueue(progress.currentSectionIndex, progress.sectionResults),
-    [progress.currentSectionIndex, progress.sectionResults],
-  );
 
   const currentSection = useMemo(() => {
     if (run) return sections[run.sectionId];
-    const sectionId = queue[queueIndex] ?? progress.currentSectionIndex;
-    return sections[sectionId];
-  }, [run, queue, queueIndex, progress.currentSectionIndex, sections]);
+    return sections[progress.frontier];
+  }, [run, progress.frontier, sections]);
 
   const previousSections = useMemo(() => {
     if (!run || run.sectionId === 0) return [];
@@ -67,17 +68,15 @@ export function useDrill(sections: Section[]) {
 
   const startDrill = useCallback(
     (sectionIndex?: number) => {
-      const idx = sectionIndex ?? progress.currentSectionIndex;
-      const newProgress = sectionIndex != null
-        ? { ...progress, currentSectionIndex: sectionIndex }
-        : progress;
+      const frontier = sectionIndex ?? progress.frontier;
       if (sectionIndex != null) {
+        const newProgress = { frontier };
         setProgress(newProgress);
         saveProgress(newProgress);
       }
-      setQueueIndex(0);
-      const q = buildQueue(idx, newProgress.sectionResults);
-      setRun({ sectionId: q[0], revealed: false });
+      setRecovery(null);
+      setWindowIndex(0);
+      setRun({ sectionId: frontier, revealed: false });
     },
     [progress],
   );
@@ -90,68 +89,83 @@ export function useDrill(sections: Section[]) {
   const assess = useCallback(
     (gotIt: boolean) => {
       if (!run) return;
+      const maxSection = sections.length - 1;
 
-      // Update section results
-      const newResults = { ...progress.sectionResults };
-      const prev = newResults[run.sectionId];
-      newResults[run.sectionId] = {
-        attempts: (prev?.attempts ?? 0) + 1,
-        lastClean: gotIt,
-      };
-
-      const nextQueueIndex = queueIndex + 1;
-
-      if (nextQueueIndex >= queue.length) {
-        // End of queue — advance if final pass on current section was clean
-        const finalPassClean = gotIt && run.sectionId === progress.currentSectionIndex;
-        const nextSectionIndex = finalPassClean
-          ? Math.min(progress.currentSectionIndex + 1, sections.length - 1)
-          : progress.currentSectionIndex;
-
-        const newProgress: DrillProgress = {
-          currentSectionIndex: nextSectionIndex,
-          sectionResults: newResults,
-        };
-        setProgress(newProgress);
-        saveProgress(newProgress);
-
-        setQueueIndex(0);
-        const newQueue = buildQueue(nextSectionIndex, newResults);
-        setRun({ sectionId: newQueue[0], revealed: false });
+      if (!recovery) {
+        // Normal mode: just the frontier
+        if (gotIt) {
+          const newFrontier = Math.min(progress.frontier + 1, maxSection);
+          const newProgress = { frontier: newFrontier };
+          setProgress(newProgress);
+          saveProgress(newProgress);
+          setRun({ sectionId: newFrontier, revealed: false });
+        } else {
+          // Enter recovery
+          const rec: Recovery = { target: progress.frontier, passesLeft: RECOVERY_PASSES, passesTotal: RECOVERY_PASSES };
+          setRecovery(rec);
+          const win = buildWindow(progress.frontier);
+          setWindowIndex(0);
+          setRun({ sectionId: win[0], revealed: false });
+        }
       } else {
-        const newProgress: DrillProgress = { ...progress, sectionResults: newResults };
-        setProgress(newProgress);
-        saveProgress(newProgress);
+        // Recovery mode
+        const win = buildWindow(recovery.target);
+        const nextIdx = windowIndex + 1;
 
-        setQueueIndex(nextQueueIndex);
-        setRun({ sectionId: queue[nextQueueIndex], revealed: false });
+        if (nextIdx >= win.length) {
+          // Just assessed the target section
+          if (gotIt) {
+            const newPassesLeft = recovery.passesLeft - 1;
+            if (newPassesLeft === 0) {
+              // Recovery complete, advance
+              const newFrontier = Math.min(progress.frontier + 1, maxSection);
+              const newProgress = { frontier: newFrontier };
+              setProgress(newProgress);
+              saveProgress(newProgress);
+              setRecovery(null);
+              setWindowIndex(0);
+              setRun({ sectionId: newFrontier, revealed: false });
+            } else {
+              // Another pass needed
+              setRecovery({ ...recovery, passesLeft: newPassesLeft });
+              setWindowIndex(0);
+              setRun({ sectionId: win[0], revealed: false });
+            }
+          } else {
+            // Failed target, restart this pass
+            setWindowIndex(0);
+            setRun({ sectionId: win[0], revealed: false });
+          }
+        } else {
+          // Not at target yet, advance through window
+          setWindowIndex(nextIdx);
+          setRun({ sectionId: win[nextIdx], revealed: false });
+        }
       }
     },
-    [run, queueIndex, queue, progress, sections],
+    [run, recovery, windowIndex, progress, sections],
   );
 
   const goHome = useCallback(() => {
     setRun(null);
+    setRecovery(null);
   }, []);
 
   const resetProgress = useCallback(() => {
-    const fresh: DrillProgress = { currentSectionIndex: 0, sectionResults: {} };
+    const fresh: DrillProgress = { frontier: 0 };
     setProgress(fresh);
     saveProgress(fresh);
-    setQueueIndex(0);
+    setRecovery(null);
+    setWindowIndex(0);
     setRun(null);
   }, []);
-
-  const isReview = run ? run.sectionId < progress.currentSectionIndex : false;
-  const queuePosition = `${queueIndex + 1}/${queue.length}`;
 
   return {
     progress,
     currentSection,
     previousSections,
     run,
-    isReview,
-    queuePosition,
+    recovery,
     startDrill,
     reveal,
     assess,

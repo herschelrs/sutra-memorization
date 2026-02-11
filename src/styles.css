@@ -121,10 +121,6 @@ button:disabled {
   font-weight: 500;
 }
 
-.header-queue {
-  opacity: 0.5;
-  font-size: 0.8em;
-}
 
 .header button {
   min-height: 40px;
@@ -228,6 +224,41 @@ button:disabled {
   align-items: center;
   justify-content: center;
   position: relative;
+}
+
+.recovery-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.recovery-dots {
+  display: flex;
+  gap: 8px;
+  padding: 10px 20px;
+  border: 1.5px solid #999;
+  background: rgba(74, 103, 65, 0.08);
+  border-radius: 8px;
+}
+
+.recovery-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.pass-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: white;
+  border: 1.5px solid #999;
+}
+
+.pass-dot.done {
+  background: var(--accent);
+  border-color: var(--accent);
 }
 
 .recall-cue {

@@ -1,5 +1,6 @@
 import type { Section, Character } from "../data/heart-sutra";
 import type { Settings } from "../types";
+import type { Recovery } from "../hooks/useDrill";
 import { ActionButtons } from "./ActionButtons";
 import { ProgressBar } from "./ProgressBar";
 
@@ -12,8 +13,7 @@ interface Props {
   section: Section;
   previousSections: Section[];
   run: Run;
-  isReview: boolean;
-  queuePosition: string;
+  recovery: Recovery | null;
   settings: Settings;
   totalSections: number;
   onReveal: () => void;
@@ -51,12 +51,12 @@ function SectionRuby({ section, settings, className }: { section: Section; setti
   );
 }
 
+
 export function StudySession({
   section,
   previousSections,
   run,
-  isReview,
-  queuePosition,
+  recovery,
   settings,
   totalSections,
   onReveal,
@@ -65,7 +65,6 @@ export function StudySession({
   onOpenSettings,
 }: Props) {
   const mode = settings.mode;
-  const label = isReview ? `Review section ${section.id}` : `Section ${section.id}`;
 
   return (
     <div className="study-session">
@@ -74,13 +73,28 @@ export function StudySession({
           &larr;
         </button>
         <span className="header-title">
-          {label} <span className="header-queue">{queuePosition}</span>
+          Section {section.id}
         </span>
         <button className="btn-ghost" onClick={onOpenSettings}>
           &#9881;
         </button>
       </div>
       <ProgressBar current={section.id} total={totalSections - 1} />
+      {recovery && (() => {
+        const done = recovery.passesTotal - recovery.passesLeft;
+        return (
+          <div className="recovery-wrap">
+            <div className="recovery-dots">
+              {Array.from({ length: recovery.passesTotal }, (_, i) => (
+                <span key={i} className={i < done ? "pass-dot done" : "pass-dot"}/>
+              ))}
+            </div>
+            <div className="recovery-label">
+              {recovery.passesLeft} more through section {recovery.target} to continue
+            </div>
+          </div>
+        );
+      })()}
       <div className="chunks-area">
         <div className="context-half">
           {previousSections.length > 0 && (

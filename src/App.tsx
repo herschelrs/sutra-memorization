@@ -83,8 +83,7 @@ export default function App() {
         section={drill.currentSection}
         previousSections={drill.previousSections}
         run={drill.run}
-        isReview={drill.isReview}
-        queuePosition={drill.queuePosition}
+        recovery={drill.recovery}
         settings={settings}
         totalSections={drill.totalSections}
         onReveal={handleReveal}

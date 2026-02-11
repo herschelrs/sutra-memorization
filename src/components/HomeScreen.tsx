@@ -1,6 +1,5 @@
 interface DrillProgress {
-  currentSectionIndex: number;
-  sectionResults: Record<number, { attempts: number; lastClean: boolean }>;
+  frontier: number;
 }
 
 interface Props {
@@ -11,7 +10,7 @@ interface Props {
 }
 
 export function HomeScreen({ progress, totalSections, onStart, onOpenSettings }: Props) {
-  const pct = Math.round((progress.currentSectionIndex / (totalSections - 1)) * 100);
+  const pct = Math.round((progress.frontier / (totalSections - 1)) * 100);
 
   return (
     <div className="home">
@@ -26,11 +25,11 @@ export function HomeScreen({ progress, totalSections, onStart, onOpenSettings }:
 
       <div className="home-actions">
         <button className="btn-primary" onClick={() => onStart()}>
-          {progress.currentSectionIndex > 0 ? "Continue Practice" : "Begin Practice"}
+          {progress.frontier > 0 ? "Continue Practice" : "Begin Practice"}
         </button>
-        {progress.currentSectionIndex > 0 && (
+        {progress.frontier > 0 && (
           <p className="home-progress">
-            Section {progress.currentSectionIndex} of {totalSections - 1} &middot; {pct}%
+            Section {progress.frontier} of {totalSections - 1} &middot; {pct}%
           </p>
         )}
       </div>
