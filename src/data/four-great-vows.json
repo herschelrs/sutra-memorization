@@ -1,0 +1,54 @@
+[
+  {
+    "id": 1,
+    "translation": "Beings are numberless; I vow to deliver them",
+    "characters": [
+      {"char":"衆","type":"s","on":"shu","kana":"しゅ","pinyin":"zhòng","gloss":"multitude"},
+      {"char":"生","type":"s","on":"jō","kana":"じょう","pinyin":"shēng","gloss":"beings"},
+      {"char":"無","type":"s","on":"mu","kana":"む","pinyin":"wú","gloss":"without"},
+      {"char":"邊","simplified":"辺","type":"s","on":"hen","kana":"へん","pinyin":"biān","gloss":"limit"},
+      {"char":"誓","type":"s","on":"sei","kana":"せい","pinyin":"shì","gloss":"vow"},
+      {"char":"願","type":"s","on":"gan","kana":"がん","pinyin":"yuàn","gloss":"wish"},
+      {"char":"度","type":"s","on":"do","kana":"ど","pinyin":"dù","gloss":"deliver"}
+    ]
+  },
+  {
+    "id": 2,
+    "translation": "Afflictions are inexhaustible; I vow to cut them off",
+    "characters": [
+      {"char":"煩","type":"s","on":"bon","kana":"ぼん","pinyin":"fán","gloss":"trouble"},
+      {"char":"惱","simplified":"悩","type":"s","on":"nō","kana":"のう","pinyin":"nǎo","gloss":"affliction"},
+      {"char":"無","type":"s","on":"mu","kana":"む","pinyin":"wú","gloss":"without"},
+      {"char":"盡","simplified":"尽","type":"s","on":"jin","kana":"じん","pinyin":"jìn","gloss":"end"},
+      {"char":"誓","type":"s","on":"sei","kana":"せい","pinyin":"shì","gloss":"vow"},
+      {"char":"願","type":"s","on":"gan","kana":"がん","pinyin":"yuàn","gloss":"wish"},
+      {"char":"斷","simplified":"断","type":"s","on":"dan","kana":"だん","pinyin":"duàn","gloss":"cut off"}
+    ]
+  },
+  {
+    "id": 3,
+    "translation": "Dharma gates are immeasurable; I vow to study them",
+    "characters": [
+      {"char":"法","type":"s","on":"hō","kana":"ほう","pinyin":"fǎ","gloss":"dharma"},
+      {"char":"門","type":"s","on":"mon","kana":"もん","pinyin":"mén","gloss":"gate"},
+      {"char":"無","type":"s","on":"mu","kana":"む","pinyin":"wú","gloss":"without"},
+      {"char":"量","type":"s","on":"ryō","kana":"りょう","pinyin":"liàng","gloss":"measure"},
+      {"char":"誓","type":"s","on":"sei","kana":"せい","pinyin":"shì","gloss":"vow"},
+      {"char":"願","type":"s","on":"gan","kana":"がん","pinyin":"yuàn","gloss":"wish"},
+      {"char":"學","simplified":"学","type":"s","on":"gaku","kana":"がく","pinyin":"xué","gloss":"study"}
+    ]
+  },
+  {
+    "id": 4,
+    "translation": "The Buddha way is unsurpassable; I vow to accomplish it",
+    "characters": [
+      {"char":"佛","simplified":"仏","type":"s","on":"butsu","kana":"ぶつ","pinyin":"fó","gloss":"Buddha"},
+      {"char":"道","type":"s","on":"dō","kana":"どう","pinyin":"dào","gloss":"way"},
+      {"char":"無","type":"s","on":"mu","kana":"む","pinyin":"wú","gloss":"without"},
+      {"char":"上","type":"s","on":"jō","kana":"じょう","pinyin":"shàng","gloss":"above"},
+      {"char":"誓","type":"s","on":"sei","kana":"せい","pinyin":"shì","gloss":"vow"},
+      {"char":"願","type":"s","on":"gan","kana":"がん","pinyin":"yuàn","gloss":"wish"},
+      {"char":"成","type":"s","on":"jō","kana":"じょう","pinyin":"chéng","gloss":"accomplish"}
+    ]
+  }
+]

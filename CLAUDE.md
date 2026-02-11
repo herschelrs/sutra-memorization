@@ -61,7 +61,7 @@ Each sutra lives in `src/data/` as a JSON file + TS wrapper (Zod validation + `e
 - Chunk readings stored explicitly (not derived) because compound readings don't decompose cleanly (e.g. 般若 = hannya)
 - TTS passes kana (not romaji) to speech engine for better Japanese pronunciation
 - Character types (semantic/phonetic/name) enable future color-coding
-- Section 0 = full title, drillable since it's chanted
+- Section 0 = full title (if present), drillable since it's chanted. Sutras without a title section start at id 1.
 
 ## Plans
 

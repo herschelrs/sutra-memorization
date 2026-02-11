@@ -8,7 +8,7 @@ Each sutra is a JSON array of sections. A section is a chantable line or phrase 
 
 ```jsonc
 {
-  "id": 0,                    // sequential, 0-indexed; 0 is typically the title
+  "id": 1,                    // sequential; 0 = title (if present), body starts at 1
   "translation": "...",       // short literal English translation of the line
   "sanskrit": "...",          // optional; only for dhāraṇī / mantra sections
   "characters": [
