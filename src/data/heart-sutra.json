@@ -3,634 +3,496 @@
     "id": 0,
     "translation": "Maha Prajna Paramita Heart Sutra",
     "characters": [
-      { "char": "摩", "type": "p", "on": "ma", "kana": "ま", "pinyin": "mó", "gloss": null },
-      { "char": "訶", "type": "p", "on": "ka", "kana": "か", "pinyin": "hē", "gloss": null },
-      { "char": "般", "type": "p", "on": "han", "kana": "はん", "pinyin": "bō", "gloss": null },
-      { "char": "若", "type": "p", "on": "nya", "kana": "にゃ", "pinyin": "rě", "gloss": null },
-      { "char": "波", "type": "p", "on": "ha", "kana": "は", "pinyin": "bō", "gloss": null },
-      { "char": "羅", "type": "p", "on": "ra", "kana": "ら", "pinyin": "luó", "gloss": null },
-      { "char": "蜜", "type": "p", "on": "mi", "kana": "み", "pinyin": "mì", "gloss": null },
-      { "char": "多", "type": "p", "on": "ta", "kana": "た", "pinyin": "duō", "gloss": null },
-      { "char": "心", "type": "s", "on": "shin", "kana": "しん", "pinyin": "xīn", "gloss": "heart" },
-      { "char": "經", "simplified": "経", "type": "s", "on": "gyō", "kana": "ぎょう", "pinyin": "jīng", "gloss": "sutra" }
+      {"char":"摩","type":"p","on":"ma","kana":"ま","pinyin":"mó","gloss":null},
+      {"char":"訶","type":"p","on":"ka","kana":"か","pinyin":"hē","gloss":null},
+      {"char":"般","type":"p","on":"han","kana":"はん","pinyin":"bō","gloss":null},
+      {"char":"若","type":"p","on":"nya","kana":"にゃ","pinyin":"rě","gloss":null},
+      {"char":"波","type":"p","on":"ha","kana":"は","pinyin":"bō","gloss":null},
+      {"char":"羅","type":"p","on":"ra","kana":"ら","pinyin":"luó","gloss":null},
+      {"char":"蜜","type":"p","on":"mi","kana":"み","pinyin":"mì","gloss":null},
+      {"char":"多","type":"p","on":"ta","kana":"た","pinyin":"duō","gloss":null},
+      {"char":"心","type":"s","on":"shin","kana":"しん","pinyin":"xīn","gloss":"heart"},
+      {"char":"經","simplified":"経","type":"s","on":"kyō","kana":"きょう","pinyin":"jīng","gloss":"sutra"}
     ],
     "chunks": [
-      { "start": 0, "end": 2, "ja": "maka", "jaKana": "まか", "zh": "mó hē" },
-      { "start": 2, "end": 4, "ja": "hannya", "jaKana": "はんにゃ", "zh": "bō rě" },
-      { "start": 4, "end": 8, "ja": "haramitta", "jaKana": "はらみった", "zh": "bō luó mì duō" },
-      { "start": 8, "end": 10, "ja": "shingyō", "jaKana": "しんぎょう", "zh": "xīn jīng" }
+      {"start":4,"end":8,"ja":"haramitta","jaKana":"はらみった","zh":"bō luó mì duō"},
+      {"start":8,"end":10,"ja":"shingyō","jaKana":"しんぎょう","zh":"xīn jīng"}
     ]
   },
   {
     "id": 1,
     "translation": "Avalokiteshvara Bodhisattva",
     "characters": [
-      { "char": "觀", "simplified": "観", "type": "n", "on": "kan", "kana": "かん", "pinyin": "guān", "gloss": null },
-      { "char": "自", "type": "n", "on": "ji", "kana": "じ", "pinyin": "zì", "gloss": null },
-      { "char": "在", "type": "n", "on": "zai", "kana": "ざい", "pinyin": "zài", "gloss": null },
-      { "char": "菩", "type": "p", "on": "bo", "kana": "ぼ", "pinyin": "pú", "gloss": null },
-      { "char": "薩", "type": "p", "on": "satsu", "kana": "さつ", "pinyin": "sà", "gloss": null }
-    ],
-    "chunks": [
-      { "start": 0, "end": 3, "ja": "kanjizai", "jaKana": "かんじざい", "zh": "guān zì zài" },
-      { "start": 3, "end": 5, "ja": "bosatsu", "jaKana": "ぼさつ", "zh": "pú sà" }
+      {"char":"觀","simplified":"観","type":"n","on":"kan","kana":"かん","pinyin":"guān","gloss":null},
+      {"char":"自","type":"n","on":"ji","kana":"じ","pinyin":"zì","gloss":null},
+      {"char":"在","type":"n","on":"zai","kana":"ざい","pinyin":"zài","gloss":null},
+      {"char":"菩","type":"p","on":"bo","kana":"ぼ","pinyin":"pú","gloss":null},
+      {"char":"薩","type":"p","on":"satsu","kana":"さつ","pinyin":"sà","gloss":null}
     ]
   },
   {
     "id": 2,
     "translation": "when practicing deeply the prajna paramita",
     "characters": [
-      { "char": "行", "type": "s", "on": "gyō", "kana": "ぎょう", "pinyin": "xíng", "gloss": "practice" },
-      { "char": "深", "type": "s", "on": "jin", "kana": "じん", "pinyin": "shēn", "gloss": "deep" },
-      { "char": "般", "type": "p", "on": "han", "kana": "はん", "pinyin": "bō", "gloss": null },
-      { "char": "若", "type": "p", "on": "nya", "kana": "にゃ", "pinyin": "rě", "gloss": null },
-      { "char": "波", "type": "p", "on": "ha", "kana": "は", "pinyin": "bō", "gloss": null },
-      { "char": "羅", "type": "p", "on": "ra", "kana": "ら", "pinyin": "luó", "gloss": null },
-      { "char": "蜜", "type": "p", "on": "mi", "kana": "み", "pinyin": "mì", "gloss": null },
-      { "char": "多", "type": "p", "on": "ta", "kana": "た", "pinyin": "duō", "gloss": null },
-      { "char": "時", "type": "s", "on": "ji", "kana": "じ", "pinyin": "shí", "gloss": "time" }
+      {"char":"行","type":"s","on":"gyō","kana":"ぎょう","pinyin":"xíng","gloss":"practice"},
+      {"char":"深","type":"s","on":"jin","kana":"じん","pinyin":"shēn","gloss":"deep"},
+      {"char":"般","type":"p","on":"han","kana":"はん","pinyin":"bō","gloss":null},
+      {"char":"若","type":"p","on":"nya","kana":"にゃ","pinyin":"rě","gloss":null},
+      {"char":"波","type":"p","on":"ha","kana":"は","pinyin":"bō","gloss":null},
+      {"char":"羅","type":"p","on":"ra","kana":"ら","pinyin":"luó","gloss":null},
+      {"char":"蜜","type":"p","on":"mi","kana":"み","pinyin":"mì","gloss":null},
+      {"char":"多","type":"p","on":"ta","kana":"た","pinyin":"duō","gloss":null},
+      {"char":"時","type":"s","on":"ji","kana":"じ","pinyin":"shí","gloss":"time"}
     ],
     "chunks": [
-      { "start": 0, "end": 2, "ja": "gyōjin", "jaKana": "ぎょうじん", "zh": "xíng shēn" },
-      { "start": 2, "end": 4, "ja": "hannya", "jaKana": "はんにゃ", "zh": "bō rě" },
-      { "start": 4, "end": 8, "ja": "haramitta", "jaKana": "はらみった", "zh": "bō luó mì duō" },
-      { "start": 8, "end": 9, "ja": "ji", "jaKana": "じ", "zh": "shí" }
+      {"start":4,"end":8,"ja":"haramitta","jaKana":"はらみった","zh":"bō luó mì duō"}
     ]
   },
   {
     "id": 3,
     "translation": "clearly saw that the five aggregates are all empty",
     "characters": [
-      { "char": "照", "type": "s", "on": "shō", "kana": "しょう", "pinyin": "zhào", "gloss": "illuminate" },
-      { "char": "見", "type": "s", "on": "ken", "kana": "けん", "pinyin": "jiàn", "gloss": "see" },
-      { "char": "五", "type": "s", "on": "go", "kana": "ご", "pinyin": "wǔ", "gloss": "five" },
-      { "char": "蘊", "type": "s", "on": "un", "kana": "うん", "pinyin": "yùn", "gloss": "aggregate" },
-      { "char": "皆", "type": "s", "on": "kai", "kana": "かい", "pinyin": "jiē", "gloss": "all" },
-      { "char": "空", "type": "s", "on": "kū", "kana": "くう", "pinyin": "kōng", "gloss": "empty" }
-    ],
-    "chunks": [
-      { "start": 0, "end": 2, "ja": "shōken", "jaKana": "しょうけん", "zh": "zhào jiàn" },
-      { "start": 2, "end": 4, "ja": "go un", "jaKana": "ごうん", "zh": "wǔ yùn" },
-      { "start": 4, "end": 6, "ja": "kaikū", "jaKana": "かいくう", "zh": "jiē kōng" }
+      {"char":"照","type":"s","on":"shō","kana":"しょう","pinyin":"zhào","gloss":"illuminate"},
+      {"char":"見","type":"s","on":"ken","kana":"けん","pinyin":"jiàn","gloss":"see"},
+      {"char":"五","type":"s","on":"go","kana":"ご","pinyin":"wǔ","gloss":"five"},
+      {"char":"蘊","type":"s","on":"un","kana":"うん","pinyin":"yùn","gloss":"aggregate"},
+      {"char":"皆","type":"s","on":"kai","kana":"かい","pinyin":"jiē","gloss":"all"},
+      {"char":"空","type":"s","on":"kū","kana":"くう","pinyin":"kōng","gloss":"empty"}
     ]
   },
   {
     "id": 4,
     "translation": "transcended all suffering",
     "characters": [
-      { "char": "度", "type": "s", "on": "do", "kana": "ど", "pinyin": "dù", "gloss": "cross over" },
-      { "char": "一", "type": "s", "on": "i", "kana": "い", "pinyin": "yī", "gloss": "one" },
-      { "char": "切", "type": "s", "on": "sai", "kana": "さい", "pinyin": "qiè", "gloss": "all" },
-      { "char": "苦", "type": "s", "on": "ku", "kana": "く", "pinyin": "kǔ", "gloss": "suffering" },
-      { "char": "厄", "type": "s", "on": "yaku", "kana": "やく", "pinyin": "è", "gloss": "distress" }
+      {"char":"度","type":"s","on":"do","kana":"ど","pinyin":"dù","gloss":"cross over"},
+      {"char":"一","type":"s","on":"i","kana":"い","pinyin":"yī","gloss":"one"},
+      {"char":"切","type":"s","on":"sai","kana":"さい","pinyin":"qiè","gloss":"all"},
+      {"char":"苦","type":"s","on":"ku","kana":"く","pinyin":"kǔ","gloss":"suffering"},
+      {"char":"厄","type":"s","on":"yaku","kana":"やく","pinyin":"è","gloss":"distress"}
     ],
     "chunks": [
-      { "start": 0, "end": 1, "ja": "do", "jaKana": "ど", "zh": "dù" },
-      { "start": 1, "end": 3, "ja": "issai", "jaKana": "いっさい", "zh": "yī qiè" },
-      { "start": 3, "end": 5, "ja": "kuyaku", "jaKana": "くやく", "zh": "kǔ è" }
+      {"start":1,"end":3,"ja":"issai","jaKana":"いっさい","zh":"yī qiè"}
     ]
   },
   {
     "id": 5,
     "translation": "Shariputra!",
     "characters": [
-      { "char": "舍", "simplified": "舎", "type": "n", "on": "sha", "kana": "しゃ", "pinyin": "shè", "gloss": null },
-      { "char": "利", "type": "n", "on": "ri", "kana": "り", "pinyin": "lì", "gloss": null },
-      { "char": "子", "type": "n", "on": "shi", "kana": "し", "pinyin": "zǐ", "gloss": null }
-    ],
-    "chunks": [
-      { "start": 0, "end": 3, "ja": "sharishi", "jaKana": "しゃりし", "zh": "shè lì zǐ" }
+      {"char":"舍","simplified":"舎","type":"n","on":"sha","kana":"しゃ","pinyin":"shè","gloss":null},
+      {"char":"利","type":"n","on":"ri","kana":"り","pinyin":"lì","gloss":null},
+      {"char":"子","type":"n","on":"shi","kana":"し","pinyin":"zǐ","gloss":null}
     ]
   },
   {
     "id": 6,
     "translation": "form is not different from emptiness",
     "characters": [
-      { "char": "色", "type": "s", "on": "shiki", "kana": "しき", "pinyin": "sè", "gloss": "form" },
-      { "char": "不", "type": "s", "on": "fu", "kana": "ふ", "pinyin": "bù", "gloss": "not" },
-      { "char": "異", "type": "s", "on": "i", "kana": "い", "pinyin": "yì", "gloss": "different" },
-      { "char": "空", "type": "s", "on": "kū", "kana": "くう", "pinyin": "kōng", "gloss": "emptiness" }
-    ],
-    "chunks": [
-      { "start": 0, "end": 1, "ja": "shiki", "jaKana": "しき", "zh": "sè" },
-      { "start": 1, "end": 2, "ja": "fu", "jaKana": "ふ", "zh": "bù" },
-      { "start": 2, "end": 3, "ja": "i", "jaKana": "い", "zh": "yì" },
-      { "start": 3, "end": 4, "ja": "kū", "jaKana": "くう", "zh": "kōng" }
+      {"char":"色","type":"s","on":"shiki","kana":"しき","pinyin":"sè","gloss":"form"},
+      {"char":"不","type":"s","on":"fu","kana":"ふ","pinyin":"bù","gloss":"not"},
+      {"char":"異","type":"s","on":"i","kana":"い","pinyin":"yì","gloss":"different"},
+      {"char":"空","type":"s","on":"kū","kana":"くう","pinyin":"kōng","gloss":"emptiness"}
     ]
   },
   {
     "id": 7,
     "translation": "emptiness is not different from form",
     "characters": [
-      { "char": "空", "type": "s", "on": "kū", "kana": "くう", "pinyin": "kōng", "gloss": "emptiness" },
-      { "char": "不", "type": "s", "on": "fu", "kana": "ふ", "pinyin": "bù", "gloss": "not" },
-      { "char": "異", "type": "s", "on": "i", "kana": "い", "pinyin": "yì", "gloss": "different" },
-      { "char": "色", "type": "s", "on": "shiki", "kana": "しき", "pinyin": "sè", "gloss": "form" }
-    ],
-    "chunks": [
-      { "start": 0, "end": 1, "ja": "kū", "jaKana": "くう", "zh": "kōng" },
-      { "start": 1, "end": 2, "ja": "fu", "jaKana": "ふ", "zh": "bù" },
-      { "start": 2, "end": 3, "ja": "i", "jaKana": "い", "zh": "yì" },
-      { "start": 3, "end": 4, "ja": "shiki", "jaKana": "しき", "zh": "sè" }
+      {"char":"空","type":"s","on":"kū","kana":"くう","pinyin":"kōng","gloss":"emptiness"},
+      {"char":"不","type":"s","on":"fu","kana":"ふ","pinyin":"bù","gloss":"not"},
+      {"char":"異","type":"s","on":"i","kana":"い","pinyin":"yì","gloss":"different"},
+      {"char":"色","type":"s","on":"shiki","kana":"しき","pinyin":"sè","gloss":"form"}
     ]
   },
   {
     "id": 8,
     "translation": "form is emptiness",
     "characters": [
-      { "char": "色", "type": "s", "on": "shiki", "kana": "しき", "pinyin": "sè", "gloss": "form" },
-      { "char": "即", "type": "s", "on": "soku", "kana": "そく", "pinyin": "jí", "gloss": "is" },
-      { "char": "是", "type": "s", "on": "ze", "kana": "ぜ", "pinyin": "shì", "gloss": "this" },
-      { "char": "空", "type": "s", "on": "kū", "kana": "くう", "pinyin": "kōng", "gloss": "emptiness" }
-    ],
-    "chunks": [
-      { "start": 0, "end": 1, "ja": "shiki", "jaKana": "しき", "zh": "sè" },
-      { "start": 1, "end": 2, "ja": "soku", "jaKana": "そく", "zh": "jí" },
-      { "start": 2, "end": 3, "ja": "ze", "jaKana": "ぜ", "zh": "shì" },
-      { "start": 3, "end": 4, "ja": "kū", "jaKana": "くう", "zh": "kōng" }
+      {"char":"色","type":"s","on":"shiki","kana":"しき","pinyin":"sè","gloss":"form"},
+      {"char":"即","type":"s","on":"soku","kana":"そく","pinyin":"jí","gloss":"is"},
+      {"char":"是","type":"s","on":"ze","kana":"ぜ","pinyin":"shì","gloss":"this"},
+      {"char":"空","type":"s","on":"kū","kana":"くう","pinyin":"kōng","gloss":"emptiness"}
     ]
   },
   {
     "id": 9,
     "translation": "emptiness is form",
     "characters": [
-      { "char": "空", "type": "s", "on": "kū", "kana": "くう", "pinyin": "kōng", "gloss": "emptiness" },
-      { "char": "即", "type": "s", "on": "soku", "kana": "そく", "pinyin": "jí", "gloss": "is" },
-      { "char": "是", "type": "s", "on": "ze", "kana": "ぜ", "pinyin": "shì", "gloss": "this" },
-      { "char": "色", "type": "s", "on": "shiki", "kana": "しき", "pinyin": "sè", "gloss": "form" }
-    ],
-    "chunks": [
-      { "start": 0, "end": 1, "ja": "kū", "jaKana": "くう", "zh": "kōng" },
-      { "start": 1, "end": 2, "ja": "soku", "jaKana": "そく", "zh": "jí" },
-      { "start": 2, "end": 3, "ja": "ze", "jaKana": "ぜ", "zh": "shì" },
-      { "start": 3, "end": 4, "ja": "shiki", "jaKana": "しき", "zh": "sè" }
+      {"char":"空","type":"s","on":"kū","kana":"くう","pinyin":"kōng","gloss":"emptiness"},
+      {"char":"即","type":"s","on":"soku","kana":"そく","pinyin":"jí","gloss":"is"},
+      {"char":"是","type":"s","on":"ze","kana":"ぜ","pinyin":"shì","gloss":"this"},
+      {"char":"色","type":"s","on":"shiki","kana":"しき","pinyin":"sè","gloss":"form"}
     ]
   },
   {
     "id": 10,
     "translation": "feeling, perception, volition, and consciousness are also like this",
     "characters": [
-      { "char": "受", "type": "s", "on": "ju", "kana": "じゅ", "pinyin": "shòu", "gloss": "feeling" },
-      { "char": "想", "type": "s", "on": "sō", "kana": "そう", "pinyin": "xiǎng", "gloss": "perception" },
-      { "char": "行", "type": "s", "on": "gyō", "kana": "ぎょう", "pinyin": "xíng", "gloss": "volition" },
-      { "char": "識", "type": "s", "on": "shiki", "kana": "しき", "pinyin": "shí", "gloss": "consciousness" },
-      { "char": "亦", "type": "s", "on": "yaku", "kana": "やく", "pinyin": "yì", "gloss": "also" },
-      { "char": "復", "type": "s", "on": "bu", "kana": "ぶ", "pinyin": "fù", "gloss": "again" },
-      { "char": "如", "type": "s", "on": "nyo", "kana": "にょ", "pinyin": "rú", "gloss": "like" },
-      { "char": "是", "type": "s", "on": "ze", "kana": "ぜ", "pinyin": "shì", "gloss": "this" }
-    ],
-    "chunks": [
-      { "start": 0, "end": 4, "ja": "ju sō gyō shiki", "jaKana": "じゅそうぎょうしき", "zh": "shòu xiǎng xíng shí" },
-      { "start": 4, "end": 8, "ja": "yaku bu nyoze", "jaKana": "やくぶにょぜ", "zh": "yì fù rú shì" }
+      {"char":"受","type":"s","on":"ju","kana":"じゅ","pinyin":"shòu","gloss":"feeling"},
+      {"char":"想","type":"s","on":"sō","kana":"そう","pinyin":"xiǎng","gloss":"perception"},
+      {"char":"行","type":"s","on":"gyō","kana":"ぎょう","pinyin":"xíng","gloss":"volition"},
+      {"char":"識","type":"s","on":"shiki","kana":"しき","pinyin":"shí","gloss":"consciousness"},
+      {"char":"亦","type":"s","on":"yaku","kana":"やく","pinyin":"yì","gloss":"also"},
+      {"char":"復","type":"s","on":"bu","kana":"ぶ","pinyin":"fù","gloss":"again"},
+      {"char":"如","type":"s","on":"nyo","kana":"にょ","pinyin":"rú","gloss":"like"},
+      {"char":"是","type":"s","on":"ze","kana":"ぜ","pinyin":"shì","gloss":"this"}
     ]
   },
   {
     "id": 11,
     "translation": "Shariputra!",
     "characters": [
-      { "char": "舍", "simplified": "舎", "type": "n", "on": "sha", "kana": "しゃ", "pinyin": "shè", "gloss": null },
-      { "char": "利", "type": "n", "on": "ri", "kana": "り", "pinyin": "lì", "gloss": null },
-      { "char": "子", "type": "n", "on": "shi", "kana": "し", "pinyin": "zǐ", "gloss": null }
-    ],
-    "chunks": [
-      { "start": 0, "end": 3, "ja": "sharishi", "jaKana": "しゃりし", "zh": "shè lì zǐ" }
+      {"char":"舍","simplified":"舎","type":"n","on":"sha","kana":"しゃ","pinyin":"shè","gloss":null},
+      {"char":"利","type":"n","on":"ri","kana":"り","pinyin":"lì","gloss":null},
+      {"char":"子","type":"n","on":"shi","kana":"し","pinyin":"zǐ","gloss":null}
     ]
   },
   {
     "id": 12,
     "translation": "all dharmas are marked with emptiness",
     "characters": [
-      { "char": "是", "type": "s", "on": "ze", "kana": "ぜ", "pinyin": "shì", "gloss": "this" },
-      { "char": "諸", "type": "s", "on": "sho", "kana": "しょ", "pinyin": "zhū", "gloss": "all" },
-      { "char": "法", "type": "s", "on": "hō", "kana": "ほう", "pinyin": "fǎ", "gloss": "dharma" },
-      { "char": "空", "type": "s", "on": "kū", "kana": "くう", "pinyin": "kōng", "gloss": "emptiness" },
-      { "char": "相", "type": "s", "on": "sō", "kana": "そう", "pinyin": "xiàng", "gloss": "mark" }
-    ],
-    "chunks": [
-      { "start": 0, "end": 3, "ja": "ze shohō", "jaKana": "ぜしょほう", "zh": "shì zhū fǎ" },
-      { "start": 3, "end": 5, "ja": "kūsō", "jaKana": "くうそう", "zh": "kōng xiàng" }
+      {"char":"是","type":"s","on":"ze","kana":"ぜ","pinyin":"shì","gloss":"this"},
+      {"char":"諸","type":"s","on":"sho","kana":"しょ","pinyin":"zhū","gloss":"all"},
+      {"char":"法","type":"s","on":"hō","kana":"ほう","pinyin":"fǎ","gloss":"dharma"},
+      {"char":"空","type":"s","on":"kū","kana":"くう","pinyin":"kōng","gloss":"emptiness"},
+      {"char":"相","type":"s","on":"sō","kana":"そう","pinyin":"xiàng","gloss":"mark"}
     ]
   },
   {
     "id": 13,
     "translation": "not born, not destroyed",
     "characters": [
-      { "char": "不", "type": "s", "on": "fu", "kana": "ふ", "pinyin": "bù", "gloss": "not" },
-      { "char": "生", "type": "s", "on": "shō", "kana": "しょう", "pinyin": "shēng", "gloss": "birth" },
-      { "char": "不", "type": "s", "on": "fu", "kana": "ふ", "pinyin": "bù", "gloss": "not" },
-      { "char": "滅", "type": "s", "on": "metsu", "kana": "めつ", "pinyin": "miè", "gloss": "destruction" }
-    ],
-    "chunks": [
-      { "start": 0, "end": 4, "ja": "fushō fumetsu", "jaKana": "ふしょうふめつ", "zh": "bù shēng bù miè" }
+      {"char":"不","type":"s","on":"fu","kana":"ふ","pinyin":"bù","gloss":"not"},
+      {"char":"生","type":"s","on":"shō","kana":"しょう","pinyin":"shēng","gloss":"birth"},
+      {"char":"不","type":"s","on":"fu","kana":"ふ","pinyin":"bù","gloss":"not"},
+      {"char":"滅","type":"s","on":"metsu","kana":"めつ","pinyin":"miè","gloss":"destruction"}
     ]
   },
   {
     "id": 14,
     "translation": "not stained, not pure",
     "characters": [
-      { "char": "不", "type": "s", "on": "fu", "kana": "ふ", "pinyin": "bù", "gloss": "not" },
-      { "char": "垢", "type": "s", "on": "ku", "kana": "く", "pinyin": "gòu", "gloss": "dirt" },
-      { "char": "不", "type": "s", "on": "fu", "kana": "ふ", "pinyin": "bù", "gloss": "not" },
-      { "char": "淨", "simplified": "浄", "type": "s", "on": "jō", "kana": "じょう", "pinyin": "jìng", "gloss": "pure" }
-    ],
-    "chunks": [
-      { "start": 0, "end": 4, "ja": "fuku fujō", "jaKana": "ふくふじょう", "zh": "bù gòu bù jìng" }
+      {"char":"不","type":"s","on":"fu","kana":"ふ","pinyin":"bù","gloss":"not"},
+      {"char":"垢","type":"s","on":"ku","kana":"く","pinyin":"gòu","gloss":"dirt"},
+      {"char":"不","type":"s","on":"fu","kana":"ふ","pinyin":"bù","gloss":"not"},
+      {"char":"淨","simplified":"浄","type":"s","on":"jō","kana":"じょう","pinyin":"jìng","gloss":"pure"}
     ]
   },
   {
     "id": 15,
     "translation": "not increasing, not decreasing",
     "characters": [
-      { "char": "不", "type": "s", "on": "fu", "kana": "ふ", "pinyin": "bù", "gloss": "not" },
-      { "char": "增", "simplified": "増", "type": "s", "on": "zō", "kana": "ぞう", "pinyin": "zēng", "gloss": "increase" },
-      { "char": "不", "type": "s", "on": "fu", "kana": "ふ", "pinyin": "bù", "gloss": "not" },
-      { "char": "減", "type": "s", "on": "gen", "kana": "げん", "pinyin": "jiǎn", "gloss": "decrease" }
-    ],
-    "chunks": [
-      { "start": 0, "end": 4, "ja": "fuzō fugen", "jaKana": "ふぞうふげん", "zh": "bù zēng bù jiǎn" }
+      {"char":"不","type":"s","on":"fu","kana":"ふ","pinyin":"bù","gloss":"not"},
+      {"char":"增","simplified":"増","type":"s","on":"zō","kana":"ぞう","pinyin":"zēng","gloss":"increase"},
+      {"char":"不","type":"s","on":"fu","kana":"ふ","pinyin":"bù","gloss":"not"},
+      {"char":"減","type":"s","on":"gen","kana":"げん","pinyin":"jiǎn","gloss":"decrease"}
     ]
   },
   {
     "id": 16,
     "translation": "therefore in emptiness no form",
     "characters": [
-      { "char": "是", "type": "s", "on": "ze", "kana": "ぜ", "pinyin": "shì", "gloss": "this" },
-      { "char": "故", "type": "s", "on": "ko", "kana": "こ", "pinyin": "gù", "gloss": "therefore" },
-      { "char": "空", "type": "s", "on": "kū", "kana": "くう", "pinyin": "kōng", "gloss": "emptiness" },
-      { "char": "中", "type": "s", "on": "chū", "kana": "ちゅう", "pinyin": "zhōng", "gloss": "middle" },
-      { "char": "無", "type": "s", "on": "mu", "kana": "む", "pinyin": "wú", "gloss": "no" },
-      { "char": "色", "type": "s", "on": "shiki", "kana": "しき", "pinyin": "sè", "gloss": "form" }
-    ],
-    "chunks": [
-      { "start": 0, "end": 2, "ja": "zeko", "jaKana": "ぜこ", "zh": "shì gù" },
-      { "start": 2, "end": 4, "ja": "kūchū", "jaKana": "くうちゅう", "zh": "kōng zhōng" },
-      { "start": 4, "end": 6, "ja": "mushiki", "jaKana": "むしき", "zh": "wú sè" }
+      {"char":"是","type":"s","on":"ze","kana":"ぜ","pinyin":"shì","gloss":"this"},
+      {"char":"故","type":"s","on":"ko","kana":"こ","pinyin":"gù","gloss":"therefore"},
+      {"char":"空","type":"s","on":"kū","kana":"くう","pinyin":"kōng","gloss":"emptiness"},
+      {"char":"中","type":"s","on":"chū","kana":"ちゅう","pinyin":"zhōng","gloss":"middle"},
+      {"char":"無","type":"s","on":"mu","kana":"む","pinyin":"wú","gloss":"no"},
+      {"char":"色","type":"s","on":"shiki","kana":"しき","pinyin":"sè","gloss":"form"}
     ]
   },
   {
     "id": 17,
     "translation": "no feeling, perception, volition, consciousness",
     "characters": [
-      { "char": "無", "type": "s", "on": "mu", "kana": "む", "pinyin": "wú", "gloss": "no" },
-      { "char": "受", "type": "s", "on": "ju", "kana": "じゅ", "pinyin": "shòu", "gloss": "feeling" },
-      { "char": "想", "type": "s", "on": "sō", "kana": "そう", "pinyin": "xiǎng", "gloss": "perception" },
-      { "char": "行", "type": "s", "on": "gyō", "kana": "ぎょう", "pinyin": "xíng", "gloss": "volition" },
-      { "char": "識", "type": "s", "on": "shiki", "kana": "しき", "pinyin": "shí", "gloss": "consciousness" }
-    ],
-    "chunks": [
-      { "start": 0, "end": 5, "ja": "mu ju sō gyō shiki", "jaKana": "むじゅそうぎょうしき", "zh": "wú shòu xiǎng xíng shí" }
+      {"char":"無","type":"s","on":"mu","kana":"む","pinyin":"wú","gloss":"no"},
+      {"char":"受","type":"s","on":"ju","kana":"じゅ","pinyin":"shòu","gloss":"feeling"},
+      {"char":"想","type":"s","on":"sō","kana":"そう","pinyin":"xiǎng","gloss":"perception"},
+      {"char":"行","type":"s","on":"gyō","kana":"ぎょう","pinyin":"xíng","gloss":"volition"},
+      {"char":"識","type":"s","on":"shiki","kana":"しき","pinyin":"shí","gloss":"consciousness"}
     ]
   },
   {
     "id": 18,
     "translation": "no eye, ear, nose, tongue, body, mind",
     "characters": [
-      { "char": "無", "type": "s", "on": "mu", "kana": "む", "pinyin": "wú", "gloss": "no" },
-      { "char": "眼", "type": "s", "on": "gen", "kana": "げん", "pinyin": "yǎn", "gloss": "eye" },
-      { "char": "耳", "type": "s", "on": "ni", "kana": "に", "pinyin": "ěr", "gloss": "ear" },
-      { "char": "鼻", "type": "s", "on": "bi", "kana": "び", "pinyin": "bí", "gloss": "nose" },
-      { "char": "舌", "type": "s", "on": "zetsu", "kana": "ぜつ", "pinyin": "shé", "gloss": "tongue" },
-      { "char": "身", "type": "s", "on": "shin", "kana": "しん", "pinyin": "shēn", "gloss": "body" },
-      { "char": "意", "type": "s", "on": "i", "kana": "い", "pinyin": "yì", "gloss": "mind" }
-    ],
-    "chunks": [
-      { "start": 0, "end": 4, "ja": "mu gen ni bi", "jaKana": "むげんにび", "zh": "wú yǎn ěr bí" },
-      { "start": 4, "end": 7, "ja": "zetsu shin i", "jaKana": "ぜつしんい", "zh": "shé shēn yì" }
+      {"char":"無","type":"s","on":"mu","kana":"む","pinyin":"wú","gloss":"no"},
+      {"char":"眼","type":"s","on":"gen","kana":"げん","pinyin":"yǎn","gloss":"eye"},
+      {"char":"耳","type":"s","on":"ni","kana":"に","pinyin":"ěr","gloss":"ear"},
+      {"char":"鼻","type":"s","on":"bi","kana":"び","pinyin":"bí","gloss":"nose"},
+      {"char":"舌","type":"s","on":"zetsu","kana":"ぜつ","pinyin":"shé","gloss":"tongue"},
+      {"char":"身","type":"s","on":"shin","kana":"しん","pinyin":"shēn","gloss":"body"},
+      {"char":"意","type":"s","on":"i","kana":"い","pinyin":"yì","gloss":"mind"}
     ]
   },
   {
     "id": 19,
     "translation": "no color, sound, smell, taste, touch, dharma",
     "characters": [
-      { "char": "無", "type": "s", "on": "mu", "kana": "む", "pinyin": "wú", "gloss": "no" },
-      { "char": "色", "type": "s", "on": "shiki", "kana": "しき", "pinyin": "sè", "gloss": "color" },
-      { "char": "聲", "simplified": "声", "type": "s", "on": "shō", "kana": "しょう", "pinyin": "shēng", "gloss": "sound" },
-      { "char": "香", "type": "s", "on": "kō", "kana": "こう", "pinyin": "xiāng", "gloss": "smell" },
-      { "char": "味", "type": "s", "on": "mi", "kana": "み", "pinyin": "wèi", "gloss": "taste" },
-      { "char": "觸", "simplified": "触", "type": "s", "on": "soku", "kana": "そく", "pinyin": "chù", "gloss": "touch" },
-      { "char": "法", "type": "s", "on": "hō", "kana": "ほう", "pinyin": "fǎ", "gloss": "dharma" }
-    ],
-    "chunks": [
-      { "start": 0, "end": 4, "ja": "mu shiki shō kō", "jaKana": "むしきしょうこう", "zh": "wú sè shēng xiāng" },
-      { "start": 4, "end": 7, "ja": "mi soku hō", "jaKana": "みそくほう", "zh": "wèi chù fǎ" }
+      {"char":"無","type":"s","on":"mu","kana":"む","pinyin":"wú","gloss":"no"},
+      {"char":"色","type":"s","on":"shiki","kana":"しき","pinyin":"sè","gloss":"color"},
+      {"char":"聲","simplified":"声","type":"s","on":"shō","kana":"しょう","pinyin":"shēng","gloss":"sound"},
+      {"char":"香","type":"s","on":"kō","kana":"こう","pinyin":"xiāng","gloss":"smell"},
+      {"char":"味","type":"s","on":"mi","kana":"み","pinyin":"wèi","gloss":"taste"},
+      {"char":"觸","simplified":"触","type":"s","on":"shoku","kana":"しょく","pinyin":"chù","gloss":"touch"},
+      {"char":"法","type":"s","on":"hō","kana":"ほう","pinyin":"fǎ","gloss":"dharma"}
     ]
   },
   {
     "id": 20,
     "translation": "no eye realm, up to no consciousness realm",
     "characters": [
-      { "char": "無", "type": "s", "on": "mu", "kana": "む", "pinyin": "wú", "gloss": "no" },
-      { "char": "眼", "type": "s", "on": "gen", "kana": "げん", "pinyin": "yǎn", "gloss": "eye" },
-      { "char": "界", "type": "s", "on": "kai", "kana": "かい", "pinyin": "jiè", "gloss": "realm" },
-      { "char": "乃", "type": "s", "on": "nai", "kana": "ない", "pinyin": "nǎi", "gloss": "then" },
-      { "char": "至", "type": "s", "on": "shi", "kana": "し", "pinyin": "zhì", "gloss": "reach" },
-      { "char": "無", "type": "s", "on": "mu", "kana": "む", "pinyin": "wú", "gloss": "no" },
-      { "char": "意", "type": "s", "on": "i", "kana": "い", "pinyin": "yì", "gloss": "mind" },
-      { "char": "識", "type": "s", "on": "shiki", "kana": "しき", "pinyin": "shí", "gloss": "consciousness" },
-      { "char": "界", "type": "s", "on": "kai", "kana": "かい", "pinyin": "jiè", "gloss": "realm" }
-    ],
-    "chunks": [
-      { "start": 0, "end": 3, "ja": "mu genkai", "jaKana": "むげんかい", "zh": "wú yǎn jiè" },
-      { "start": 3, "end": 5, "ja": "naishi", "jaKana": "ないし", "zh": "nǎi zhì" },
-      { "start": 5, "end": 9, "ja": "mu ishikikai", "jaKana": "むいしきかい", "zh": "wú yì shí jiè" }
+      {"char":"無","type":"s","on":"mu","kana":"む","pinyin":"wú","gloss":"no"},
+      {"char":"眼","type":"s","on":"gen","kana":"げん","pinyin":"yǎn","gloss":"eye"},
+      {"char":"界","type":"s","on":"kai","kana":"かい","pinyin":"jiè","gloss":"realm"},
+      {"char":"乃","type":"s","on":"nai","kana":"ない","pinyin":"nǎi","gloss":"then"},
+      {"char":"至","type":"s","on":"shi","kana":"し","pinyin":"zhì","gloss":"reach"},
+      {"char":"無","type":"s","on":"mu","kana":"む","pinyin":"wú","gloss":"no"},
+      {"char":"意","type":"s","on":"i","kana":"い","pinyin":"yì","gloss":"mind"},
+      {"char":"識","type":"s","on":"shiki","kana":"しき","pinyin":"shí","gloss":"consciousness"},
+      {"char":"界","type":"s","on":"kai","kana":"かい","pinyin":"jiè","gloss":"realm"}
     ]
   },
   {
     "id": 21,
     "translation": "no ignorance and no end of ignorance",
     "characters": [
-      { "char": "無", "type": "s", "on": "mu", "kana": "む", "pinyin": "wú", "gloss": "without" },
-      { "char": "無", "type": "s", "on": "mu", "kana": "む", "pinyin": "wú", "gloss": "without" },
-      { "char": "明", "type": "s", "on": "myō", "kana": "みょう", "pinyin": "míng", "gloss": "clarity" },
-      { "char": "亦", "type": "s", "on": "yaku", "kana": "やく", "pinyin": "yì", "gloss": "also" },
-      { "char": "無", "type": "s", "on": "mu", "kana": "む", "pinyin": "wú", "gloss": "without" },
-      { "char": "無", "type": "s", "on": "mu", "kana": "む", "pinyin": "wú", "gloss": "without" },
-      { "char": "明", "type": "s", "on": "myō", "kana": "みょう", "pinyin": "míng", "gloss": "clarity" },
-      { "char": "盡", "simplified": "尽", "type": "s", "on": "jin", "kana": "じん", "pinyin": "jìn", "gloss": "exhaust" }
-    ],
-    "chunks": [
-      { "start": 0, "end": 3, "ja": "mu mumyō", "jaKana": "むむみょう", "zh": "wú wú míng" },
-      { "start": 3, "end": 4, "ja": "yaku", "jaKana": "やく", "zh": "yì" },
-      { "start": 4, "end": 8, "ja": "mu mumyō jin", "jaKana": "むむみょうじん", "zh": "wú wú míng jìn" }
+      {"char":"無","type":"s","on":"mu","kana":"む","pinyin":"wú","gloss":"without"},
+      {"char":"無","type":"s","on":"mu","kana":"む","pinyin":"wú","gloss":"without"},
+      {"char":"明","type":"s","on":"myō","kana":"みょう","pinyin":"míng","gloss":"clarity"},
+      {"char":"亦","type":"s","on":"yaku","kana":"やく","pinyin":"yì","gloss":"also"},
+      {"char":"無","type":"s","on":"mu","kana":"む","pinyin":"wú","gloss":"without"},
+      {"char":"無","type":"s","on":"mu","kana":"む","pinyin":"wú","gloss":"without"},
+      {"char":"明","type":"s","on":"myō","kana":"みょう","pinyin":"míng","gloss":"clarity"},
+      {"char":"盡","simplified":"尽","type":"s","on":"jin","kana":"じん","pinyin":"jìn","gloss":"exhaust"}
     ]
   },
   {
     "id": 22,
     "translation": "up to no old age and death, no end of old age and death",
     "characters": [
-      { "char": "乃", "type": "s", "on": "nai", "kana": "ない", "pinyin": "nǎi", "gloss": "thereupon" },
-      { "char": "至", "type": "s", "on": "shi", "kana": "し", "pinyin": "zhì", "gloss": "reach" },
-      { "char": "無", "type": "s", "on": "mu", "kana": "む", "pinyin": "wú", "gloss": "without" },
-      { "char": "老", "type": "s", "on": "rō", "kana": "ろう", "pinyin": "lǎo", "gloss": "old age" },
-      { "char": "死", "type": "s", "on": "shi", "kana": "し", "pinyin": "sǐ", "gloss": "death" },
-      { "char": "亦", "type": "s", "on": "yaku", "kana": "やく", "pinyin": "yì", "gloss": "also" },
-      { "char": "無", "type": "s", "on": "mu", "kana": "む", "pinyin": "wú", "gloss": "without" },
-      { "char": "老", "type": "s", "on": "rō", "kana": "ろう", "pinyin": "lǎo", "gloss": "old age" },
-      { "char": "死", "type": "s", "on": "shi", "kana": "し", "pinyin": "sǐ", "gloss": "death" },
-      { "char": "盡", "simplified": "尽", "type": "s", "on": "jin", "kana": "じん", "pinyin": "jìn", "gloss": "exhaust" }
-    ],
-    "chunks": [
-      { "start": 0, "end": 2, "ja": "naishi", "jaKana": "ないし", "zh": "nǎi zhì" },
-      { "start": 2, "end": 5, "ja": "mu rōshi", "jaKana": "むろうし", "zh": "wú lǎo sǐ" },
-      { "start": 5, "end": 6, "ja": "yaku", "jaKana": "やく", "zh": "yì" },
-      { "start": 6, "end": 10, "ja": "mu rōshi jin", "jaKana": "むろうしじん", "zh": "wú lǎo sǐ jìn" }
+      {"char":"乃","type":"s","on":"nai","kana":"ない","pinyin":"nǎi","gloss":"thereupon"},
+      {"char":"至","type":"s","on":"shi","kana":"し","pinyin":"zhì","gloss":"reach"},
+      {"char":"無","type":"s","on":"mu","kana":"む","pinyin":"wú","gloss":"without"},
+      {"char":"老","type":"s","on":"rō","kana":"ろう","pinyin":"lǎo","gloss":"old age"},
+      {"char":"死","type":"s","on":"shi","kana":"し","pinyin":"sǐ","gloss":"death"},
+      {"char":"亦","type":"s","on":"yaku","kana":"やく","pinyin":"yì","gloss":"also"},
+      {"char":"無","type":"s","on":"mu","kana":"む","pinyin":"wú","gloss":"without"},
+      {"char":"老","type":"s","on":"rō","kana":"ろう","pinyin":"lǎo","gloss":"old age"},
+      {"char":"死","type":"s","on":"shi","kana":"し","pinyin":"sǐ","gloss":"death"},
+      {"char":"盡","simplified":"尽","type":"s","on":"jin","kana":"じん","pinyin":"jìn","gloss":"exhaust"}
     ]
   },
   {
     "id": 23,
     "translation": "no suffering, accumulation, cessation, or path",
     "characters": [
-      { "char": "無", "type": "s", "on": "mu", "kana": "む", "pinyin": "wú", "gloss": "without" },
-      { "char": "苦", "type": "s", "on": "ku", "kana": "く", "pinyin": "kǔ", "gloss": "suffering" },
-      { "char": "集", "type": "s", "on": "shū", "kana": "しゅう", "pinyin": "jí", "gloss": "accumulation" },
-      { "char": "滅", "type": "s", "on": "metsu", "kana": "めつ", "pinyin": "miè", "gloss": "cessation" },
-      { "char": "道", "type": "s", "on": "dō", "kana": "どう", "pinyin": "dào", "gloss": "path" }
-    ],
-    "chunks": [
-      { "start": 0, "end": 5, "ja": "mu ku shū metsu dō", "jaKana": "むくしゅうめつどう", "zh": "wú kǔ jí miè dào" }
+      {"char":"無","type":"s","on":"mu","kana":"む","pinyin":"wú","gloss":"without"},
+      {"char":"苦","type":"s","on":"ku","kana":"く","pinyin":"kǔ","gloss":"suffering"},
+      {"char":"集","type":"s","on":"shū","kana":"しゅう","pinyin":"jí","gloss":"accumulation"},
+      {"char":"滅","type":"s","on":"metsu","kana":"めつ","pinyin":"miè","gloss":"cessation"},
+      {"char":"道","type":"s","on":"dō","kana":"どう","pinyin":"dào","gloss":"path"}
     ]
   },
   {
     "id": 24,
     "translation": "no wisdom and no attainment",
     "characters": [
-      { "char": "無", "type": "s", "on": "mu", "kana": "む", "pinyin": "wú", "gloss": "without" },
-      { "char": "智", "type": "s", "on": "chi", "kana": "ち", "pinyin": "zhì", "gloss": "wisdom" },
-      { "char": "亦", "type": "s", "on": "yaku", "kana": "やく", "pinyin": "yì", "gloss": "also" },
-      { "char": "無", "type": "s", "on": "mu", "kana": "む", "pinyin": "wú", "gloss": "without" },
-      { "char": "得", "type": "s", "on": "toku", "kana": "とく", "pinyin": "dé", "gloss": "attain" }
-    ],
-    "chunks": [
-      { "start": 0, "end": 2, "ja": "mu chi", "jaKana": "むち", "zh": "wú zhì" },
-      { "start": 2, "end": 3, "ja": "yaku", "jaKana": "やく", "zh": "yì" },
-      { "start": 3, "end": 5, "ja": "mu toku", "jaKana": "むとく", "zh": "wú dé" }
+      {"char":"無","type":"s","on":"mu","kana":"む","pinyin":"wú","gloss":"without"},
+      {"char":"智","type":"s","on":"chi","kana":"ち","pinyin":"zhì","gloss":"wisdom"},
+      {"char":"亦","type":"s","on":"yaku","kana":"やく","pinyin":"yì","gloss":"also"},
+      {"char":"無","type":"s","on":"mu","kana":"む","pinyin":"wú","gloss":"without"},
+      {"char":"得","type":"s","on":"toku","kana":"とく","pinyin":"dé","gloss":"attain"}
     ]
   },
   {
     "id": 25,
     "translation": "because nothing to attain",
     "characters": [
-      { "char": "以", "type": "s", "on": "i", "kana": "い", "pinyin": "yǐ", "gloss": "by means of" },
-      { "char": "無", "type": "s", "on": "mu", "kana": "む", "pinyin": "wú", "gloss": "without" },
-      { "char": "所", "type": "s", "on": "sho", "kana": "しょ", "pinyin": "suǒ", "gloss": "place" },
-      { "char": "得", "type": "s", "on": "toku", "kana": "とく", "pinyin": "dé", "gloss": "attain" },
-      { "char": "故", "type": "s", "on": "ko", "kana": "こ", "pinyin": "gù", "gloss": "therefore" }
-    ],
-    "chunks": [
-      { "start": 0, "end": 1, "ja": "i", "jaKana": "い", "zh": "yǐ" },
-      { "start": 1, "end": 4, "ja": "mu shotoku", "jaKana": "むしょとく", "zh": "wú suǒ dé" },
-      { "start": 4, "end": 5, "ja": "ko", "jaKana": "こ", "zh": "gù" }
+      {"char":"以","type":"s","on":"i","kana":"い","pinyin":"yǐ","gloss":"by means of"},
+      {"char":"無","type":"s","on":"mu","kana":"む","pinyin":"wú","gloss":"without"},
+      {"char":"所","type":"s","on":"sho","kana":"しょ","pinyin":"suǒ","gloss":"place"},
+      {"char":"得","type":"s","on":"toku","kana":"とく","pinyin":"dé","gloss":"attain"},
+      {"char":"故","type":"s","on":"ko","kana":"こ","pinyin":"gù","gloss":"therefore"}
     ]
   },
   {
     "id": 26,
     "translation": "the bodhisattva relying on prajna paramita",
     "characters": [
-      { "char": "菩", "type": "p", "on": "bo", "kana": "ぼ", "pinyin": "pú", "gloss": null },
-      { "char": "提", "type": "p", "on": "dai", "kana": "だい", "pinyin": "tí", "gloss": null },
-      { "char": "薩", "type": "p", "on": "sa", "kana": "さ", "pinyin": "sà", "gloss": null },
-      { "char": "埵", "type": "p", "on": "tta", "kana": "った", "pinyin": "duǒ", "gloss": null },
-      { "char": "依", "type": "s", "on": "e", "kana": "え", "pinyin": "yī", "gloss": "rely on" },
-      { "char": "般", "type": "p", "on": "han", "kana": "はん", "pinyin": "bō", "gloss": null },
-      { "char": "若", "type": "p", "on": "nya", "kana": "にゃ", "pinyin": "rě", "gloss": null },
-      { "char": "波", "type": "p", "on": "ha", "kana": "は", "pinyin": "bō", "gloss": null },
-      { "char": "羅", "type": "p", "on": "ra", "kana": "ら", "pinyin": "luó", "gloss": null },
-      { "char": "蜜", "type": "p", "on": "mi", "kana": "み", "pinyin": "mì", "gloss": null },
-      { "char": "多", "type": "p", "on": "ta", "kana": "た", "pinyin": "duō", "gloss": null },
-      { "char": "故", "type": "s", "on": "ko", "kana": "こ", "pinyin": "gù", "gloss": "therefore" }
+      {"char":"菩","type":"p","on":"bo","kana":"ぼ","pinyin":"pú","gloss":null},
+      {"char":"提","type":"p","on":"dai","kana":"だい","pinyin":"tí","gloss":null},
+      {"char":"薩","type":"p","on":"sa","kana":"さ","pinyin":"sà","gloss":null},
+      {"char":"埵","type":"p","on":"tta","kana":"った","pinyin":"duǒ","gloss":null},
+      {"char":"依","type":"s","on":"e","kana":"え","pinyin":"yī","gloss":"rely on"},
+      {"char":"般","type":"p","on":"han","kana":"はん","pinyin":"bō","gloss":null},
+      {"char":"若","type":"p","on":"nya","kana":"にゃ","pinyin":"rě","gloss":null},
+      {"char":"波","type":"p","on":"ha","kana":"は","pinyin":"bō","gloss":null},
+      {"char":"羅","type":"p","on":"ra","kana":"ら","pinyin":"luó","gloss":null},
+      {"char":"蜜","type":"p","on":"mi","kana":"み","pinyin":"mì","gloss":null},
+      {"char":"多","type":"p","on":"ta","kana":"た","pinyin":"duō","gloss":null},
+      {"char":"故","type":"s","on":"ko","kana":"こ","pinyin":"gù","gloss":"therefore"}
     ],
     "chunks": [
-      { "start": 0, "end": 4, "ja": "bodaisatta", "jaKana": "ぼだいさった", "zh": "pú tí sà duǒ" },
-      { "start": 4, "end": 5, "ja": "e", "jaKana": "え", "zh": "yī" },
-      { "start": 5, "end": 11, "ja": "hannya haramitta", "jaKana": "はんにゃはらみった", "zh": "bō rě bō luó mì duō" },
-      { "start": 11, "end": 12, "ja": "ko", "jaKana": "こ", "zh": "gù" }
+      {"start":7,"end":11,"ja":"haramitta","jaKana":"はらみった","zh":"bō luó mì duō"}
     ]
   },
   {
     "id": 27,
     "translation": "mind without hindrance, without hindrance therefore no fear",
     "characters": [
-      { "char": "心", "type": "s", "on": "shin", "kana": "しん", "pinyin": "xīn", "gloss": "mind" },
-      { "char": "無", "type": "s", "on": "mu", "kana": "む", "pinyin": "wú", "gloss": "without" },
-      { "char": "罣", "type": "s", "on": "ke", "kana": "け", "pinyin": "guà", "gloss": "hindrance" },
-      { "char": "礙", "simplified": "碍", "type": "s", "on": "ge", "kana": "げ", "pinyin": "ài", "gloss": "obstruction" },
-      { "char": "無", "type": "s", "on": "mu", "kana": "む", "pinyin": "wú", "gloss": "without" },
-      { "char": "罣", "type": "s", "on": "ke", "kana": "け", "pinyin": "guà", "gloss": "hindrance" },
-      { "char": "礙", "simplified": "碍", "type": "s", "on": "ge", "kana": "げ", "pinyin": "ài", "gloss": "obstruction" },
-      { "char": "故", "type": "s", "on": "ko", "kana": "こ", "pinyin": "gù", "gloss": "therefore" },
-      { "char": "無", "type": "s", "on": "mu", "kana": "む", "pinyin": "wú", "gloss": "without" },
-      { "char": "有", "type": "s", "on": "u", "kana": "う", "pinyin": "yǒu", "gloss": "have" },
-      { "char": "恐", "type": "s", "on": "ku", "kana": "く", "pinyin": "kǒng", "gloss": "fear" },
-      { "char": "怖", "type": "s", "on": "fu", "kana": "ふ", "pinyin": "bù", "gloss": "terror" }
-    ],
-    "chunks": [
-      { "start": 0, "end": 4, "ja": "shin mu kege", "jaKana": "しんむけげ", "zh": "xīn wú guà ài" },
-      { "start": 4, "end": 8, "ja": "mu kege ko", "jaKana": "むけげこ", "zh": "wú guà ài gù" },
-      { "start": 8, "end": 12, "ja": "mu u kufu", "jaKana": "むうくふ", "zh": "wú yǒu kǒng bù" }
+      {"char":"心","type":"s","on":"shin","kana":"しん","pinyin":"xīn","gloss":"mind"},
+      {"char":"無","type":"s","on":"mu","kana":"む","pinyin":"wú","gloss":"without"},
+      {"char":"罣","type":"s","on":"ke","kana":"け","pinyin":"guà","gloss":"hindrance"},
+      {"char":"礙","simplified":"碍","type":"s","on":"ge","kana":"げ","pinyin":"ài","gloss":"obstruction"},
+      {"char":"無","type":"s","on":"mu","kana":"む","pinyin":"wú","gloss":"without"},
+      {"char":"罣","type":"s","on":"ke","kana":"け","pinyin":"guà","gloss":"hindrance"},
+      {"char":"礙","simplified":"碍","type":"s","on":"ge","kana":"げ","pinyin":"ài","gloss":"obstruction"},
+      {"char":"故","type":"s","on":"ko","kana":"こ","pinyin":"gù","gloss":"therefore"},
+      {"char":"無","type":"s","on":"mu","kana":"む","pinyin":"wú","gloss":"without"},
+      {"char":"有","type":"s","on":"u","kana":"う","pinyin":"yǒu","gloss":"have"},
+      {"char":"恐","type":"s","on":"ku","kana":"く","pinyin":"kǒng","gloss":"fear"},
+      {"char":"怖","type":"s","on":"fu","kana":"ふ","pinyin":"bù","gloss":"terror"}
     ]
   },
   {
     "id": 28,
     "translation": "far from inverted dream-thinking, ultimate nirvana",
     "characters": [
-      { "char": "遠", "type": "s", "on": "on", "kana": "おん", "pinyin": "yuǎn", "gloss": "far" },
-      { "char": "離", "type": "s", "on": "ri", "kana": "り", "pinyin": "lí", "gloss": "separate" },
-      { "char": "一", "type": "s", "on": "i", "kana": "い", "pinyin": "yī", "gloss": "one" },
-      { "char": "切", "type": "s", "on": "sai", "kana": "さい", "pinyin": "qiè", "gloss": "all" },
-      { "char": "顛", "type": "s", "on": "ten", "kana": "てん", "pinyin": "diān", "gloss": "topsy-turvy" },
-      { "char": "倒", "type": "s", "on": "dō", "kana": "どう", "pinyin": "dǎo", "gloss": "invert" },
-      { "char": "夢", "type": "s", "on": "mu", "kana": "む", "pinyin": "mèng", "gloss": "dream" },
-      { "char": "想", "type": "s", "on": "sō", "kana": "そう", "pinyin": "xiǎng", "gloss": "thinking" },
-      { "char": "究", "type": "s", "on": "ku", "kana": "く", "pinyin": "jiū", "gloss": "investigate" },
-      { "char": "竟", "type": "s", "on": "gyō", "kana": "ぎょう", "pinyin": "jìng", "gloss": "complete" },
-      { "char": "涅", "type": "p", "on": "ne", "kana": "ね", "pinyin": "niè", "gloss": null },
-      { "char": "槃", "type": "p", "on": "han", "kana": "はん", "pinyin": "pán", "gloss": null }
+      {"char":"遠","type":"s","on":"on","kana":"おん","pinyin":"yuǎn","gloss":"far"},
+      {"char":"離","type":"s","on":"ri","kana":"り","pinyin":"lí","gloss":"separate"},
+      {"char":"一","type":"s","on":"i","kana":"い","pinyin":"yī","gloss":"one"},
+      {"char":"切","type":"s","on":"sai","kana":"さい","pinyin":"qiè","gloss":"all"},
+      {"char":"顛","type":"s","on":"ten","kana":"てん","pinyin":"diān","gloss":"topsy-turvy"},
+      {"char":"倒","type":"s","on":"dō","kana":"どう","pinyin":"dǎo","gloss":"invert"},
+      {"char":"夢","type":"s","on":"mu","kana":"む","pinyin":"mèng","gloss":"dream"},
+      {"char":"想","type":"s","on":"sō","kana":"そう","pinyin":"xiǎng","gloss":"thinking"},
+      {"char":"究","type":"s","on":"ku","kana":"く","pinyin":"jiū","gloss":"investigate"},
+      {"char":"竟","type":"s","on":"gyō","kana":"ぎょう","pinyin":"jìng","gloss":"complete"},
+      {"char":"涅","type":"p","on":"ne","kana":"ね","pinyin":"niè","gloss":null},
+      {"char":"槃","type":"p","on":"han","kana":"はん","pinyin":"pán","gloss":null}
     ],
     "chunks": [
-      { "start": 0, "end": 2, "ja": "onri", "jaKana": "おんり", "zh": "yuǎn lí" },
-      { "start": 2, "end": 4, "ja": "issai", "jaKana": "いっさい", "zh": "yī qiè" },
-      { "start": 4, "end": 6, "ja": "tendō", "jaKana": "てんどう", "zh": "diān dǎo" },
-      { "start": 6, "end": 8, "ja": "musō", "jaKana": "むそう", "zh": "mèng xiǎng" },
-      { "start": 8, "end": 10, "ja": "kugyō", "jaKana": "くぎょう", "zh": "jiū jìng" },
-      { "start": 10, "end": 12, "ja": "nehan", "jaKana": "ねはん", "zh": "niè pán" }
+      {"start":2,"end":4,"ja":"issai","jaKana":"いっさい","zh":"yī qiè"}
     ]
   },
   {
     "id": 29,
     "translation": "all Buddhas of the three times rely on prajna paramita",
     "characters": [
-      { "char": "三", "type": "s", "on": "san", "kana": "さん", "pinyin": "sān", "gloss": "three" },
-      { "char": "世", "type": "s", "on": "se", "kana": "せ", "pinyin": "shì", "gloss": "age" },
-      { "char": "諸", "type": "s", "on": "sho", "kana": "しょ", "pinyin": "zhū", "gloss": "all" },
-      { "char": "佛", "simplified": "仏", "type": "s", "on": "butsu", "kana": "ぶつ", "pinyin": "fó", "gloss": "Buddha" },
-      { "char": "依", "type": "s", "on": "e", "kana": "え", "pinyin": "yī", "gloss": "rely on" },
-      { "char": "般", "type": "p", "on": "han", "kana": "はん", "pinyin": "bō", "gloss": null },
-      { "char": "若", "type": "p", "on": "nya", "kana": "にゃ", "pinyin": "rě", "gloss": null },
-      { "char": "波", "type": "p", "on": "ha", "kana": "は", "pinyin": "bō", "gloss": null },
-      { "char": "羅", "type": "p", "on": "ra", "kana": "ら", "pinyin": "luó", "gloss": null },
-      { "char": "蜜", "type": "p", "on": "mi", "kana": "み", "pinyin": "mì", "gloss": null },
-      { "char": "多", "type": "p", "on": "ta", "kana": "た", "pinyin": "duō", "gloss": null },
-      { "char": "故", "type": "s", "on": "ko", "kana": "こ", "pinyin": "gù", "gloss": "therefore" }
+      {"char":"三","type":"s","on":"san","kana":"さん","pinyin":"sān","gloss":"three"},
+      {"char":"世","type":"s","on":"se","kana":"せ","pinyin":"shì","gloss":"age"},
+      {"char":"諸","type":"s","on":"sho","kana":"しょ","pinyin":"zhū","gloss":"all"},
+      {"char":"佛","simplified":"仏","type":"s","on":"butsu","kana":"ぶつ","pinyin":"fó","gloss":"Buddha"},
+      {"char":"依","type":"s","on":"e","kana":"え","pinyin":"yī","gloss":"rely on"},
+      {"char":"般","type":"p","on":"han","kana":"はん","pinyin":"bō","gloss":null},
+      {"char":"若","type":"p","on":"nya","kana":"にゃ","pinyin":"rě","gloss":null},
+      {"char":"波","type":"p","on":"ha","kana":"は","pinyin":"bō","gloss":null},
+      {"char":"羅","type":"p","on":"ra","kana":"ら","pinyin":"luó","gloss":null},
+      {"char":"蜜","type":"p","on":"mi","kana":"み","pinyin":"mì","gloss":null},
+      {"char":"多","type":"p","on":"ta","kana":"た","pinyin":"duō","gloss":null},
+      {"char":"故","type":"s","on":"ko","kana":"こ","pinyin":"gù","gloss":"therefore"}
     ],
     "chunks": [
-      { "start": 0, "end": 2, "ja": "sanze", "jaKana": "さんぜ", "zh": "sān shì" },
-      { "start": 2, "end": 4, "ja": "shobutsu", "jaKana": "しょぶつ", "zh": "zhū fó" },
-      { "start": 4, "end": 5, "ja": "e", "jaKana": "え", "zh": "yī" },
-      { "start": 5, "end": 11, "ja": "hannya haramitta", "jaKana": "はんにゃはらみった", "zh": "bō rě bō luó mì duō" },
-      { "start": 11, "end": 12, "ja": "ko", "jaKana": "こ", "zh": "gù" }
+      {"start":0,"end":2,"ja":"sanze","jaKana":"さんぜ","zh":"sān shì"},
+      {"start":7,"end":11,"ja":"haramitta","jaKana":"はらみった","zh":"bō luó mì duō"}
     ]
   },
   {
     "id": 30,
     "translation": "attain supreme perfect enlightenment",
     "characters": [
-      { "char": "得", "type": "s", "on": "toku", "kana": "とく", "pinyin": "dé", "gloss": "attain" },
-      { "char": "阿", "type": "p", "on": "a", "kana": "あ", "pinyin": "ā", "gloss": null },
-      { "char": "耨", "type": "p", "on": "noku", "kana": "のく", "pinyin": "nòu", "gloss": null },
-      { "char": "多", "type": "p", "on": "ta", "kana": "た", "pinyin": "duō", "gloss": null },
-      { "char": "羅", "type": "p", "on": "ra", "kana": "ら", "pinyin": "luó", "gloss": null },
-      { "char": "三", "type": "p", "on": "san", "kana": "さん", "pinyin": "sān", "gloss": null },
-      { "char": "藐", "type": "p", "on": "myaku", "kana": "みゃく", "pinyin": "miǎo", "gloss": null },
-      { "char": "三", "type": "p", "on": "san", "kana": "さん", "pinyin": "sān", "gloss": null },
-      { "char": "菩", "type": "p", "on": "bo", "kana": "ぼ", "pinyin": "pú", "gloss": null },
-      { "char": "提", "type": "p", "on": "dai", "kana": "だい", "pinyin": "tí", "gloss": null }
-    ],
-    "chunks": [
-      { "start": 0, "end": 1, "ja": "toku", "jaKana": "とく", "zh": "dé" },
-      { "start": 1, "end": 10, "ja": "anokutara sanmyaku sanbodai", "jaKana": "あのくたらさんみゃくさんぼだい", "zh": "ā nòu duō luó sān miǎo sān pú tí" }
+      {"char":"得","type":"s","on":"toku","kana":"とく","pinyin":"dé","gloss":"attain"},
+      {"char":"阿","type":"p","on":"a","kana":"あ","pinyin":"ā","gloss":null},
+      {"char":"耨","type":"p","on":"noku","kana":"のく","pinyin":"nòu","gloss":null},
+      {"char":"多","type":"p","on":"ta","kana":"た","pinyin":"duō","gloss":null},
+      {"char":"羅","type":"p","on":"ra","kana":"ら","pinyin":"luó","gloss":null},
+      {"char":"三","type":"p","on":"san","kana":"さん","pinyin":"sān","gloss":null},
+      {"char":"藐","type":"p","on":"myaku","kana":"みゃく","pinyin":"miǎo","gloss":null},
+      {"char":"三","type":"p","on":"san","kana":"さん","pinyin":"sān","gloss":null},
+      {"char":"菩","type":"p","on":"bo","kana":"ぼ","pinyin":"pú","gloss":null},
+      {"char":"提","type":"p","on":"dai","kana":"だい","pinyin":"tí","gloss":null}
     ]
   },
   {
     "id": 31,
     "translation": "therefore know prajna paramita",
     "characters": [
-      { "char": "故", "type": "s", "on": "ko", "kana": "こ", "pinyin": "gù", "gloss": "therefore" },
-      { "char": "知", "type": "s", "on": "chi", "kana": "ち", "pinyin": "zhī", "gloss": "know" },
-      { "char": "般", "type": "p", "on": "han", "kana": "はん", "pinyin": "bō", "gloss": null },
-      { "char": "若", "type": "p", "on": "nya", "kana": "にゃ", "pinyin": "rě", "gloss": null },
-      { "char": "波", "type": "p", "on": "ha", "kana": "は", "pinyin": "bō", "gloss": null },
-      { "char": "羅", "type": "p", "on": "ra", "kana": "ら", "pinyin": "luó", "gloss": null },
-      { "char": "蜜", "type": "p", "on": "mi", "kana": "み", "pinyin": "mì", "gloss": null },
-      { "char": "多", "type": "p", "on": "ta", "kana": "た", "pinyin": "duō", "gloss": null }
+      {"char":"故","type":"s","on":"ko","kana":"こ","pinyin":"gù","gloss":"therefore"},
+      {"char":"知","type":"s","on":"chi","kana":"ち","pinyin":"zhī","gloss":"know"},
+      {"char":"般","type":"p","on":"han","kana":"はん","pinyin":"bō","gloss":null},
+      {"char":"若","type":"p","on":"nya","kana":"にゃ","pinyin":"rě","gloss":null},
+      {"char":"波","type":"p","on":"ha","kana":"は","pinyin":"bō","gloss":null},
+      {"char":"羅","type":"p","on":"ra","kana":"ら","pinyin":"luó","gloss":null},
+      {"char":"蜜","type":"p","on":"mi","kana":"み","pinyin":"mì","gloss":null},
+      {"char":"多","type":"p","on":"ta","kana":"た","pinyin":"duō","gloss":null}
     ],
     "chunks": [
-      { "start": 0, "end": 2, "ja": "kochi", "jaKana": "こち", "zh": "gù zhī" },
-      { "start": 2, "end": 8, "ja": "hannya haramitta", "jaKana": "はんにゃはらみった", "zh": "bō rě bō luó mì duō" }
+      {"start":4,"end":8,"ja":"haramitta","jaKana":"はらみった","zh":"bō luó mì duō"}
     ]
   },
   {
     "id": 32,
     "translation": "is the great divine mantra, great bright mantra, unsurpassed mantra, unequaled mantra",
     "characters": [
-      { "char": "是", "type": "s", "on": "ze", "kana": "ぜ", "pinyin": "shì", "gloss": "is" },
-      { "char": "大", "type": "s", "on": "dai", "kana": "だい", "pinyin": "dà", "gloss": "great" },
-      { "char": "神", "type": "s", "on": "jin", "kana": "じん", "pinyin": "shén", "gloss": "divine" },
-      { "char": "呪", "type": "s", "on": "shu", "kana": "しゅ", "pinyin": "zhòu", "gloss": "mantra" },
-      { "char": "是", "type": "s", "on": "ze", "kana": "ぜ", "pinyin": "shì", "gloss": "is" },
-      { "char": "大", "type": "s", "on": "dai", "kana": "だい", "pinyin": "dà", "gloss": "great" },
-      { "char": "明", "type": "s", "on": "myō", "kana": "みょう", "pinyin": "míng", "gloss": "bright" },
-      { "char": "呪", "type": "s", "on": "shu", "kana": "しゅ", "pinyin": "zhòu", "gloss": "mantra" },
-      { "char": "是", "type": "s", "on": "ze", "kana": "ぜ", "pinyin": "shì", "gloss": "is" },
-      { "char": "無", "type": "s", "on": "mu", "kana": "む", "pinyin": "wú", "gloss": "without" },
-      { "char": "上", "type": "s", "on": "jō", "kana": "じょう", "pinyin": "shàng", "gloss": "above" },
-      { "char": "呪", "type": "s", "on": "shu", "kana": "しゅ", "pinyin": "zhòu", "gloss": "mantra" },
-      { "char": "是", "type": "s", "on": "ze", "kana": "ぜ", "pinyin": "shì", "gloss": "is" },
-      { "char": "無", "type": "s", "on": "mu", "kana": "む", "pinyin": "wú", "gloss": "without" },
-      { "char": "等", "type": "s", "on": "tō", "kana": "とう", "pinyin": "děng", "gloss": "equal" },
-      { "char": "等", "type": "s", "on": "dō", "kana": "どう", "pinyin": "děng", "gloss": "equal" },
-      { "char": "呪", "type": "s", "on": "shu", "kana": "しゅ", "pinyin": "zhòu", "gloss": "mantra" }
+      {"char":"是","type":"s","on":"ze","kana":"ぜ","pinyin":"shì","gloss":"is"},
+      {"char":"大","type":"s","on":"dai","kana":"だい","pinyin":"dà","gloss":"great"},
+      {"char":"神","type":"s","on":"jin","kana":"じん","pinyin":"shén","gloss":"divine"},
+      {"char":"呪","type":"s","on":"shu","kana":"しゅ","pinyin":"zhòu","gloss":"mantra"},
+      {"char":"是","type":"s","on":"ze","kana":"ぜ","pinyin":"shì","gloss":"is"},
+      {"char":"大","type":"s","on":"dai","kana":"だい","pinyin":"dà","gloss":"great"},
+      {"char":"明","type":"s","on":"myō","kana":"みょう","pinyin":"míng","gloss":"bright"},
+      {"char":"呪","type":"s","on":"shu","kana":"しゅ","pinyin":"zhòu","gloss":"mantra"},
+      {"char":"是","type":"s","on":"ze","kana":"ぜ","pinyin":"shì","gloss":"is"},
+      {"char":"無","type":"s","on":"mu","kana":"む","pinyin":"wú","gloss":"without"},
+      {"char":"上","type":"s","on":"jō","kana":"じょう","pinyin":"shàng","gloss":"above"},
+      {"char":"呪","type":"s","on":"shu","kana":"しゅ","pinyin":"zhòu","gloss":"mantra"},
+      {"char":"是","type":"s","on":"ze","kana":"ぜ","pinyin":"shì","gloss":"is"},
+      {"char":"無","type":"s","on":"mu","kana":"む","pinyin":"wú","gloss":"without"},
+      {"char":"等","type":"s","on":"tō","kana":"とう","pinyin":"děng","gloss":"equal"},
+      {"char":"等","type":"s","on":"tō","kana":"とう","pinyin":"děng","gloss":"equal"},
+      {"char":"呪","type":"s","on":"shu","kana":"しゅ","pinyin":"zhòu","gloss":"mantra"}
     ],
     "chunks": [
-      { "start": 0, "end": 4, "ja": "ze dai jin shu", "jaKana": "ぜだいじんしゅ", "zh": "shì dà shén zhòu" },
-      { "start": 4, "end": 8, "ja": "ze dai myō shu", "jaKana": "ぜだいみょうしゅ", "zh": "shì dà míng zhòu" },
-      { "start": 8, "end": 12, "ja": "ze mu jō shu", "jaKana": "ぜむじょうしゅ", "zh": "shì wú shàng zhòu" },
-      { "start": 12, "end": 17, "ja": "ze mu tō dō shu", "jaKana": "ぜむとうどうしゅ", "zh": "shì wú děng děng zhòu" }
+      {"start":14,"end":16,"ja":"tōdō","jaKana":"とうどう","zh":"děng děng"}
     ]
   },
   {
     "id": 33,
     "translation": "can remove all suffering, true not false",
     "characters": [
-      { "char": "能", "type": "s", "on": "nō", "kana": "のう", "pinyin": "néng", "gloss": "can" },
-      { "char": "除", "type": "s", "on": "jo", "kana": "じょ", "pinyin": "chú", "gloss": "remove" },
-      { "char": "一", "type": "s", "on": "i", "kana": "い", "pinyin": "yī", "gloss": "one" },
-      { "char": "切", "type": "s", "on": "sai", "kana": "さい", "pinyin": "qiè", "gloss": "all" },
-      { "char": "苦", "type": "s", "on": "ku", "kana": "く", "pinyin": "kǔ", "gloss": "suffering" },
-      { "char": "真", "type": "s", "on": "shin", "kana": "しん", "pinyin": "zhēn", "gloss": "true" },
-      { "char": "實", "simplified": "実", "type": "s", "on": "jitsu", "kana": "じつ", "pinyin": "shí", "gloss": "real" },
-      { "char": "不", "type": "s", "on": "fu", "kana": "ふ", "pinyin": "bù", "gloss": "not" },
-      { "char": "虛", "simplified": "虚", "type": "s", "on": "ko", "kana": "こ", "pinyin": "xū", "gloss": "false" }
+      {"char":"能","type":"s","on":"nō","kana":"のう","pinyin":"néng","gloss":"can"},
+      {"char":"除","type":"s","on":"jo","kana":"じょ","pinyin":"chú","gloss":"remove"},
+      {"char":"一","type":"s","on":"i","kana":"い","pinyin":"yī","gloss":"one"},
+      {"char":"切","type":"s","on":"sai","kana":"さい","pinyin":"qiè","gloss":"all"},
+      {"char":"苦","type":"s","on":"ku","kana":"く","pinyin":"kǔ","gloss":"suffering"},
+      {"char":"真","type":"s","on":"shin","kana":"しん","pinyin":"zhēn","gloss":"true"},
+      {"char":"實","simplified":"実","type":"s","on":"jitsu","kana":"じつ","pinyin":"shí","gloss":"real"},
+      {"char":"不","type":"s","on":"fu","kana":"ふ","pinyin":"bù","gloss":"not"},
+      {"char":"虛","simplified":"虚","type":"s","on":"ko","kana":"こ","pinyin":"xū","gloss":"false"}
     ],
     "chunks": [
-      { "start": 0, "end": 2, "ja": "nō jo", "jaKana": "のうじょ", "zh": "néng chú" },
-      { "start": 2, "end": 5, "ja": "issai ku", "jaKana": "いっさいく", "zh": "yī qiè kǔ" },
-      { "start": 5, "end": 7, "ja": "shinjitsu", "jaKana": "しんじつ", "zh": "zhēn shí" },
-      { "start": 7, "end": 9, "ja": "fu ko", "jaKana": "ふこ", "zh": "bù xū" }
+      {"start":2,"end":4,"ja":"issai","jaKana":"いっさい","zh":"yī qiè"}
     ]
   },
   {
     "id": 34,
     "translation": "therefore proclaim the prajna paramita mantra, the mantra says",
     "characters": [
-      { "char": "故", "type": "s", "on": "ko", "kana": "こ", "pinyin": "gù", "gloss": "therefore" },
-      { "char": "說", "simplified": "説", "type": "s", "on": "setsu", "kana": "せつ", "pinyin": "shuō", "gloss": "speak" },
-      { "char": "般", "type": "p", "on": "han", "kana": "はん", "pinyin": "bō", "gloss": null },
-      { "char": "若", "type": "p", "on": "nya", "kana": "にゃ", "pinyin": "rě", "gloss": null },
-      { "char": "波", "type": "p", "on": "ha", "kana": "は", "pinyin": "bō", "gloss": null },
-      { "char": "羅", "type": "p", "on": "ra", "kana": "ら", "pinyin": "luó", "gloss": null },
-      { "char": "蜜", "type": "p", "on": "mi", "kana": "み", "pinyin": "mì", "gloss": null },
-      { "char": "多", "type": "p", "on": "ta", "kana": "た", "pinyin": "duō", "gloss": null },
-      { "char": "呪", "type": "s", "on": "shu", "kana": "しゅ", "pinyin": "zhòu", "gloss": "mantra" },
-      { "char": "即", "type": "s", "on": "soku", "kana": "そく", "pinyin": "jí", "gloss": "immediately" },
-      { "char": "說", "simplified": "説", "type": "s", "on": "setsu", "kana": "せつ", "pinyin": "shuō", "gloss": "speak" },
-      { "char": "呪", "type": "s", "on": "shu", "kana": "しゅ", "pinyin": "zhòu", "gloss": "mantra" },
-      { "char": "曰", "type": "s", "on": "watsu", "kana": "わつ", "pinyin": "yuē", "gloss": "say" }
+      {"char":"故","type":"s","on":"ko","kana":"こ","pinyin":"gù","gloss":"therefore"},
+      {"char":"說","simplified":"説","type":"s","on":"setsu","kana":"せつ","pinyin":"shuō","gloss":"speak"},
+      {"char":"般","type":"p","on":"han","kana":"はん","pinyin":"bō","gloss":null},
+      {"char":"若","type":"p","on":"nya","kana":"にゃ","pinyin":"rě","gloss":null},
+      {"char":"波","type":"p","on":"ha","kana":"は","pinyin":"bō","gloss":null},
+      {"char":"羅","type":"p","on":"ra","kana":"ら","pinyin":"luó","gloss":null},
+      {"char":"蜜","type":"p","on":"mi","kana":"み","pinyin":"mì","gloss":null},
+      {"char":"多","type":"p","on":"ta","kana":"た","pinyin":"duō","gloss":null},
+      {"char":"呪","type":"s","on":"shu","kana":"しゅ","pinyin":"zhòu","gloss":"mantra"},
+      {"char":"即","type":"s","on":"soku","kana":"そく","pinyin":"jí","gloss":"immediately"},
+      {"char":"說","simplified":"説","type":"s","on":"setsu","kana":"せつ","pinyin":"shuō","gloss":"speak"},
+      {"char":"呪","type":"s","on":"shu","kana":"しゅ","pinyin":"zhòu","gloss":"mantra"},
+      {"char":"曰","type":"s","on":"watsu","kana":"わつ","pinyin":"yuē","gloss":"say"}
     ],
     "chunks": [
-      { "start": 0, "end": 2, "ja": "kosetsu", "jaKana": "こせつ", "zh": "gù shuō" },
-      { "start": 2, "end": 8, "ja": "hannya haramitta", "jaKana": "はんにゃはらみった", "zh": "bō rě bō luó mì duō" },
-      { "start": 8, "end": 9, "ja": "shu", "jaKana": "しゅ", "zh": "zhòu" },
-      { "start": 9, "end": 13, "ja": "soku setsu shu watsu", "jaKana": "そくせつしゅわつ", "zh": "jí shuō zhòu yuē" }
+      {"start":4,"end":8,"ja":"haramitta","jaKana":"はらみった","zh":"bō luó mì duō"}
     ]
   },
   {
@@ -638,32 +500,24 @@
     "translation": "gone, gone, gone beyond, gone completely beyond, enlightenment, hail!",
     "sanskrit": "gate gate pāragate pārasaṃgate bodhi svāhā",
     "characters": [
-      { "char": "揭", "type": "p", "on": "gya", "kana": "ぎゃ", "pinyin": "jiē", "gloss": null },
-      { "char": "諦", "type": "p", "on": "tei", "kana": "てい", "pinyin": "dì", "gloss": null },
-      { "char": "揭", "type": "p", "on": "gya", "kana": "ぎゃ", "pinyin": "jiē", "gloss": null },
-      { "char": "諦", "type": "p", "on": "tei", "kana": "てい", "pinyin": "dì", "gloss": null },
-      { "char": "波", "type": "p", "on": "ha", "kana": "は", "pinyin": "bō", "gloss": null },
-      { "char": "羅", "type": "p", "on": "ra", "kana": "ら", "pinyin": "luó", "gloss": null },
-      { "char": "揭", "type": "p", "on": "gya", "kana": "ぎゃ", "pinyin": "jiē", "gloss": null },
-      { "char": "諦", "type": "p", "on": "tei", "kana": "てい", "pinyin": "dì", "gloss": null },
-      { "char": "波", "type": "p", "on": "ha", "kana": "は", "pinyin": "bō", "gloss": null },
-      { "char": "羅", "type": "p", "on": "ra", "kana": "ら", "pinyin": "luó", "gloss": null },
-      { "char": "僧", "type": "p", "on": "sō", "kana": "そう", "pinyin": "sēng", "gloss": null },
-      { "char": "揭", "type": "p", "on": "gya", "kana": "ぎゃ", "pinyin": "jiē", "gloss": null },
-      { "char": "諦", "type": "p", "on": "tei", "kana": "てい", "pinyin": "dì", "gloss": null },
-      { "char": "菩", "type": "p", "on": "bo", "kana": "ぼ", "pinyin": "pú", "gloss": null },
-      { "char": "提", "type": "p", "on": "ji", "kana": "じ", "pinyin": "tí", "gloss": null },
-      { "char": "薩", "type": "p", "on": "so", "kana": "そ", "pinyin": "sà", "gloss": null },
-      { "char": "婆", "type": "p", "on": "wa", "kana": "わ", "pinyin": "pó", "gloss": null },
-      { "char": "訶", "type": "p", "on": "ka", "kana": "か", "pinyin": "hē", "gloss": null }
-    ],
-    "chunks": [
-      { "start": 0, "end": 2, "ja": "gyatei", "jaKana": "ぎゃてい", "zh": "jiē dì" },
-      { "start": 2, "end": 4, "ja": "gyatei", "jaKana": "ぎゃてい", "zh": "jiē dì" },
-      { "start": 4, "end": 8, "ja": "hara gyatei", "jaKana": "はらぎゃてい", "zh": "bō luó jiē dì" },
-      { "start": 8, "end": 13, "ja": "harasō gyatei", "jaKana": "はらそうぎゃてい", "zh": "bō luó sēng jiē dì" },
-      { "start": 13, "end": 15, "ja": "boji", "jaKana": "ぼじ", "zh": "pú tí" },
-      { "start": 15, "end": 18, "ja": "sowaka", "jaKana": "そわか", "zh": "sà pó hē" }
+      {"char":"揭","type":"p","on":"gya","kana":"ぎゃ","pinyin":"jiē","gloss":null},
+      {"char":"諦","type":"p","on":"tei","kana":"てい","pinyin":"dì","gloss":null},
+      {"char":"揭","type":"p","on":"gya","kana":"ぎゃ","pinyin":"jiē","gloss":null},
+      {"char":"諦","type":"p","on":"tei","kana":"てい","pinyin":"dì","gloss":null},
+      {"char":"波","type":"p","on":"ha","kana":"は","pinyin":"bō","gloss":null},
+      {"char":"羅","type":"p","on":"ra","kana":"ら","pinyin":"luó","gloss":null},
+      {"char":"揭","type":"p","on":"gya","kana":"ぎゃ","pinyin":"jiē","gloss":null},
+      {"char":"諦","type":"p","on":"tei","kana":"てい","pinyin":"dì","gloss":null},
+      {"char":"波","type":"p","on":"ha","kana":"は","pinyin":"bō","gloss":null},
+      {"char":"羅","type":"p","on":"ra","kana":"ら","pinyin":"luó","gloss":null},
+      {"char":"僧","type":"p","on":"sō","kana":"そう","pinyin":"sēng","gloss":null},
+      {"char":"揭","type":"p","on":"gya","kana":"ぎゃ","pinyin":"jiē","gloss":null},
+      {"char":"諦","type":"p","on":"tei","kana":"てい","pinyin":"dì","gloss":null},
+      {"char":"菩","type":"p","on":"bo","kana":"ぼ","pinyin":"pú","gloss":null},
+      {"char":"提","type":"p","on":"ji","kana":"じ","pinyin":"tí","gloss":null},
+      {"char":"薩","type":"p","on":"so","kana":"そ","pinyin":"sà","gloss":null},
+      {"char":"婆","type":"p","on":"wa","kana":"わ","pinyin":"pó","gloss":null},
+      {"char":"訶","type":"p","on":"ka","kana":"か","pinyin":"hē","gloss":null}
     ]
   }
 ]

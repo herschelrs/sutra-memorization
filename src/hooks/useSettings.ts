@@ -7,6 +7,7 @@ const defaultSettings: Settings = {
   script: "romaji",
   kanjiForm: "traditional",
   ttsEnabled: true,
+  showGlosses: false,
   mode: "readings",
 };
 

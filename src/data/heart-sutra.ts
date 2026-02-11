@@ -22,7 +22,7 @@ const ChunkSchema = z.object({
 const SectionSchema = z.object({
   id: z.number().int().min(0),
   characters: z.array(CharacterSchema).min(1),
-  chunks: z.array(ChunkSchema).min(1),
+  chunks: z.array(ChunkSchema).default([]),
   translation: z.string(),
   sanskrit: z.string().optional(),
 });
@@ -42,4 +42,28 @@ export interface Section {
   sanskrit?: string;
 }
 
-export const sections: Section[] = parsed;
+/** Fill gaps between explicit (compound) chunks with single-character chunks. */
+function expandChunks(characters: Character[], sparse: Chunk[]): Chunk[] {
+  const result: Chunk[] = [];
+  let pos = 0;
+  for (const chunk of sparse) {
+    while (pos < chunk.start) {
+      const c = characters[pos];
+      result.push({ start: pos, end: pos + 1, ja: c.on, jaKana: c.kana, zh: c.pinyin });
+      pos++;
+    }
+    result.push(chunk);
+    pos = chunk.end;
+  }
+  while (pos < characters.length) {
+    const c = characters[pos];
+    result.push({ start: pos, end: pos + 1, ja: c.on, jaKana: c.kana, zh: c.pinyin });
+    pos++;
+  }
+  return result;
+}
+
+export const sections: Section[] = parsed.map((s) => ({
+  ...s,
+  chunks: expandChunks(s.characters, s.chunks),
+}));

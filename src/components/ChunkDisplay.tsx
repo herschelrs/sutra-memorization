@@ -45,7 +45,17 @@ export function ChunkDisplay({ section, chunk, revealed, settings }: Props) {
       <div className="chunk-kanji">
         {chars.map((c, i) => {
           const face = settings.kanjiForm === "simplified" && c.simplified ? c.simplified : c.char;
-          return <ruby key={i}>{face}<rt>{charReading(c)}</rt></ruby>;
+          const reading = charReading(c);
+          const gloss = settings.showGlosses && (mode === "readings" || mode === "mandarin") ? c.gloss : null;
+          if (gloss) {
+            return (
+              <span key={i} className="glossed">
+                <ruby>{face}<rt>{reading}</rt></ruby>
+                <span className="gloss-under">{gloss}</span>
+              </span>
+            );
+          }
+          return <ruby key={i}>{face}<rt>{reading}</rt></ruby>;
         })}
       </div>
     </div>

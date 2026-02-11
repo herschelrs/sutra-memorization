@@ -36,17 +36,31 @@ function chunkReading(chunk: Section["chunks"][number], chars: Character[], sett
 }
 
 function SectionRuby({ section, settings, className }: { section: Section; settings: Settings; className?: string }) {
+  const glossActive = settings.showGlosses && (settings.mode === "readings" || settings.mode === "mandarin");
+  const cls = (className ?? "section-line") + (glossActive ? " has-glosses" : "");
   return (
-    <div className={className ?? "section-line"}>
-      {section.chunks.map((chunk, ci) => {
-        const chars = section.characters.slice(chunk.start, chunk.end);
-        const kanji = chars.map((c) => charFace(c, settings)).join("");
-        return (
-          <ruby key={ci} className="chunk-group">
-            {kanji}<rt>{chunkReading(chunk, chars, settings)}</rt>
-          </ruby>
-        );
-      })}
+    <div className={glossActive ? "section-glossed-wrap" : undefined}>
+      <div className={cls}>
+        {section.chunks.map((chunk, ci) => {
+          const chars = section.characters.slice(chunk.start, chunk.end);
+          const kanji = chars.map((c) => charFace(c, settings)).join("");
+          if (glossActive) {
+            const gloss = chars.map((c) => c.gloss).filter(Boolean).join(" ");
+            return (
+              <span key={ci} className="chunk-group glossed">
+                <ruby>{kanji}<rt>{chunkReading(chunk, chars, settings)}</rt></ruby>
+                {gloss && <span className="gloss-under">{gloss}</span>}
+              </span>
+            );
+          }
+          return (
+            <ruby key={ci} className="chunk-group">
+              {kanji}<rt>{chunkReading(chunk, chars, settings)}</rt>
+            </ruby>
+          );
+        })}
+      </div>
+      {glossActive && <div className="section-translation">{section.translation}</div>}
     </div>
   );
 }

@@ -8,7 +8,7 @@ interface Props {
 }
 
 const modes: { value: StudyMode; label: string }[] = [
-  { value: "readings", label: "Readings" },
+  { value: "readings", label: "Japanese" },
   { value: "mandarin", label: "Mandarin" },
 ];
 
@@ -79,6 +79,14 @@ export function SettingsPanel({ settings, onUpdate, onReset, onClose }: Props) {
           <button
             className={`toggle ${settings.ttsEnabled ? "on" : ""}`}
             onClick={() => onUpdate({ ttsEnabled: !settings.ttsEnabled })}
+          />
+        </div>
+
+        <div className="setting-toggle">
+          <span>English Glosses</span>
+          <button
+            className={`toggle ${settings.showGlosses ? "on" : ""}`}
+            onClick={() => onUpdate({ showGlosses: !settings.showGlosses })}
           />
         </div>
 
