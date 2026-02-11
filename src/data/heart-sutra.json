@@ -112,7 +112,10 @@
       { "char": "空", "type": "s", "on": "kū", "kana": "くう", "pinyin": "kōng", "gloss": "emptiness" }
     ],
     "chunks": [
-      { "start": 0, "end": 4, "ja": "shiki fu i kū", "jaKana": "しきふいくう", "zh": "sè bù yì kōng" }
+      { "start": 0, "end": 1, "ja": "shiki", "jaKana": "しき", "zh": "sè" },
+      { "start": 1, "end": 2, "ja": "fu", "jaKana": "ふ", "zh": "bù" },
+      { "start": 2, "end": 3, "ja": "i", "jaKana": "い", "zh": "yì" },
+      { "start": 3, "end": 4, "ja": "kū", "jaKana": "くう", "zh": "kōng" }
     ]
   },
   {
@@ -125,7 +128,10 @@
       { "char": "色", "type": "s", "on": "shiki", "kana": "しき", "pinyin": "sè", "gloss": "form" }
     ],
     "chunks": [
-      { "start": 0, "end": 4, "ja": "kū fu i shiki", "jaKana": "くうふいしき", "zh": "kōng bù yì sè" }
+      { "start": 0, "end": 1, "ja": "kū", "jaKana": "くう", "zh": "kōng" },
+      { "start": 1, "end": 2, "ja": "fu", "jaKana": "ふ", "zh": "bù" },
+      { "start": 2, "end": 3, "ja": "i", "jaKana": "い", "zh": "yì" },
+      { "start": 3, "end": 4, "ja": "shiki", "jaKana": "しき", "zh": "sè" }
     ]
   },
   {
@@ -138,7 +144,10 @@
       { "char": "空", "type": "s", "on": "kū", "kana": "くう", "pinyin": "kōng", "gloss": "emptiness" }
     ],
     "chunks": [
-      { "start": 0, "end": 4, "ja": "shiki soku ze kū", "jaKana": "しきそくぜくう", "zh": "sè jí shì kōng" }
+      { "start": 0, "end": 1, "ja": "shiki", "jaKana": "しき", "zh": "sè" },
+      { "start": 1, "end": 2, "ja": "soku", "jaKana": "そく", "zh": "jí" },
+      { "start": 2, "end": 3, "ja": "ze", "jaKana": "ぜ", "zh": "shì" },
+      { "start": 3, "end": 4, "ja": "kū", "jaKana": "くう", "zh": "kōng" }
     ]
   },
   {
@@ -151,7 +160,10 @@
       { "char": "色", "type": "s", "on": "shiki", "kana": "しき", "pinyin": "sè", "gloss": "form" }
     ],
     "chunks": [
-      { "start": 0, "end": 4, "ja": "kū soku ze shiki", "jaKana": "くうそくぜしき", "zh": "kōng jí shì sè" }
+      { "start": 0, "end": 1, "ja": "kū", "jaKana": "くう", "zh": "kōng" },
+      { "start": 1, "end": 2, "ja": "soku", "jaKana": "そく", "zh": "jí" },
+      { "start": 2, "end": 3, "ja": "ze", "jaKana": "ぜ", "zh": "shì" },
+      { "start": 3, "end": 4, "ja": "shiki", "jaKana": "しき", "zh": "sè" }
     ]
   },
   {
