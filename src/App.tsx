@@ -84,6 +84,8 @@ export default function App() {
         previousSections={drill.previousSections}
         run={drill.run}
         recovery={drill.recovery}
+        rewindKey={drill.rewindKey}
+        rewindType={drill.rewindType}
         settings={settings}
         totalSections={drill.totalSections}
         onReveal={handleReveal}

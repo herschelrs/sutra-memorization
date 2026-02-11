@@ -76,6 +76,18 @@ button:disabled {
   background: var(--accent-hover);
 }
 
+.btn-secondary {
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  font-weight: 500;
+  width: 100%;
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: rgba(74, 103, 65, 0.08);
+}
+
 .btn-got-it {
   background: var(--success);
   color: white;
@@ -179,6 +191,52 @@ button:disabled {
   grid-template-rows: 1fr 1fr;
   padding: 0 16px;
   overflow: hidden;
+}
+
+.chunks-area.rewind {
+  animation: rewind-slide 0.45s ease-out;
+  position: relative;
+}
+
+.chunks-area.rewind::after {
+  content: "";
+  position: absolute;
+  inset: 10%;
+  border-radius: 24px;
+  filter: blur(30px);
+  animation: rewind-flash 0.6s ease-out forwards;
+  pointer-events: none;
+}
+
+.chunks-area.rewind-fail::after {
+  background: rgba(160, 64, 64, 0.12);
+}
+
+.chunks-area.rewind-success::after {
+  background: rgba(74, 103, 65, 0.15);
+}
+
+@keyframes rewind-slide {
+  0% {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes rewind-flash {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 .section-line {

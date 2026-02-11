@@ -25,12 +25,17 @@ export function HomeScreen({ progress, totalSections, onStart, onOpenSettings }:
 
       <div className="home-actions">
         <button className="btn-primary" onClick={() => onStart()}>
-          {progress.frontier > 0 ? "Continue Practice" : "Begin Practice"}
+          {progress.frontier > 0 ? "Practice from Start" : "Begin Practice"}
         </button>
         {progress.frontier > 0 && (
-          <p className="home-progress">
-            Section {progress.frontier} of {totalSections - 1} &middot; {pct}%
-          </p>
+          <>
+            <button className="btn-secondary" onClick={() => onStart(progress.frontier)}>
+              Continue from Section {progress.frontier}
+            </button>
+            <p className="home-progress">
+              Progress: section {progress.frontier} of {totalSections - 1} &middot; {pct}%
+            </p>
+          </>
         )}
       </div>
     </div>

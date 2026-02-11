@@ -14,6 +14,8 @@ interface Props {
   previousSections: Section[];
   run: Run;
   recovery: Recovery | null;
+  rewindKey: number;
+  rewindType: "fail" | "success";
   settings: Settings;
   totalSections: number;
   onReveal: () => void;
@@ -71,6 +73,8 @@ export function StudySession({
   previousSections,
   run,
   recovery,
+  rewindKey,
+  rewindType,
   settings,
   totalSections,
   onReveal,
@@ -109,7 +113,7 @@ export function StudySession({
           </div>
         );
       })()}
-      <div className="chunks-area">
+      <div className={rewindKey > 0 ? `chunks-area rewind rewind-${rewindType}` : "chunks-area"} key={rewindKey}>
         <div className="context-half">
           {previousSections.length > 0 && (
             <div className="context-lines">

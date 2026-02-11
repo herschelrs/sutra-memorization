@@ -50,6 +50,8 @@ export function useDrill(sections: Section[]) {
   const [recovery, setRecovery] = useState<Recovery | null>(null);
   const [windowIndex, setWindowIndex] = useState(0);
   const [run, setRun] = useState<SectionRun | null>(null);
+  const [rewindKey, setRewindKey] = useState(0);
+  const [rewindType, setRewindType] = useState<"fail" | "success">("fail");
 
   const currentSection = useMemo(() => {
     if (run) return sections[run.sectionId];
@@ -67,18 +69,13 @@ export function useDrill(sections: Section[]) {
   }, [run, sections]);
 
   const startDrill = useCallback(
-    (sectionIndex?: number) => {
-      const frontier = sectionIndex ?? progress.frontier;
-      if (sectionIndex != null) {
-        const newProgress = { frontier };
-        setProgress(newProgress);
-        saveProgress(newProgress);
-      }
+    (startFrom?: number) => {
+      const section = startFrom ?? 0;
       setRecovery(null);
       setWindowIndex(0);
-      setRun({ sectionId: frontier, revealed: false });
+      setRun({ sectionId: section, revealed: false });
     },
-    [progress],
+    [],
   );
 
   const reveal = useCallback(() => {
@@ -89,22 +86,29 @@ export function useDrill(sections: Section[]) {
   const assess = useCallback(
     (gotIt: boolean) => {
       if (!run) return;
-      const maxSection = sections.length - 1;
 
       if (!recovery) {
-        // Normal mode: just the frontier
+        // Normal mode: advance through sections
         if (gotIt) {
-          const newFrontier = Math.min(progress.frontier + 1, maxSection);
-          const newProgress = { frontier: newFrontier };
-          setProgress(newProgress);
-          saveProgress(newProgress);
-          setRun({ sectionId: newFrontier, revealed: false });
+          const nextSection = run.sectionId + 1;
+          if (nextSection >= sections.length) {
+            setRun(null);
+            return;
+          }
+          if (nextSection > progress.frontier) {
+            const newProgress = { frontier: nextSection };
+            setProgress(newProgress);
+            saveProgress(newProgress);
+          }
+          setRun({ sectionId: nextSection, revealed: false });
         } else {
-          // Enter recovery
-          const rec: Recovery = { target: progress.frontier, passesLeft: RECOVERY_PASSES, passesTotal: RECOVERY_PASSES };
+          // Enter recovery for current section
+          const rec: Recovery = { target: run.sectionId, passesLeft: RECOVERY_PASSES, passesTotal: RECOVERY_PASSES };
           setRecovery(rec);
-          const win = buildWindow(progress.frontier);
+          const win = buildWindow(run.sectionId);
           setWindowIndex(0);
+          setRewindType("fail");
+          setRewindKey((k) => k + 1);
           setRun({ sectionId: win[0], revealed: false });
         }
       } else {
@@ -117,29 +121,51 @@ export function useDrill(sections: Section[]) {
           if (gotIt) {
             const newPassesLeft = recovery.passesLeft - 1;
             if (newPassesLeft === 0) {
-              // Recovery complete, advance
-              const newFrontier = Math.min(progress.frontier + 1, maxSection);
-              const newProgress = { frontier: newFrontier };
-              setProgress(newProgress);
-              saveProgress(newProgress);
+              // Recovery complete, advance past target
+              const nextSection = recovery.target + 1;
+              if (nextSection >= sections.length) {
+                setRecovery(null);
+                setRun(null);
+                return;
+              }
+              if (nextSection > progress.frontier) {
+                const newProgress = { frontier: nextSection };
+                setProgress(newProgress);
+                saveProgress(newProgress);
+              }
               setRecovery(null);
               setWindowIndex(0);
-              setRun({ sectionId: newFrontier, revealed: false });
+              setRun({ sectionId: nextSection, revealed: false });
             } else {
               // Another pass needed
               setRecovery({ ...recovery, passesLeft: newPassesLeft });
               setWindowIndex(0);
+              setRewindType("success");
+              setRewindKey((k) => k + 1);
               setRun({ sectionId: win[0], revealed: false });
             }
           } else {
-            // Failed target, restart this pass
+            // Failed target, reset recovery completely
+            setRecovery({ ...recovery, passesLeft: RECOVERY_PASSES });
             setWindowIndex(0);
+            setRewindType("fail");
+            setRewindKey((k) => k + 1);
             setRun({ sectionId: win[0], revealed: false });
           }
-        } else {
+        } else if (gotIt) {
           // Not at target yet, advance through window
           setWindowIndex(nextIdx);
           setRun({ sectionId: win[nextIdx], revealed: false });
+        } else {
+          // Failed a non-target section — start new recovery for it
+          const newTarget = win[windowIndex];
+          const rec: Recovery = { target: newTarget, passesLeft: RECOVERY_PASSES, passesTotal: RECOVERY_PASSES };
+          setRecovery(rec);
+          const newWin = buildWindow(newTarget);
+          setWindowIndex(0);
+          setRewindType("fail");
+          setRewindKey((k) => k + 1);
+          setRun({ sectionId: newWin[0], revealed: false });
         }
       }
     },
@@ -166,6 +192,8 @@ export function useDrill(sections: Section[]) {
     previousSections,
     run,
     recovery,
+    rewindKey,
+    rewindType,
     startDrill,
     reveal,
     assess,
