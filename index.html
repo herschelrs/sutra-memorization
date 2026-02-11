@@ -7,6 +7,17 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
   </head>
   <body>
+    <script>
+      // Set data-theme before first paint to avoid flash
+      (function() {
+        try {
+          var s = JSON.parse(localStorage.getItem('sutras-settings') || '{}');
+          var t = s.theme || 'auto';
+        } catch(e) { var t = 'auto'; }
+        if (t === 'auto') t = matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', t);
+      })();
+    </script>
     <div id="root"></div>
     <script type="module" src="/src/App.tsx"></script>
   </body>

@@ -1,9 +1,12 @@
 export type StudyMode = "readings" | "kanji" | "mandarin" | "glosses" | "translation";
 
+export type Theme = "light" | "dark" | "auto";
+
 export interface Settings {
   script: "romaji" | "kana";
   kanjiForm: "traditional" | "simplified";
   ttsEnabled: boolean;
   showGlosses: boolean;
   mode: StudyMode;
+  theme: Theme;
 }

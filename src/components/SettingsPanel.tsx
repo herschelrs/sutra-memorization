@@ -1,4 +1,4 @@
-import type { Settings, StudyMode } from "../types";
+import type { Settings, StudyMode, Theme } from "../types";
 
 interface Props {
   settings: Settings;
@@ -10,6 +10,12 @@ interface Props {
 const modes: { value: StudyMode; label: string }[] = [
   { value: "readings", label: "Japanese" },
   { value: "mandarin", label: "Mandarin" },
+];
+
+const themes: { value: Theme; label: string }[] = [
+  { value: "auto", label: "Auto" },
+  { value: "light", label: "Light" },
+  { value: "dark", label: "Dark" },
 ];
 
 export function SettingsPanel({ settings, onUpdate, onReset, onClose }: Props) {
@@ -71,6 +77,21 @@ export function SettingsPanel({ settings, onUpdate, onReset, onClose }: Props) {
             >
               Shinjitai
             </button>
+          </div>
+        </div>
+
+        <div className="setting-group">
+          <label>Theme</label>
+          <div className="setting-options">
+            {themes.map((t) => (
+              <button
+                key={t.value}
+                className={`setting-option ${settings.theme === t.value ? "active" : ""}`}
+                onClick={() => onUpdate({ theme: t.value })}
+              >
+                {t.label}
+              </button>
+            ))}
           </div>
         </div>
 
