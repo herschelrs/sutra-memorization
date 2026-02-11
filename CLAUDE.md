@@ -54,6 +54,9 @@ Each sutra lives in `src/data/` as a JSON file + TS wrapper (Zod validation + `e
 ### Data sources
 
 - `data/kaikki.org-dictionary-Japanese.jsonl` — Wiktionary extract (kaikki.org) for verifying on'yomi and compound readings. Gitignored (large file). Query with: `jq 'select(.word == "X")' data/kaikki.org-dictionary-Japanese.jsonl -c`
+- `data/kaikki.org-dictionary-Chinese.jsonl` — Wiktionary extract (kaikki.org) for verifying pinyin readings. Gitignored (large file). Query with: `jq 'select(.word == "X")' data/kaikki.org-dictionary-Chinese.jsonl -c`
+- **rinnou.net** (臨黄ネット) — Official Rinzai/Obaku network. Has sutra texts with furigana readings (e.g. [懺悔文](https://rinnou.net/story/1684/)). Good Tier 2 source for Rinzai-lineage readings.
+- **tenborin.org** (Sangha Tenborin) — Zen temple site with romaji chanting guides.
 - See `plans/data-compilation.md` for the full list of web sources and cross-referencing strategy.
 
 ## Design Decisions
@@ -68,7 +71,7 @@ Each sutra lives in `src/data/` as a JSON file + TS wrapper (Zod validation + `e
 - [ ] Compile remaining sutras from Daishuin West sutra book
   - [x] HANNYA SHINGYO 般若心経 — Heart Sutra
   - [x] SHI KU SEI GAN 四弘誓願 — Four Great Vows
-  - [ ] ZAN GE MON 懺悔文 — Verse of Repentance
+  - [x] ZAN GE MON 懺悔文 — Verse of Repentance
   - [ ] SAN KI KAI 三帰戒 — Three Refuges / Precepts
   - [ ] SHO SAI SHU 消災呪 — Disaster-Preventing Dharani
   - [ ] DAI HI SHU 大悲呪 — Great Compassion Dharani

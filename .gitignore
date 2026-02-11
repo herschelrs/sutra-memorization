@@ -2,3 +2,4 @@ node_modules
 dist
 *.local
 data/kaikki.org-dictionary-Japanese.jsonl
+data/*
