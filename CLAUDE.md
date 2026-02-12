@@ -78,7 +78,8 @@ Each sutra lives in `src/data/` as a JSON file + TS wrapper (Zod validation + `e
 
 ## Issues
 
-- [ ] Writing mode: 揭 (U+63ED) missing from ref-patterns — used in Heart Sutra mantra (揭諦揭諦). Not in KanjiVG; needs custom SVG in `data/custom-strokes/`
+Bugs and roadmap are tracked in `README.md` (the root README — read it directly, don't glob for `README.md` or you'll get hundreds of node_modules hits).
+
 - [ ] Compile remaining sutras from Daishuin West sutra book
   - [x] HANNYA SHINGYO 般若心経 — Heart Sutra
   - [x] SHI KU SEI GAN 四弘誓願 — Four Great Vows

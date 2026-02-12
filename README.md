@@ -63,6 +63,7 @@ npm run build    # Production build
 
 - [ ] need option to disable glosses in the line being tested
 
+
 ## Roadmap
 
 - [ ] View/review data for a given sutra (to check readings, chunking, etc)
@@ -70,5 +71,6 @@ npm run build    # Production build
 - [ ] pwa
 - [ ] Complete sutra list from Daishu-in West (see CLAUDE.md)
 - [ ] Kanji handwriting mode
+  - [ ] Writing mode: 揭 (U+63ED) missing from ref-patterns — used in Heart Sutra mantra (揭諦揭諦). Not in KanjiVG; needs custom SVG in `data/custom-strokes/`
 - [ ] Further texts?
   - [ ] Besides sutras, eg. Thousand character classic?
