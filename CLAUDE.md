@@ -54,7 +54,7 @@ Each sutra lives in `src/data/` as a JSON file + TS wrapper (Zod validation + `e
 ### Data sources
 
 - `data/kaikki.org-dictionary-Japanese.jsonl` — Wiktionary extract (kaikki.org) for verifying on'yomi and compound readings. Gitignored (large file). Query with: `jq 'select(.word == "X")' data/kaikki.org-dictionary-Japanese.jsonl -c`
-- `data/kaikki.org-dictionary-Chinese.jsonl` — Wiktionary extract (kaikki.org) for verifying pinyin readings. Gitignored (large file). Query with: `jq 'select(.word == "X")' data/kaikki.org-dictionary-Chinese.jsonl -c`
+- `data/kaikki.org-dictionary-Chinese.jsonl` — Wiktionary extract (kaikki.org, via [wiktextract](https://github.com/tatuylonen/wiktextract)) for verifying pinyin readings. Also the best source for **character decomposition** — the `etymology_templates` field contains structured `Han compound` data with semantic/phonetic components (e.g. `jq 'select(.word == "揭") | .etymology_text' ... -c` → "Phono-semantic compound: semantic 扌 + phonetic 曷"). Use this to verify radical structure before composing custom stroke SVGs. Gitignored (large file). Query with: `jq 'select(.word == "X")' data/kaikki.org-dictionary-Chinese.jsonl -c`
 - **rinnou.net** (臨黄ネット) — Official Rinzai/Obaku network. Has sutra texts with furigana readings (e.g. [懺悔文](https://rinnou.net/story/1684/)). Good Tier 2 source for Rinzai-lineage readings.
 - **tenborin.org** (Sangha Tenborin) — Zen temple site with romaji chanting guides.
 - See `plans/data-compilation.md` for the full list of web sources and cross-referencing strategy.
@@ -63,11 +63,11 @@ Each sutra lives in `src/data/` as a JSON file + TS wrapper (Zod validation + `e
 
 - Writing mode uses vendored KanjiCanvas for client-side handwriting recognition
 - Ref-patterns (`public/vendor/kanjicanvas/ref-patterns.js`) generated from KanjiVG cover ~6,696 characters
-- **When compiling a new sutra**, check writing mode coverage. Extract unique kanji from a sutra JSON with:
+- **When compiling a new sutra**, always check writing mode coverage before considering the sutra done. Extract unique kanji from the sutra JSON and test each against ref-patterns:
   ```bash
   node -e 'const d=require("./src/data/SUTRA.json"); const cs=new Set(); for(const s of Object.values(d)){if(!s||!s.characters)continue; for(const c of s.characters){if(!/[\u3040-\u309F\u30A0-\u30FF\uFF00-\uFF9F]/.test(c.char))cs.add(c.char)}} console.log([...cs].join(""))'
   ```
-  Then test against ref-patterns. Characters not in the dataset are auto-skipped in writing mode. Missing characters that are in KanjiVG need pipeline debugging; characters not in KanjiVG need custom SVGs in `data/custom-strokes/`.
+  Then test against ref-patterns. Characters not in the dataset are auto-skipped in writing mode. Missing characters that are in KanjiVG need pipeline debugging; characters not in KanjiVG need custom SVGs in `data/custom-strokes/`. **Report any missing characters to the user** — custom SVG authoring requires visual verification that Claude cannot do, so the user needs to eyeball-check composed SVGs. See `plans/add-custom-strokes.md` for the full workflow including dataset-verified decomposition.
 - **Adding custom stroke data**: Create `data/custom-strokes/{hex_codepoint}.svg` (get codepoint with `python3 -c "print(f'{ord(\"揭\"):05x}')"`). Format matches KanjiVG: `viewBox="0 0 109 109"`, one `<path d="...">` per stroke in writing order, bezier commands. Look at files in `data/kanjivg/kanji/` for examples. Compose from radicals of similar characters already in KanjiVG.
 - **Regenerating ref-patterns**: `npm run generate-patterns` (full rebuild, ~30s). For specific characters only: `python3 scripts/generate-ref-patterns.py --kanjivg data/kanjivg/kanji --custom data/custom-strokes --output public/vendor/kanjicanvas/ref-patterns.js --chars 揭`
 - KanjiVG must be cloned first: `git clone --depth 1 https://github.com/KanjiVG/kanjivg.git data/kanjivg` (gitignored)
