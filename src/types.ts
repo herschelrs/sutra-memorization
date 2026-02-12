@@ -1,4 +1,4 @@
-export type StudyMode = "readings" | "kanji" | "mandarin" | "glosses" | "translation";
+export type StudyMode = "readings" | "kanji" | "mandarin" | "glosses" | "translation" | "writing";
 
 export type Theme = "light" | "dark" | "auto";
 

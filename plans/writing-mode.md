@@ -168,6 +168,15 @@ Based on dharani analysis, these 32 characters are not in KanjiVG and will need 
 
 Note: 𤚥 and 𩕳 are CJK Extension B characters. They may not render in common fonts and authoring stroke data for them will be challenging. These only appear in 仏頂尊勝陀羅尼.
 
+#### TODO: Audit and fill missing characters in compiled sutras
+
+The generated ref-patterns.js covers 6,700+ characters from KanjiVG, but some characters in already-compiled sutras may still be missing (auto-skipped in writing mode). Need to:
+
+1. Run the app in writing mode against each compiled sutra and note which characters get auto-skipped
+2. For characters in KanjiVG but somehow missed: debug the generation pipeline
+3. For characters not in KanjiVG: author custom SVGs in `data/custom-strokes/` and regenerate
+4. Validate recognition quality for newly added characters
+
 ## Writing mode UX
 
 ### Per-character drawing flow

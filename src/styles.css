@@ -47,6 +47,7 @@
     --border: #333330;
     --card-bg: #242422;
     --overlay-bg: rgba(0, 0, 0, 0.6);
+    --overlay-bg-solid: rgba(26, 26, 26, 0.92);
     --accent-subtle: rgba(107, 153, 96, 0.12);
     --danger-subtle: rgba(196, 85, 85, 0.15);
     --accent-flash: rgba(107, 153, 96, 0.18);
@@ -67,6 +68,7 @@
   --border: #333330;
   --card-bg: #242422;
   --overlay-bg: rgba(0, 0, 0, 0.6);
+  --overlay-bg-solid: rgba(26, 26, 26, 0.92);
   --accent-subtle: rgba(107, 153, 96, 0.12);
   --danger-subtle: rgba(196, 85, 85, 0.15);
   --accent-flash: rgba(107, 153, 96, 0.18);
@@ -642,4 +644,180 @@ button:disabled {
 
 .section-glossed-wrap {
   margin-bottom: 0.5em;
+}
+
+/* Writing Mode */
+.writing-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px max(16px, calc((100% - 480px) / 2 + 16px));
+  gap: 12px;
+  overflow-y: auto;
+}
+
+.writing-cue {
+  font-size: 1.3rem;
+  text-align: center;
+  line-height: 1.6;
+  min-height: 2.2em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: baseline;
+}
+
+.writing-cue-dim {
+  color: var(--text-muted);
+}
+
+.writing-cue-current {
+  color: var(--text);
+  font-weight: 700;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 1px;
+}
+
+.writing-dots {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.writing-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1.5px solid var(--dot-border);
+  background: var(--knob);
+  flex-shrink: 0;
+}
+
+.writing-dot-current {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.writing-dot-correct {
+  background: var(--success);
+  border-color: var(--success);
+}
+
+.writing-dot-missed {
+  background: var(--danger);
+  border-color: var(--danger);
+}
+
+.writing-dot-skipped {
+  background: var(--text-muted);
+  border-color: var(--text-muted);
+  opacity: 0.4;
+}
+
+.writing-canvas-wrap {
+  position: relative;
+  width: 300px;
+  max-width: 100%;
+  aspect-ratio: 1;
+}
+
+.writing-canvas {
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  touch-action: none;
+  cursor: crosshair;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .writing-canvas {
+    filter: invert(0.88);
+  }
+}
+
+[data-theme="dark"] .writing-canvas {
+  filter: invert(0.88);
+}
+
+.writing-canvas-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--overlay-bg-solid, rgba(255, 255, 255, 0.9));
+  border-radius: 8px;
+  gap: 8px;
+  pointer-events: none;
+}
+
+.writing-skip-char {
+  font-family: var(--font-cjk);
+  font-size: 4rem;
+  color: var(--text-muted);
+}
+
+.writing-skip-label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.writing-feedback {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 24px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 300px;
+}
+
+.writing-feedback.correct {
+  background: var(--accent-subtle);
+}
+
+.writing-feedback.missed {
+  background: var(--danger-subtle);
+}
+
+.writing-feedback-kanji {
+  font-family: var(--font-cjk);
+  font-size: 5rem;
+  line-height: 1;
+}
+
+.writing-feedback-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.writing-feedback-candidates {
+  font-family: var(--font-cjk);
+  font-size: 1.8rem;
+  color: var(--text-muted);
+  letter-spacing: 0.15em;
+}
+
+.writing-actions {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  max-width: 300px;
+  padding-bottom: 16px;
+}
+
+.writing-btn {
+  flex: 1;
+}
+
+.writing-btn-check {
+  flex: 2;
 }

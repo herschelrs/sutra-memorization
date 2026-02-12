@@ -66,6 +66,8 @@ npm run build    # Production build
 ## Roadmap
 
 - [ ] View/review data for a given sutra (to check readings, chunking, etc)
+- [ ] react router (so browser back works etc)
+- [ ] pwa
 - [ ] Complete sutra list from Daishu-in West (see CLAUDE.md)
 - [ ] Kanji handwriting mode
 - [ ] Further texts?

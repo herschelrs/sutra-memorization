@@ -63,6 +63,7 @@ function SutraDrill({ sutra, onBack }: { sutra: SutraInfo; onBack: () => void })
     const handler = (e: KeyboardEvent) => {
       if (showSettings) return;
       if (!drill.run) return;
+      if (settings.mode === "writing") return;
 
       if (e.key === " ") {
         e.preventDefault();

@@ -3,6 +3,7 @@ import type { Settings } from "../types";
 import type { Recovery } from "../hooks/useDrill";
 import { ActionButtons } from "./ActionButtons";
 import { ProgressBar } from "./ProgressBar";
+import { WritingCanvas } from "./WritingCanvas";
 
 interface Run {
   sectionId: number;
@@ -115,37 +116,47 @@ export function StudySession({
           </div>
         );
       })()}
-      <div className={rewindKey > 0 ? `chunks-area rewind rewind-${rewindType}` : "chunks-area"} key={rewindKey}>
-        <div className="context-half">
-          {previousSections.length > 0 && (
-            <div className="context-lines">
-              {previousSections.map((s) => (
-                <SectionRuby key={s.id} section={s} settings={settings} className="section-line context" />
-              ))}
+      {mode === "writing" ? (
+        <WritingCanvas
+          section={section}
+          settings={settings}
+          onComplete={onAssess}
+        />
+      ) : (
+        <>
+          <div className={rewindKey > 0 ? `chunks-area rewind rewind-${rewindType}` : "chunks-area"} key={rewindKey}>
+            <div className="context-half">
+              {previousSections.length > 0 && (
+                <div className="context-lines">
+                  {previousSections.map((s) => (
+                    <SectionRuby key={s.id} section={s} settings={settings} className="section-line context" />
+                  ))}
+                </div>
+              )}
             </div>
-          )}
-        </div>
-        <div className="current-half">
-          {!run.revealed && (
-            <div className="recall-cue">
-              {section.id === 0 ? "[title]" : "• • •"}
+            <div className="current-half">
+              {!run.revealed && (
+                <div className="recall-cue">
+                  {section.id === 0 ? "[title]" : "• • •"}
+                </div>
+              )}
+              {mode === "translation" ? (
+                <div className={"translation-display" + (run.revealed ? "" : " hidden-reserve")}>
+                  <div className="translation-english">{section.translation}</div>
+                </div>
+              ) : (
+                <SectionRuby section={section} settings={settings} className={run.revealed ? "section-line" : "section-line hidden-reserve"} />
+              )}
             </div>
-          )}
-          {mode === "translation" ? (
-            <div className={"translation-display" + (run.revealed ? "" : " hidden-reserve")}>
-              <div className="translation-english">{section.translation}</div>
-            </div>
-          ) : (
-            <SectionRuby section={section} settings={settings} className={run.revealed ? "section-line" : "section-line hidden-reserve"} />
-          )}
-        </div>
-      </div>
-      <ActionButtons
-        revealed={run.revealed}
-        onReveal={onReveal}
-        onGotIt={() => onAssess(true)}
-        onMissed={() => onAssess(false)}
-      />
+          </div>
+          <ActionButtons
+            revealed={run.revealed}
+            onReveal={onReveal}
+            onGotIt={() => onAssess(true)}
+            onMissed={() => onAssess(false)}
+          />
+        </>
+      )}
     </div>
   );
 }

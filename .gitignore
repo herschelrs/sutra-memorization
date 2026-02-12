@@ -4,3 +4,4 @@ dist
 data/kaikki.org-dictionary-Japanese.jsonl
 data/*
 !data/custom-strokes/
+public/vendor/kanjicanvas/ref-patterns.js

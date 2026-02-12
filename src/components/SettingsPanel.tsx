@@ -10,6 +10,7 @@ interface Props {
 const modes: { value: StudyMode; label: string }[] = [
   { value: "readings", label: "Japanese" },
   { value: "mandarin", label: "Mandarin" },
+  { value: "writing", label: "Writing" },
 ];
 
 const themes: { value: Theme; label: string }[] = [
