@@ -1,7 +1,7 @@
 import { useState, useCallback, useRef, useEffect } from "react";
 import type { Section, Character } from "../data/schema";
 import type { Settings } from "../types";
-import { useKanjiCanvas, canRecognize } from "../hooks/useKanjiCanvas";
+import { useKanjiCanvas, canRecognize, getExpectedStrokes } from "../hooks/useKanjiCanvas";
 
 const CANVAS_ID = "kanji-draw";
 
@@ -66,7 +66,7 @@ function buildReadingCue(
 }
 
 export function WritingCanvas({ section, settings, onComplete }: Props) {
-  const { isLoading, error, isLoaded, recognize, erase, deleteLast } =
+  const { isLoading, error, isLoaded, recognize, erase, deleteLast, getStrokeCount } =
     useKanjiCanvas(CANVAS_ID);
 
   const chars = section.characters;
@@ -78,6 +78,7 @@ export function WritingCanvas({ section, settings, onComplete }: Props) {
   const [candidates, setCandidates] = useState<string[]>([]);
   const [isCorrect, setIsCorrect] = useState(false);
   const hadMiss = useRef(false);
+  const autoAdvanceTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   // Auto-skip characters that can't be recognized
   useEffect(() => {
@@ -104,6 +105,63 @@ export function WritingCanvas({ section, settings, onComplete }: Props) {
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [charIndex, isLoaded, checked]);
+
+  // Auto-check after each stroke: when drawn strokes >= expected, try recognition
+  useEffect(() => {
+    if (!isLoaded || checked || charIndex >= chars.length) return;
+
+    const canvas = document.getElementById(CANVAS_ID);
+    if (!canvas) return;
+
+    const target = charFace(chars[charIndex], settings);
+    const simplified = chars[charIndex].simplified;
+    const expected =
+      getExpectedStrokes(target) ??
+      (simplified ? getExpectedStrokes(simplified) : null);
+
+    if (expected === null) return;
+
+    const tryAutoCheck = () => {
+      // Small delay to ensure KanjiCanvas has processed the stroke
+      setTimeout(() => {
+        const drawn = getStrokeCount();
+        if (drawn < expected) return;
+
+        const results = recognize();
+        const correct =
+          results.includes(target) ||
+          (simplified ? results.includes(simplified) : false);
+
+        if (correct) {
+          setCandidates(results);
+          setIsCorrect(true);
+          setStatuses((prev) => {
+            const next = [...prev];
+            next[charIndex] = "correct";
+            return next;
+          });
+          setChecked(true);
+          // Auto-advance after brief feedback
+          autoAdvanceTimer.current = setTimeout(() => {
+            advance(charIndex);
+          }, 400);
+        }
+        // If not correct, do nothing — user can keep drawing or manually Check
+      }, 50);
+    };
+
+    canvas.addEventListener("mouseup", tryAutoCheck);
+    canvas.addEventListener("touchend", tryAutoCheck);
+    return () => {
+      canvas.removeEventListener("mouseup", tryAutoCheck);
+      canvas.removeEventListener("touchend", tryAutoCheck);
+      if (autoAdvanceTimer.current) {
+        clearTimeout(autoAdvanceTimer.current);
+        autoAdvanceTimer.current = null;
+      }
+    };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [charIndex, isLoaded, checked, chars, settings]);
 
   const advance = useCallback(
     (fromIndex: number) => {
@@ -153,6 +211,13 @@ export function WritingCanvas({ section, settings, onComplete }: Props) {
     advance(charIndex);
   }, [advance, charIndex]);
 
+  const handleRetry = useCallback(() => {
+    setChecked(false);
+    setCandidates([]);
+    setIsCorrect(false);
+    erase();
+  }, [erase]);
+
   const handleUndo = useCallback(() => {
     if (isLoaded && !checked) deleteLast();
   }, [isLoaded, checked, deleteLast]);
@@ -169,6 +234,7 @@ export function WritingCanvas({ section, settings, onComplete }: Props) {
   const targetKanji = currentChar ? charFace(currentChar, settings) : "";
   const cue = buildReadingCue(section, charIndex, settings);
   const isSkipping =
+    isLoaded &&
     currentChar &&
     !canRecognize(charFace(currentChar, settings)) &&
     !(currentChar.simplified && canRecognize(currentChar.simplified));
@@ -235,9 +301,18 @@ export function WritingCanvas({ section, settings, onComplete }: Props) {
               Check
             </button>
           </div>
-        ) : (
+        ) : isCorrect ? (
           <div key="next" className="writing-actions-row">
             <button className="btn-primary" onClick={handleNext}>
+              Next
+            </button>
+          </div>
+        ) : (
+          <div key="missed" className="writing-actions-row">
+            <button className="btn-ghost writing-btn" onClick={handleRetry}>
+              Retry
+            </button>
+            <button className="btn-primary writing-btn" onClick={handleNext}>
               Next
             </button>
           </div>

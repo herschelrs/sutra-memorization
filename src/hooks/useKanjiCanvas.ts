@@ -48,6 +48,7 @@ function loadScript(src: string): Promise<void> {
 
 let loadPromise: Promise<void> | null = null;
 let recognizableSet: Set<string> | null = null;
+let strokeCountMap: Map<string, number> | null = null;
 
 async function loadAll(): Promise<void> {
   // Load the small engine script
@@ -82,9 +83,13 @@ async function loadAll(): Promise<void> {
 
 function buildRecognizableSet() {
   recognizableSet = new Set<string>();
+  strokeCountMap = new Map<string, number>();
   for (const entry of KanjiCanvas.refPatterns) {
     if (Array.isArray(entry) && typeof entry[0] === "string") {
       recognizableSet.add(entry[0]);
+      if (typeof entry[1] === "number") {
+        strokeCountMap.set(entry[0], entry[1]);
+      }
     }
   }
 }
@@ -92,6 +97,11 @@ function buildRecognizableSet() {
 /** Check if a character can be recognized by the loaded patterns. */
 export function canRecognize(char: string): boolean {
   return recognizableSet?.has(char) ?? false;
+}
+
+/** Get expected stroke count for a character, or null if unknown. */
+export function getExpectedStrokes(char: string): number | null {
+  return strokeCountMap?.get(char) ?? null;
 }
 
 export function useKanjiCanvas(canvasId: string) {
@@ -128,5 +138,11 @@ export function useKanjiCanvas(canvasId: string) {
     if (isLoaded) KanjiCanvas.deleteLast(canvasId);
   }, [canvasId, isLoaded]);
 
-  return { isLoaded, isLoading, error, recognize, erase, deleteLast };
+  const getStrokeCount = useCallback((): number => {
+    if (!isLoaded) return 0;
+    const pattern = (KanjiCanvas as any)[`recordedPattern_${canvasId}`];
+    return Array.isArray(pattern) ? pattern.length : 0;
+  }, [canvasId, isLoaded]);
+
+  return { isLoaded, isLoading, error, recognize, erase, deleteLast, getStrokeCount };
 }
