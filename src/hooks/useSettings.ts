@@ -6,7 +6,7 @@ const STORAGE_KEY = "sutras-settings";
 const defaultSettings: Settings = {
   script: "romaji",
   kanjiForm: "traditional",
-  ttsEnabled: true,
+  ttsEnabled: false,
   showGlosses: false,
   mode: "readings",
   theme: "auto",
