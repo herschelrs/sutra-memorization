@@ -32,9 +32,17 @@ The app has a writing mode where users draw kanji and a recognition engine (Kanj
    - Path data uses SVG bezier commands (`M`, `C`, `S`, `L`, etc.)
    - Strokes must be in the standard Japanese writing order
 
-   The composition approach: find KanjiVG characters that contain the same radicals/components (verified in step 2), extract their stroke paths, and combine them with appropriate positioning. For example, for 揭 = 扌+ 曷: get 扌 strokes from any hand-radical character (e.g. 捨), get 曷 strokes from a character like 喝 or 褐 that contains it.
+   The composition approach: find KanjiVG characters that **already use the same component in the same position** (left-right, top-bottom, etc.) so the paths are already scaled and positioned correctly. Don't take a standalone character and try to shrink it — take the component from a character where it's already "squished" into the right role. For example, for 揭 = 扌+ 曷:
+   - 扌 from 捨 (06368.svg, strokes 1-3) — already sized for left side of a left-right character
+   - 曷 from 竭 (07aed.svg, strokes 6-14) — already sized for right side of a left-right character
+   - Both source characters have similar left-right proportions, so the paths combine without coordinate adjustment
 
-   **This requires visual verification — ask the user to eyeball the result.** Open the SVG in a browser or viewer to confirm it looks correct before regenerating patterns. Claude cannot see images and should never commit an SVG without the user confirming it renders correctly.
+   **SVG format notes:**
+   - Strip the `kvg:` namespace attributes (e.g. `kvg:element`, `kvg:position`) and the DOCTYPE block — browsers can't render SVGs with undeclared namespace prefixes. The pattern generator only reads `<path d="...">` data anyway.
+   - Include stroke number `<text>` elements (copy positions from source files) so the user can verify stroke order visually.
+   - Keep `<!-- comments -->` noting which source file each group of strokes came from.
+
+   **This requires visual verification — ask the user to eyeball the result.** Open the SVG in a browser to confirm it looks correct before regenerating patterns. Claude cannot see images and should never commit an SVG without the user confirming it renders correctly.
 
 4. **Regenerate ref-patterns.** After adding custom SVGs:
    ```bash
