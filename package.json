@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "generate-patterns": "python3 scripts/generate-ref-patterns.py --kanjivg data/kanjivg/kanji --custom data/custom-strokes --output public/vendor/kanjicanvas/ref-patterns.js"
   },
   "dependencies": {
     "react": "^19.2.0",

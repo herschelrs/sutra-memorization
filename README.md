@@ -26,6 +26,31 @@ The Heart Sutra data was compiled by having an LLM cross-reference multiple web 
 
 See `plans/data-compilation.md` for the full schema and compilation process for adding new sutras.
 
+## Handwriting Recognition
+
+Writing mode uses [KanjiCanvas](https://github.com/asdfjkl/kanjicanvas) for stroke recognition, with reference patterns generated from [KanjiVG](https://github.com/KanjiVG/kanjivg) (CC BY-SA 3.0, Ulrich Apel). The vendored KanjiCanvas engine lives in `public/vendor/kanjicanvas/`; the `ref-patterns.js` file it needs is generated from SVG stroke data.
+
+To regenerate reference patterns (e.g. after adding custom strokes or updating KanjiVG):
+
+```bash
+# One-time: clone KanjiVG into data/ (gitignored)
+git clone --depth 1 https://github.com/KanjiVG/kanjivg.git data/kanjivg
+
+# Generate ref-patterns.js (~6,700 characters, ~30s)
+npm run generate-patterns
+
+# Or generate only specific characters
+python3 scripts/generate-ref-patterns.py \
+  --kanjivg data/kanjivg/kanji \
+  --custom data/custom-strokes \
+  --output public/vendor/kanjicanvas/ref-patterns.js \
+  --chars 菩薩涅槃
+```
+
+The pipeline (`scripts/generate-ref-patterns.py`) parses SVG paths into Bezier curves, samples dense polylines, scales from KanjiVG's 109x109 coordinate space to 256x256, applies moment normalization matching KanjiCanvas's internal algorithm, then resamples at 20px intervals for feature extraction. Stdlib-only Python 3, no pip dependencies.
+
+Custom stroke overrides go in `data/custom-strokes/` as `{hex-codepoint}.svg` files (same format as KanjiVG). These take priority over KanjiVG when both exist for the same character.
+
 ## Development
 
 ```bash
