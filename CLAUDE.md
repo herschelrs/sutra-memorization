@@ -59,6 +59,16 @@ Each sutra lives in `src/data/` as a JSON file + TS wrapper (Zod validation + `e
 - **tenborin.org** (Sangha Tenborin) — Zen temple site with romaji chanting guides.
 - See `plans/data-compilation.md` for the full list of web sources and cross-referencing strategy.
 
+## Writing Mode
+
+- Writing mode uses vendored KanjiCanvas for client-side handwriting recognition
+- Ref-patterns (`public/vendor/kanjicanvas/ref-patterns.js`) generated from KanjiVG cover ~6,696 characters
+- **When compiling a new sutra**, check writing mode coverage. Extract unique kanji from a sutra JSON with:
+  ```bash
+  node -e 'const d=require("./src/data/SUTRA.json"); const cs=new Set(); for(const s of Object.values(d)){if(!s||!s.characters)continue; for(const c of s.characters){if(!/[\u3040-\u309F\u30A0-\u30FF\uFF00-\uFF9F]/.test(c.char))cs.add(c.char)}} console.log([...cs].join(""))'
+  ```
+  Then test against ref-patterns. Characters not in the dataset are auto-skipped in writing mode. Missing characters that are in KanjiVG need pipeline debugging; characters not in KanjiVG need custom SVGs in `data/custom-strokes/`. See `plans/writing-mode.md` for details.
+
 ## Design Decisions
 
 - Chunk readings stored explicitly (not derived) because compound readings don't decompose cleanly (e.g. 般若 = hannya)
@@ -68,6 +78,7 @@ Each sutra lives in `src/data/` as a JSON file + TS wrapper (Zod validation + `e
 
 ## Issues
 
+- [ ] Writing mode: 揭 (U+63ED) missing from ref-patterns — used in Heart Sutra mantra (揭諦揭諦). Not in KanjiVG; needs custom SVG in `data/custom-strokes/`
 - [ ] Compile remaining sutras from Daishuin West sutra book
   - [x] HANNYA SHINGYO 般若心経 — Heart Sutra
   - [x] SHI KU SEI GAN 四弘誓願 — Four Great Vows

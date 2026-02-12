@@ -19,6 +19,8 @@ interface Props {
   rewindKey: number;
   rewindType: "fail" | "success";
   writingRetryKey: number;
+  writingPhase: "practice" | "test";
+  onWritingPhaseChange: (phase: "practice" | "test") => void;
   settings: Settings;
   totalSections: number;
   onReveal: () => void;
@@ -80,6 +82,8 @@ export function StudySession({
   rewindKey,
   rewindType,
   writingRetryKey,
+  writingPhase,
+  onWritingPhaseChange,
   settings,
   totalSections,
   onReveal,
@@ -123,6 +127,8 @@ export function StudySession({
           key={`${section.id}-${writingRetryKey}`}
           section={section}
           settings={settings}
+          phase={writingPhase}
+          onPhaseChange={onWritingPhaseChange}
           onComplete={onAssess}
         />
       ) : (

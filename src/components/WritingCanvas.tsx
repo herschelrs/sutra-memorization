@@ -8,6 +8,8 @@ const CANVAS_ID = "kanji-draw";
 interface Props {
   section: Section;
   settings: Settings;
+  phase: "practice" | "test";
+  onPhaseChange: (phase: "practice" | "test") => void;
   onComplete: (gotIt: boolean) => void;
 }
 
@@ -65,7 +67,7 @@ function buildReadingCue(
   };
 }
 
-export function WritingCanvas({ section, settings, onComplete }: Props) {
+export function WritingCanvas({ section, settings, phase, onPhaseChange, onComplete }: Props) {
   const { isLoading, error, isLoaded, recognize, erase, deleteLast, getStrokeCount } =
     useKanjiCanvas(CANVAS_ID);
 
@@ -241,6 +243,22 @@ export function WritingCanvas({ section, settings, onComplete }: Props) {
 
   return (
     <div className="writing-area">
+      {/* Phase toggle */}
+      <div className="writing-phase-toggle">
+        <button
+          className={`writing-phase-btn ${phase === "practice" ? "active" : ""}`}
+          onClick={() => onPhaseChange("practice")}
+        >
+          Practice
+        </button>
+        <button
+          className={`writing-phase-btn ${phase === "test" ? "active" : ""}`}
+          onClick={() => onPhaseChange("test")}
+        >
+          Test
+        </button>
+      </div>
+
       {/* Reading cue */}
       <div className="writing-cue">
         <span className="writing-cue-dim">{cue.before}</span>
@@ -263,6 +281,9 @@ export function WritingCanvas({ section, settings, onComplete }: Props) {
           height={300}
           className="writing-canvas"
         />
+        {phase === "practice" && !checked && !isSkipping && targetKanji && (
+          <div className="writing-canvas-hint">{targetKanji}</div>
+        )}
         {isLoading && <div className="writing-canvas-overlay">Loading...</div>}
         {isSkipping && (
           <div className="writing-canvas-overlay">

@@ -716,11 +716,53 @@ button:disabled {
   opacity: 0.4;
 }
 
+.writing-phase-toggle {
+  display: flex;
+  width: 300px;
+  max-width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.writing-phase-btn {
+  flex: 1;
+  padding: 6px 0;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  min-height: 0;
+  min-width: 0;
+  cursor: pointer;
+}
+
+.writing-phase-btn.active {
+  background: var(--accent);
+  color: #fff;
+}
+
 .writing-canvas-wrap {
   position: relative;
   width: 300px;
   max-width: 100%;
   aspect-ratio: 1;
+}
+
+.writing-canvas-hint {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-cjk);
+  font-size: 12rem;
+  color: #000;
+  opacity: 0.18;
+  pointer-events: none;
+  user-select: none;
 }
 
 .writing-canvas {
@@ -734,12 +776,14 @@ button:disabled {
 }
 
 @media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .writing-canvas {
+  :root:not([data-theme="light"]) .writing-canvas,
+  :root:not([data-theme="light"]) .writing-canvas-hint {
     filter: invert(0.88);
   }
 }
 
-[data-theme="dark"] .writing-canvas {
+[data-theme="dark"] .writing-canvas,
+[data-theme="dark"] .writing-canvas-hint {
   filter: invert(0.88);
 }
 
