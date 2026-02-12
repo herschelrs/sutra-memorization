@@ -814,6 +814,12 @@ button:disabled {
   padding-bottom: 16px;
 }
 
+.writing-actions-row {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+
 .writing-btn {
   flex: 1;
 }

@@ -41,6 +41,7 @@ function SutraDrill({ sutra, onBack }: { sutra: SutraInfo; onBack: () => void })
   const drill = useDrill(sutra.sections, sutra.id);
   const { speakChunk } = useTTS(settings);
   const [showSettings, setShowSettings] = useState(false);
+  const [writingRetryKey, setWritingRetryKey] = useState(0);
 
   const handleReveal = useCallback(() => {
     drill.reveal();
@@ -54,9 +55,14 @@ function SutraDrill({ sutra, onBack }: { sutra: SutraInfo; onBack: () => void })
 
   const handleAssess = useCallback(
     (gotIt: boolean) => {
+      if (settings.mode === "writing" && !gotIt) {
+        // Writing mode: skip recovery, just redo the section immediately
+        setWritingRetryKey((k) => k + 1);
+        return;
+      }
       drill.assess(gotIt);
     },
-    [drill],
+    [drill, settings.mode],
   );
 
   useEffect(() => {
@@ -119,6 +125,7 @@ function SutraDrill({ sutra, onBack }: { sutra: SutraInfo; onBack: () => void })
         recovery={drill.recovery}
         rewindKey={drill.rewindKey}
         rewindType={drill.rewindType}
+        writingRetryKey={writingRetryKey}
         settings={settings}
         totalSections={drill.totalSections}
         onReveal={handleReveal}

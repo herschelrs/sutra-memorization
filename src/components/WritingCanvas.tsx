@@ -79,21 +79,6 @@ export function WritingCanvas({ section, settings, onComplete }: Props) {
   const [isCorrect, setIsCorrect] = useState(false);
   const hadMiss = useRef(false);
 
-  // Reset state when section changes
-  const sectionIdRef = useRef(section.id);
-  useEffect(() => {
-    if (sectionIdRef.current !== section.id) {
-      sectionIdRef.current = section.id;
-      setCharIndex(0);
-      setStatuses(chars.map((_, i) => (i === 0 ? "current" : "pending")));
-      setChecked(false);
-      setCandidates([]);
-      setIsCorrect(false);
-      hadMiss.current = false;
-      if (isLoaded) erase();
-    }
-  }, [section.id, chars, isLoaded, erase]);
-
   // Auto-skip characters that can't be recognized
   useEffect(() => {
     if (!isLoaded || checked || charIndex >= chars.length) return;
@@ -239,7 +224,7 @@ export function WritingCanvas({ section, settings, onComplete }: Props) {
       {/* Action buttons */}
       <div className="writing-actions">
         {!checked ? (
-          <>
+          <div key="draw" className="writing-actions-row">
             <button className="btn-ghost writing-btn" onClick={handleUndo} disabled={!isLoaded || isLoading}>
               Undo
             </button>
@@ -249,11 +234,13 @@ export function WritingCanvas({ section, settings, onComplete }: Props) {
             <button className="btn-primary writing-btn-check" onClick={handleCheck} disabled={!isLoaded || isLoading}>
               Check
             </button>
-          </>
+          </div>
         ) : (
-          <button className="btn-primary" onClick={handleNext}>
-            Next
-          </button>
+          <div key="next" className="writing-actions-row">
+            <button className="btn-primary" onClick={handleNext}>
+              Next
+            </button>
+          </div>
         )}
       </div>
     </div>

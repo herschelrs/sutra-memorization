@@ -18,6 +18,7 @@ interface Props {
   recovery: Recovery | null;
   rewindKey: number;
   rewindType: "fail" | "success";
+  writingRetryKey: number;
   settings: Settings;
   totalSections: number;
   onReveal: () => void;
@@ -78,6 +79,7 @@ export function StudySession({
   recovery,
   rewindKey,
   rewindType,
+  writingRetryKey,
   settings,
   totalSections,
   onReveal,
@@ -101,7 +103,7 @@ export function StudySession({
         </button>
       </div>
       <ProgressBar current={run.sectionId} total={totalSections - 1} />
-      {recovery && (() => {
+      {recovery && mode !== "writing" && (() => {
         const done = recovery.passesTotal - recovery.passesLeft;
         return (
           <div className="recovery-wrap">
@@ -118,6 +120,7 @@ export function StudySession({
       })()}
       {mode === "writing" ? (
         <WritingCanvas
+          key={`${section.id}-${writingRetryKey}`}
           section={section}
           settings={settings}
           onComplete={onAssess}
