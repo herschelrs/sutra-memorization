@@ -67,7 +67,11 @@ Each sutra lives in `src/data/` as a JSON file + TS wrapper (Zod validation + `e
   ```bash
   node -e 'const d=require("./src/data/SUTRA.json"); const cs=new Set(); for(const s of Object.values(d)){if(!s||!s.characters)continue; for(const c of s.characters){if(!/[\u3040-\u309F\u30A0-\u30FF\uFF00-\uFF9F]/.test(c.char))cs.add(c.char)}} console.log([...cs].join(""))'
   ```
-  Then test against ref-patterns. Characters not in the dataset are auto-skipped in writing mode. Missing characters that are in KanjiVG need pipeline debugging; characters not in KanjiVG need custom SVGs in `data/custom-strokes/`. See `plans/writing-mode.md` for details.
+  Then test against ref-patterns. Characters not in the dataset are auto-skipped in writing mode. Missing characters that are in KanjiVG need pipeline debugging; characters not in KanjiVG need custom SVGs in `data/custom-strokes/`.
+- **Adding custom stroke data**: Create `data/custom-strokes/{hex_codepoint}.svg` (get codepoint with `python3 -c "print(f'{ord(\"揭\"):05x}')"`). Format matches KanjiVG: `viewBox="0 0 109 109"`, one `<path d="...">` per stroke in writing order, bezier commands. Look at files in `data/kanjivg/kanji/` for examples. Compose from radicals of similar characters already in KanjiVG.
+- **Regenerating ref-patterns**: `npm run generate-patterns` (full rebuild, ~30s). For specific characters only: `python3 scripts/generate-ref-patterns.py --kanjivg data/kanjivg/kanji --custom data/custom-strokes --output public/vendor/kanjicanvas/ref-patterns.js --chars 揭`
+- KanjiVG must be cloned first: `git clone --depth 1 https://github.com/KanjiVG/kanjivg.git data/kanjivg` (gitignored)
+- See `plans/writing-mode.md` for full design details and `plans/add-custom-strokes.md` for a standalone task prompt.
 
 ## Design Decisions
 

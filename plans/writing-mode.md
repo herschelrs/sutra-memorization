@@ -102,6 +102,8 @@ Custom stroke SVGs follow the same format. To add a new character:
 2. Draw strokes in correct order as SVG `<path>` elements in a 109×109 viewBox
 3. Run the generation script (see below)
 
+See `plans/add-custom-strokes.md` for a standalone task prompt covering this workflow end-to-end.
+
 #### Conversion process
 
 KanjiCanvas's recognition works on point sequences, not bezier curves. The conversion:
