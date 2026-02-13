@@ -289,6 +289,11 @@ button:disabled {
   text-align: right;
 }
 
+.section-list-check {
+  color: var(--success);
+  margin-right: 2px;
+}
+
 .section-list-kanji {
   font-family: var(--font-cjk);
   font-size: 1.1rem;

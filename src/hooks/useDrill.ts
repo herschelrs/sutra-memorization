@@ -22,6 +22,22 @@ function storageKey(sutraKey: string) {
   return `sutras-drill-${sutraKey}`;
 }
 
+function writingStorageKey(sutraKey: string) {
+  return `sutras-writing-${sutraKey}`;
+}
+
+export function loadWritingProgress(sutraKey: string): number[] {
+  try {
+    const raw = localStorage.getItem(writingStorageKey(sutraKey));
+    if (raw) return JSON.parse(raw);
+  } catch { /* ignore */ }
+  return [];
+}
+
+export function saveWritingProgress(sutraKey: string, completed: number[]) {
+  localStorage.setItem(writingStorageKey(sutraKey), JSON.stringify(completed));
+}
+
 export function loadProgress(sutraKey: string): DrillProgress {
   try {
     const raw = localStorage.getItem(storageKey(sutraKey));

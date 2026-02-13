@@ -10,13 +10,14 @@ interface Props {
   titleEn: string;
   sections: Section[];
   progress: DrillProgress;
+  writingCompleted: Set<number>;
   totalSections: number;
   onStart: (sectionIndex?: number) => void;
   onBack: () => void;
   onOpenSettings: () => void;
 }
 
-function SectionList({ sections, onStart }: { sections: Section[]; onStart: (index: number) => void }) {
+function SectionList({ sections, writingCompleted, onStart }: { sections: Section[]; writingCompleted: Set<number>; onStart: (index: number) => void }) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -31,7 +32,10 @@ function SectionList({ sections, onStart }: { sections: Section[]; onStart: (ind
         <div className="section-list-items">
           {sections.map((section, index) => (
             <button key={section.id} className="section-list-item" onClick={() => onStart(index)}>
-              <span className="section-list-id">{section.id}</span>
+              <span className="section-list-id">
+                {writingCompleted.has(index) && <span className="section-list-check">&#x2713;</span>}
+                {section.id}
+              </span>
               <span className="section-list-kanji">
                 {section.chunks.map((chunk, ci) => {
                   const chars = section.characters.slice(chunk.start, chunk.end).map((c) => c.char).join("");
@@ -46,7 +50,7 @@ function SectionList({ sections, onStart }: { sections: Section[]; onStart: (ind
   );
 }
 
-export function HomeScreen({ titleJa, titleEn, sections, progress, totalSections, onStart, onBack, onOpenSettings }: Props) {
+export function HomeScreen({ titleJa, titleEn, sections, progress, writingCompleted, totalSections, onStart, onBack, onOpenSettings }: Props) {
   const pct = Math.round((progress.frontier / (totalSections - 1)) * 100);
   const frontierSectionId = sections[progress.frontier]?.id ?? progress.frontier;
 
@@ -91,7 +95,7 @@ export function HomeScreen({ titleJa, titleEn, sections, progress, totalSections
         )}
       </div>
 
-      <SectionList sections={sections} onStart={onStart} />
+      <SectionList sections={sections} writingCompleted={writingCompleted} onStart={onStart} />
     </div>
   );
 }

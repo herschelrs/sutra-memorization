@@ -1,7 +1,7 @@
 import { useState, useCallback, useEffect } from "react";
 import { createRoot } from "react-dom/client";
 import { sutras, type SutraInfo } from "./data";
-import { useDrill, loadProgress } from "./hooks/useDrill";
+import { useDrill, loadProgress, loadWritingProgress, saveWritingProgress } from "./hooks/useDrill";
 import { useSettings } from "./hooks/useSettings";
 import { useTTS } from "./hooks/useTTS";
 import { HomeScreen } from "./components/HomeScreen";
@@ -43,6 +43,9 @@ function SutraDrill({ sutra, onBack }: { sutra: SutraInfo; onBack: () => void })
   const [showSettings, setShowSettings] = useState(false);
   const [writingRetryKey, setWritingRetryKey] = useState(0);
   const [writingPhase, setWritingPhase] = useState<"practice" | "test">("practice");
+  const [writingCompleted, setWritingCompleted] = useState<Set<number>>(
+    () => new Set(loadWritingProgress(sutra.id)),
+  );
 
   const handleReveal = useCallback(() => {
     drill.reveal();
@@ -67,10 +70,27 @@ function SutraDrill({ sutra, onBack }: { sutra: SutraInfo; onBack: () => void })
           setWritingRetryKey((k) => k + 1);
           return;
         }
+        // Test mode success: mark section complete, advance linearly
+        const sectionIdx = drill.run!.sectionId;
+        const next = new Set(writingCompleted);
+        next.add(sectionIdx);
+        setWritingCompleted(next);
+        saveWritingProgress(sutra.id, [...next]);
+
+        // Find next incomplete section
+        for (let i = sectionIdx + 1; i < sutra.sections.length; i++) {
+          if (!next.has(i)) {
+            drill.startDrill(i);
+            return;
+          }
+        }
+        // All done
+        drill.goHome();
+        return;
       }
       drill.assess(gotIt);
     },
-    [drill, settings.mode, writingPhase],
+    [drill, settings.mode, writingPhase, writingCompleted, sutra.id, sutra.sections.length],
   );
 
   useEffect(() => {
@@ -105,6 +125,7 @@ function SutraDrill({ sutra, onBack }: { sutra: SutraInfo; onBack: () => void })
           titleEn={sutra.titleEn}
           sections={sutra.sections}
           progress={drill.progress}
+          writingCompleted={writingCompleted}
           totalSections={drill.totalSections}
           onStart={drill.startDrill}
           onBack={onBack}
@@ -114,7 +135,7 @@ function SutraDrill({ sutra, onBack }: { sutra: SutraInfo; onBack: () => void })
           <SettingsPanel
             settings={settings}
             onUpdate={setSettings}
-            onReset={drill.resetProgress}
+            onReset={() => { drill.resetProgress(); setWritingCompleted(new Set()); saveWritingProgress(sutra.id, []); }}
             onClose={() => setShowSettings(false)}
           />
         )}
