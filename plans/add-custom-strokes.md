@@ -68,9 +68,9 @@ The app has a writing mode where users draw kanji and a recognition engine (Kanj
 
 The build requires stroke data for **both** kyujitai and shinjitai forms of every sutra character (`npm run check-strokes`). Three categories:
 
-1. **Stroke-identical pairs** (e.g. 說/説, 虛/虚): Same components, same stroke sequence. The kyujitai SVG can reuse the shinjitai's paths — the difference is purely a Unicode/glyph variant. The recognizer will match either way.
+1. **Stroke-identical pairs** (e.g. 說/説): Same components, same stroke sequence. The kyujitai SVG can reuse the shinjitai's paths — the difference is purely a Unicode/glyph variant. The recognizer will match either way.
 
-2. **Structurally different pairs** (e.g. 增/増): The kyujitai has a different component (曾 vs 曽) with different stroke count/sequence. These need genuinely different SVGs composed from the kyujitai's own components.
+2. **Structurally different pairs** (e.g. 增/増, 虛/虚): The kyujitai has a different component with different stroke count/sequence. These need genuinely different SVGs composed from the kyujitai's own components. 虛 (12 strokes, 虍+丱+一) vs 虚 (11 strokes, 虍+业); 增 (15 strokes, 土+曾) vs 増 (14 strokes, 土+曽). **Don't assume similar-looking pairs are stroke-identical** — always verify decomposition from the Chinese dataset.
 
 3. **Kyujitai-only characters** (e.g. 揭): No shinjitai equivalent — just needs a standard custom SVG.
 
