@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+虛 (U+865B) — kyujitai of 虚 (U+865A). 12 strokes.
+Decomposition (Chinese Wiktionary): 虍 (phonetic) + 丘 (semantic "hill").
+The bottom retains the shape of 丠 (ancient 丘), written as 丱 + 一.
+Unlike shinjitai 虚 (虍+业, 11 strokes), 虛 has 丱+一 (6 strokes) below the 虍.
+Sources:
+  虍 (strokes 1-6) from 虚 (U+865A, 0865a.svg)
+  丱 (strokes 7-11) from 噓 (U+5653, 05653.svg, strokes 10-14), x-shifted -10
+  一 (stroke 12) from 虚 (U+865A, 0865a.svg, stroke 11)
+Note: 虍 strokes 3-4 order follows KanjiVG (see plans/add-custom-strokes.md).
+KanjiVG is CC BY-SA 3.0, Ulrich Apel.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" width="109" height="109" viewBox="0 0 109 109">
+<g style="fill:none;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;">
+	<!-- 虍 from 虚 (0865a s1-s6) -->
+	<path d="M53.02,11.58c0.98,0.92,1.26,2.29,1.26,4.02c0,5.9-0.02,7.94-0.02,12.9"/>
+	<path d="M55.6,20.77c4.74-0.58,9.76-1.35,14.14-1.94c1.59-0.22,3.17-0.46,4.76-0.07"/>
+	<path d="M27.36,29.93c0.85,0.85,1.21,2.49,1.23,4.57c0.16,23.25-4.72,47.13-16.09,60"/>
+	<path d="M29.63,32.27c1.31-0.2,2.78-0.4,4.36-0.6c14.5-1.84,35.51-3.67,48.96-3.83c12.07-0.15,2.8,6.91-0.2,9.03"/>
+	<path d="M36.25,46.72c3,0.78,5.53,0.31,7.89-0.17c6.84-1.37,20.49-3.43,25.74-4.11c2.08-0.27,3.82-0.36,5.87,0.2"/>
+	<path d="M52.25,34.93c0.91,0.91,1.29,1.95,1.29,3.34c0,4.98-0.04,8.63-0.04,10.86c0,4.62,1.75,6.12,12.17,6.12c2.95,0,9.8-0.5,12.33-1.39"/>
+	<!-- 丱 from 噓 (05653 s10-s14), x-shifted -10 -->
+	<path d="M40.36,66.99c0.61,0.4,1.03,1.87,1.08,3.2c0.09,2.4-0.17,6.24-0.56,11.05c-0.08,0.94,0.5,1.58,1.78,1.2c4.09-1.2,8.76-1.6,10.44-1.7"/>
+	<path d="M51.64,59.33c0.76,0.86,1.29,1.87,1.35,4.73c0.31,13.72-0.2,24.23-0.2,28.9"/>
+	<path d="M77.18,64.33c0.61,0.4,1.08,1.87,1.08,3.2c0,3.67-1.44,10-1.44,14.93"/>
+	<path d="M64.66,80.86c2.46,-0.16,7,-0.5,11.12,-0.61"/>
+	<path d="M63.1,59.58c0.75,0.85,1.27,1.85,1.33,4.66c0.31,13.52-0.19,23.37-0.19,27.97"/>
+	<!-- 一 from 虚 (0865a s11) -->
+	<path d="M28,93.32c3.13,1.14,7.23,0.69,10.49,0.39c13.66-1.24,30.93-2.36,44.14-2.55c3.54-0.05,7.14-0.24,10.62,0.52"/>
+</g>
+<g style="font-size:8;fill:#808080">
+	<text transform="matrix(1 0 0 1 44.50 12.50)">1</text>
+	<text transform="matrix(1 0 0 1 58.50 17.50)">2</text>
+	<text transform="matrix(1 0 0 1 21.50 40.63)">3</text>
+	<text transform="matrix(1 0 0 1 30.25 29.50)">4</text>
+	<text transform="matrix(1 0 0 1 35.50 44.50)">5</text>
+	<text transform="matrix(1 0 0 1 43.50 39.50)">6</text>
+	<text transform="matrix(1 0 0 1 35.00 65.50)">7</text>
+	<text transform="matrix(1 0 0 1 42.50 59.50)">8</text>
+	<text transform="matrix(1 0 0 1 73.50 62.50)">9</text>
+	<text transform="matrix(1 0 0 1 65.70 78.30)">10</text>
+	<text transform="matrix(1 0 0 1 55.75 57.50)">11</text>
+	<text transform="matrix(1 0 0 1 24.50 90.50)">12</text>
+</g>
+</svg>

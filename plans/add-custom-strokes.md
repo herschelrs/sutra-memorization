@@ -13,7 +13,7 @@ The app has a writing mode where users draw kanji and a recognition engine (Kanj
    node -e 'const d=require("./src/data/SUTRA.json"); const cs=new Set(); for(const s of Object.values(d)){if(!s||!s.characters)continue; for(const c of s.characters){if(!/[\u3040-\u309F\u30A0-\u30FF\uFF00-\uFF9F]/.test(c.char))cs.add(c.char)}} console.log([...cs].join(""))'
    ```
 
-2. **Verify character decomposition from data (not LLM knowledge).** Before composing an SVG, confirm the character's radical/component structure against the kaikki.org dictionary datasets. The Chinese dataset is much richer for this — query the `etymology_templates` field:
+2. **Verify character decomposition from data (not LLM knowledge).** Before composing an SVG, confirm the character's radical/component structure against the kaikki.org dictionary datasets. The **Chinese** dataset is the authoritative source for decomposition — use it over the Japanese dataset or shinjitai analysis. Kyujitai forms are the original Chinese characters; shinjitai simplifications may have changed the component structure (e.g. 曾→曽 in 增→増). Always decompose from the kyujitai form's own etymology, not by diff from the shinjitai. Query the `etymology_templates` field:
    ```bash
    # Chinese dataset has structured Han compound decomposition
    jq 'select(.word == "揭") | {etymology_text, etymology_templates}' \
@@ -44,6 +44,8 @@ The app has a writing mode where users draw kanji and a recognition engine (Kanj
 
    **This requires visual verification — ask the user to eyeball the result.** Open the SVG in a browser to confirm it looks correct before regenerating patterns. Claude cannot see images and should never commit an SVG without the user confirming it renders correctly.
 
+   **KanjiVG stroke order is authoritative.** KanjiVG's stroke order occasionally differs from other references (e.g. Wiktionary). For example, KanjiVG has 虍 strokes 3-4 as ㇒ then ㇖, while Wiktionary's 虍 entry shows ㇖ then ㇒. Always defer to KanjiVG's order — the recognition engine's ref-patterns are all generated from KanjiVG, so using a different stroke order for custom characters would cause inconsistent recognition behavior against all other characters sharing the same radical.
+
 4. **Regenerate ref-patterns.** After adding custom SVGs:
    ```bash
    # Make sure KanjiVG is cloned (one-time)
@@ -62,6 +64,26 @@ The app has a writing mode where users draw kanji and a recognition engine (Kanj
 
 5. **Test.** Run `npm run dev`, open the app in writing mode, and draw the character to verify recognition works.
 
+## Kyujitai vs shinjitai
+
+The build requires stroke data for **both** kyujitai and shinjitai forms of every sutra character (`npm run check-strokes`). Three categories:
+
+1. **Stroke-identical pairs** (e.g. 說/説, 虛/虚): Same components, same stroke sequence. The kyujitai SVG can reuse the shinjitai's paths — the difference is purely a Unicode/glyph variant. The recognizer will match either way.
+
+2. **Structurally different pairs** (e.g. 增/増): The kyujitai has a different component (曾 vs 曽) with different stroke count/sequence. These need genuinely different SVGs composed from the kyujitai's own components.
+
+3. **Kyujitai-only characters** (e.g. 揭): No shinjitai equivalent — just needs a standard custom SVG.
+
+When composing kyujitai SVGs, always decompose from the Chinese dataset etymology (which describes the original/traditional form), not by diffing against the shinjitai.
+
+### 曾 vs 曽 top stroke ambiguity
+
+The top two strokes of 曾 (traditional) vary by regional convention:
+- **Kangxi / Japanese kyujitai / Korean**: 八 (outward-spreading), per Wiktionary: "When used in Korea or as a Japanese kyūjitai character, the upper component is 八 instead of 丷, which is also the historical form found in the Kangxi dictionary."
+- **Modern Chinese**: 丷 (inward-converging, same as shinjitai 曽)
+
+We use 八 for the kyujitai custom stroke SVG (增, U+589E) since it's the historical/Kangxi form and this is a Japanese kyujitai context. However, most modern fonts (including the user's system font) may render 曾 with 丷. The recognizer is tolerant enough that either form should be accepted in practice.
+
 ## Currently missing
 
-Check `README.md` Bugs section for the current list. As of writing, 揭 (U+63ED) is the only missing character in compiled sutras (Heart Sutra mantra 揭諦揭諦). The `plans/writing-mode.md` file has a full list of characters that will be needed when dharani texts are compiled.
+Check `README.md` Bugs section for the current list. The `plans/writing-mode.md` file has a full list of characters that will be needed when dharani texts are compiled.
