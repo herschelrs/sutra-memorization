@@ -62,16 +62,16 @@ npm run build    # Production build
 ## Bugs
 
 - [ ] need option to disable glosses in the line being tested
-
+- [ ] kanji writing mode is currently misleading for some characters where different fonts render eg. walking radical with different number of strokes
 
 ## Roadmap
 
+- [x] Kanji handwriting mode
+  - [x] Writing mode: 揭 (U+63ED) missing from ref-patterns — used in Heart Sutra mantra (揭諦揭諦). Not in KanjiVG; needs custom SVG in `data/custom-strokes/`
+- [x] pwa
 - [ ] View/review data for a given sutra (to check readings, chunking, etc)
 - [ ] react router (so browser back works etc)
-- [ ] pwa
 - [ ] Complete sutra list from Daishu-in West (see CLAUDE.md)
-- [ ] Kanji handwriting mode
-  - [x] Writing mode: 揭 (U+63ED) missing from ref-patterns — used in Heart Sutra mantra (揭諦揭諦). Not in KanjiVG; needs custom SVG in `data/custom-strokes/`
 - [ ] Redesign home screen: surface modes/features more prominently; writing mode should be its own top-level mode, not a setting
 - [ ] Further texts?
   - [ ] Besides sutras, eg. Thousand character classic?
