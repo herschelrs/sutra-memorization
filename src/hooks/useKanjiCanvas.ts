@@ -4,6 +4,8 @@ const DB_NAME = "kanjicanvas";
 const DB_VERSION = 1;
 const STORE_NAME = "data";
 const PATTERNS_KEY = "refPatterns";
+const PATTERNS_HASH_KEY = "refPatternsHash";
+declare const __REF_PATTERNS_HASH__: string;
 
 const BASE = import.meta.env.BASE_URL;
 
@@ -57,11 +59,14 @@ async function loadAll(): Promise<void> {
   // Try IndexedDB cache for the large patterns data
   try {
     const db = await openDB();
-    const cached = await idbGet(db, PATTERNS_KEY);
-    if (cached && Array.isArray(cached) && cached.length > 0) {
-      KanjiCanvas.refPatterns = cached;
-      buildRecognizableSet();
-      return;
+    const cachedHash = await idbGet(db, PATTERNS_HASH_KEY);
+    if (cachedHash === __REF_PATTERNS_HASH__) {
+      const cached = await idbGet(db, PATTERNS_KEY);
+      if (cached && Array.isArray(cached) && cached.length > 0) {
+        KanjiCanvas.refPatterns = cached;
+        buildRecognizableSet();
+        return;
+      }
     }
   } catch {
     // IndexedDB unavailable — fall through to script load
@@ -74,6 +79,7 @@ async function loadAll(): Promise<void> {
   try {
     const db = await openDB();
     await idbPut(db, PATTERNS_KEY, KanjiCanvas.refPatterns);
+    await idbPut(db, PATTERNS_HASH_KEY, __REF_PATTERNS_HASH__);
   } catch {
     // Cache write failed — non-fatal
   }

@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import type { Section } from "../data/schema";
 
 interface DrillProgress {
@@ -14,6 +14,36 @@ interface Props {
   onStart: (sectionIndex?: number) => void;
   onBack: () => void;
   onOpenSettings: () => void;
+}
+
+function SectionList({ sections, onStart }: { sections: Section[]; onStart: (index: number) => void }) {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <div className="section-list">
+      <button className="section-list-toggle" onClick={() => setOpen(!open)}>
+        <span>Sections</span>
+        <span className="section-list-arrow" style={{ transform: open ? "rotate(90deg)" : undefined }}>
+          <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="7,4 13,10 7,16" /></svg>
+        </span>
+      </button>
+      {open && (
+        <div className="section-list-items">
+          {sections.map((section, index) => (
+            <button key={section.id} className="section-list-item" onClick={() => onStart(index)}>
+              <span className="section-list-id">{section.id}</span>
+              <span className="section-list-kanji">
+                {section.chunks.map((chunk, ci) => {
+                  const chars = section.characters.slice(chunk.start, chunk.end).map((c) => c.char).join("");
+                  return <ruby key={ci}>{chars}<rp>(</rp><rt>{chunk.ja}</rt><rp>)</rp></ruby>;
+                })}
+              </span>
+            </button>
+          ))}
+        </div>
+      )}
+    </div>
+  );
 }
 
 export function HomeScreen({ titleJa, titleEn, sections, progress, totalSections, onStart, onBack, onOpenSettings }: Props) {
@@ -60,6 +90,8 @@ export function HomeScreen({ titleJa, titleEn, sections, progress, totalSections
           </>
         )}
       </div>
+
+      <SectionList sections={sections} onStart={onStart} />
     </div>
   );
 }

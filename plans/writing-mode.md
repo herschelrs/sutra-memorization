@@ -170,6 +170,10 @@ Based on dharani analysis, these 32 characters are not in KanjiVG and will need 
 
 Note: 𤚥 and 𩕳 are CJK Extension B characters. They may not render in common fonts and authoring stroke data for them will be challenging. These only appear in 仏頂尊勝陀羅尼.
 
+#### Build-time stroke coverage check
+
+`npm run check-strokes` (also wired into `npm run build`) verifies that **every kanji in every compiled sutra JSON has stroke data in ref-patterns.js**. Both kyujitai and shinjitai forms are required — writing mode uses whichever form the user has selected (`kanjiForm` setting), so both must be recognizable. The script (`scripts/check-stroke-coverage.js`) extracts all unique non-kana characters (including `simplified` variants) from `src/data/*.json` and checks each against the ref-patterns character set. Build fails if any are missing.
+
 #### TODO: Audit and fill missing characters in compiled sutras
 
 The generated ref-patterns.js covers 6,700+ characters from KanjiVG, but some characters in already-compiled sutras may still be missing (auto-skipped in writing mode). Need to:
