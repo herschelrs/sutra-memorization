@@ -26,6 +26,8 @@ jobs:
           node-version: 20
           cache: npm
       - run: npm ci
+      - run: git clone --depth 1 https://github.com/KanjiVG/kanjivg.git data/kanjivg
+      - run: npm run generate-patterns
       - run: npm run build
       - uses: actions/configure-pages@v4
       - uses: actions/upload-pages-artifact@v3
