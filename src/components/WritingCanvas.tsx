@@ -1,4 +1,4 @@
-import { useState, useCallback, useRef, useEffect } from "react";
+import { useState, useCallback, useRef, useEffect, useLayoutEffect } from "react";
 import type { Section, Character } from "../data/schema";
 import type { Settings } from "../types";
 import { useKanjiCanvas, canRecognize, getExpectedStrokes } from "../hooks/useKanjiCanvas";
@@ -81,6 +81,17 @@ export function WritingCanvas({ section, settings, phase, onPhaseChange, onCompl
   const [isCorrect, setIsCorrect] = useState(false);
   const hadMiss = useRef(false);
   const autoAdvanceTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const wrapRef = useRef<HTMLDivElement>(null);
+  const [canvasSize, setCanvasSize] = useState(300);
+
+  // Measure the wrap container and set canvas to match exactly
+  useLayoutEffect(() => {
+    const wrap = wrapRef.current;
+    if (!wrap) return;
+    const size = Math.round(wrap.getBoundingClientRect().width);
+    if (size > 0) setCanvasSize(size);
+  }, []);
 
   // Auto-skip characters that can't be recognized
   useEffect(() => {
@@ -274,11 +285,13 @@ export function WritingCanvas({ section, settings, phase, onPhaseChange, onCompl
       </div>
 
       {/* Canvas */}
-      <div className="writing-canvas-wrap">
+      <div ref={wrapRef} className="writing-canvas-wrap">
         <canvas
+          ref={canvasRef}
           id={CANVAS_ID}
-          width={300}
-          height={300}
+          width={canvasSize}
+          height={canvasSize}
+          style={{ width: canvasSize, height: canvasSize }}
           className="writing-canvas"
         />
         {phase === "practice" && !checked && !isSkipping && targetKanji && (

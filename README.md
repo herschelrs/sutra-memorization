@@ -71,6 +71,7 @@ npm run build    # Production build
 - [ ] pwa
 - [ ] Complete sutra list from Daishu-in West (see CLAUDE.md)
 - [ ] Kanji handwriting mode
-  - [ ] Writing mode: 揭 (U+63ED) missing from ref-patterns — used in Heart Sutra mantra (揭諦揭諦). Not in KanjiVG; needs custom SVG in `data/custom-strokes/`
+  - [x] Writing mode: 揭 (U+63ED) missing from ref-patterns — used in Heart Sutra mantra (揭諦揭諦). Not in KanjiVG; needs custom SVG in `data/custom-strokes/`
+- [ ] Redesign home screen: surface modes/features more prominently; writing mode should be its own top-level mode, not a setting
 - [ ] Further texts?
   - [ ] Besides sutras, eg. Thousand character classic?
